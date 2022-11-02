@@ -1,4 +1,4 @@
-20520429940081068
+20514754258690356
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -9849,13 +9849,6 @@ connector Hirose FH12 horizontal
 55
 54
 Connector_FFC-FPC
-Hirose_FH41-30S-0.5SH_1x30_1MP_1SH_P0.5mm_Horizontal
-Hirose FH41, FFC/FPC connector, FH41-30S-0.5SH, 30 Pins per row (https://www.hirose.com/fr/product/document?clcode=CL0580-2218-5-05&productname=FH41-30S-0.5SH(05)&series=FH41&documenttype=2DDrawing&lang=fr&documentid=0001001704)
-connector Hirose FH41 horizontal
-0
-38
-32
-Connector_FFC-FPC
 JAE_FF0825SA1_2Rows-25Pins_P0.40mm_Horizontal
 Molex JAE 0.2mm pitch, 1mm overall height FFC/FPC connector, FF0825SA1, 25 Circuits (http://www.jae.com/z-en/pdf_download_exec.cfm?param=SJ108178.pdf), generated with kicad-footprint-generator
 connector JAE  top entry
@@ -9898,26 +9891,12 @@ connector JAE  top entry
 81
 81
 Connector_FFC-FPC
-Molex_52559-3652_2x18-1MP_P0.5mm_Vertical
-Molex 0.50mm Pitch Easy-On Type FFC/FPC, 52559-3652, 36 Circuits (https://www.molex.com/pdm_docs/sd/525593652_sd.pdf)
-connector Molex top entry
-0
-40
-37
-Connector_FFC-FPC
 Molex_54132-5033_1x50-1MP_P0.5mm_Horizontal
 Molex FFC/FPC connector, 50 bottom-side contacts, 0.5mm pitch, 2.0mm height, https://www.molex.com/pdm_docs/sd/541325033_sd.pdf
 FFC FPC
 0
 54
 51
-Connector_FFC-FPC
-Molex_54548-1071_1x10-1MP_P0.5mm_Horizontal
-Molex FFC/FPC connector, 10 bottom-side contacts, 0.5mm pitch, 1.2mm height, https://www.molex.com/pdm_docs/sd/545481071_sd.pdf
-FFC FPC connector
-0
-12
-11
 Connector_FFC-FPC
 Molex_200528-0040_1x04-1MP_P1.00mm_Horizontal
 Molex Molex 1.00mm Pitch Easy-On BackFlip, Right-Angle, Bottom Contact FFC/FPC, 200528-0040, 4 Circuits (https://www.molex.com/pdm_docs/sd/2005280040_sd.pdf), generated with kicad-footprint-generator
@@ -75333,6 +75312,41 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+Panelization
+mouse-bite-1mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2.54mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-5mm-slot
+
+
+0
+0
+0
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -79171,13 +79185,6 @@ rotary encoder
 4
 SPU0410
 SPU0410LR5H-QB
-
-
-0
-6
-6
-SPU0410LR5H-QB
-XDCR_SPU0410LR5H-QB
 
 
 0
@@ -84797,6 +84804,13 @@ test point THT pad
 0
 1
 1
+Transformer
+Transformer_shielded_8x13.5
+
+
+0
+5
+5
 Transformer_SMD
 Pulse_P0926NL
 SMT Gate Drive Transformer, 1:1:1, 8.0x6.3x5.3mm (https://productfinder.pulseeng.com/products/datasheets/SPM2007_61.pdf)
