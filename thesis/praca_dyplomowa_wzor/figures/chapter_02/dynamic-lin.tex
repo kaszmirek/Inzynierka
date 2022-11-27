@@ -1,0 +1,108 @@
+% TikZ figure file, can be compiled both alone or included, see:
+% https://tex.stackexchange.com/questions/79594/outsourcing-tikz-code
+\documentclass{standalone}
+
+% use full preamble in standalone file
+\usepackage{tikz}
+\usepackage{amsmath}  % to use {aligned} environment
+\usetikzlibrary{%
+    arrows,  % fancy "stealth" arrows
+    calc,  % advanced calculations of coordinates using $$, like: ($(P1) + (1,0)$)
+    positioning,  % relative positioning, e.g. "\node[above left = of P1]"
+}
+
+
+\begin{document}
+
+% Style definitions for drawing blocks in TikZ
+% (have to be inside {document} so that standalone package will include them)
+\tikzset{%
+    >=stealth',  % style for all arrows
+    thick,
+    block/.style = {%
+        draw, thick, rectangle,
+        minimum height = 3em,
+        minimum width = 3em,
+        inner sep = 3mm
+    },
+    blockname/.style = {node distance = -0mm},
+    input/.style     = {coordinate},
+    output/.style    = {coordinate}
+}
+
+% the actual image
+\begin{tikzpicture}[auto, node distance = 1.2cm]
+    % First draw all the blocks (using a single path and relative positioning)
+    % generally the sytnax is: node [style] (coordinate-name) {text}
+    \draw
+        node at (0,0) [input, name = trajectory-gen] {}
+        node [block, fill=blue!20, right = 1.4cm of trajectory-gen] (feedback)
+        {$\begin{aligned}
+                v = \ddot h_d &- K_1 (\dot h - \dot h_d) \\
+                              &- K_2 (h - h_d)
+        \end{aligned}$}
+        node [blockname, above = of feedback] {Feedback control}
+        node [output, right = of feedback] (feedback-out) {}
+
+        node [block, fill=blue!20, right = 2.8cm of feedback] (dynamic-lin) {$ u = K_{dd}^{-1} (v - P) $}
+        node [input, left = of dynamic-lin] (dynamic-lin-in) {}
+        node [input, below = 0.8cm of dynamic-lin] (dynamic-lin-in-bot) {}
+        node [block, fill=blue!20, right = of dynamic-lin] (dynamic-lin-int) {$ \int dt $}
+        node [output, right = 1.6cm of dynamic-lin-int] (dynamic-lin-int-out) {}
+
+        node [input, below = 2.6cm of dynamic-lin-int] (object-center) {}
+        node [input, right = 2.0cm of object-center] (object-in) {}
+        node [block, fill=blue!20, left = of object-in] (object) {$ \dot q = G \eta $}
+        node [blockname, above = of object] {Object}
+        node [output, left = of object, name = object-out] {}
+
+        node [input, left = 1.6cm of object] (output-fun-in) {}
+        node [block, fill=blue!20, left = of output-fun-in] (output-fun) {$ h(q) $}
+        node [blockname, above = of output-fun] {Output function}
+        node [output, left = of output-fun, name = output-fun-out] {}
+        node [output, below = of object-out, name = object-out-below] {}
+        ;
+
+    % from here the "calc" library becomes very helpful
+    % also the "let syntax" (very counter-intuitive) will be essential,
+    % as it allows to extract the x and y coordinates of some point
+    % last thing, we can extract borders of coordinates using e.g. "P1.north"
+
+    % Then draw connections between blocks
+    \draw[->] ([yshift=3mm]trajectory-gen) -- node {$ h_d $} ([yshift=3mm]feedback.west);
+    \draw[->] (feedback) -- node[xshift=-3mm] {$ v $}
+        ($(dynamic-lin-in)!0.17!(dynamic-lin)$) -- (dynamic-lin);
+    \draw[->] (dynamic-lin) -- node {$ u $} (dynamic-lin-int);
+    \draw[->] (dynamic-lin-int) -- node {$ \eta $} (dynamic-lin-int-out) |- (object);
+    \draw[->] (object) -- node[above,xshift=-2mm] {$ q $} (object-out) -- (output-fun);
+    \draw[->] (output-fun-in) let \p1 = (dynamic-lin.south), \p2 = (output-fun-in) in
+        -- (\x2,\y1);
+    \draw[->] (dynamic-lin-int-out) |- ([xshift=1.1cm]dynamic-lin-in-bot)
+        -- ([xshift=1.1cm]dynamic-lin.south);
+    \draw[->] (output-fun) -- (output-fun-out) -| ([xshift=3mm,yshift=-3mm]trajectory-gen.west)
+        -- node[above,xshift=-1mm] {$ h $} ([yshift=-3mm]feedback.west);
+
+    % Draw the dashed box around submodel
+    % first define coordinates of rectangle corners relative to other blocks
+    \path let \p1 = (output-fun.west), \p2 = (dynamic-lin.north) in
+        coordinate (submodel-top-left) at (\x1 - 1.0cm,\y2 + 1.15cm);
+    \path let \p1 = (dynamic-lin-int-out.east), \p2 = (object.south) in
+        coordinate (submodel-bot-right) at (\x1 + 0.7cm,\y2 - 0.3cm);
+    % draw the rectangle
+    \draw[dashed] (submodel-top-left) rectangle (submodel-bot-right);
+    % place the text above rectangle by recreating the path of the top line
+    % of the rectangle and writing in the middle above it
+    \path (submodel-top-left) let \p1 = ($(submodel-bot-right) - (submodel-top-left)$) in
+        -- ($(submodel-top-left) + (\x1,0)$) node[midway,above] {Input-output linear submodel};
+
+    % Draw the dashed box around dynamic lineratization group
+    \path let \p1 = (dynamic-lin.west), \p2 = (dynamic-lin.north) in
+        coordinate (dynamic-lin-box-top-left) at (\x1 - 0.4cm,\y2 + 0.3cm);
+    \path let \p1 = (dynamic-lin-int-out.east), \p2 = (dynamic-lin-in-bot) in
+        coordinate (dynamic-lin-box-bot-right) at (\x1 + 0.3cm,\y2 - 0.3cm);
+    \draw[dashed] (dynamic-lin-box-top-left) rectangle (dynamic-lin-box-bot-right);
+    \path (dynamic-lin-box-top-left) let \p1 = ($(dynamic-lin-box-bot-right) - (dynamic-lin-box-top-left)$) in
+        -- ($(dynamic-lin-box-top-left) + (\x1,0)$) node[midway,above] {Dynamic linearisation};
+
+\end{tikzpicture}
+\end{document}

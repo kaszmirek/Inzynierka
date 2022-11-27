@@ -1,0 +1,88 @@
+\chapter{Preliminaria matematyczne}\label{ch_02}
+Celem rozdziału jest zaprezentowanie podstawowych informacji dotyczących aparatu matematycznego wykorzystywanego w pracy. Ma on ponadto ułatwić dalsze czytanie poprzez zaznajomienie czytelnika z przyjętymi konwencjami oznaczeń oraz symboli, które można napotkać w następnych rozdziałach. Przedstawione zostaną tu również interpretacje wprowadzonych wzorów oraz formalizmów. Szczegółowe opisy oraz dowody przedstawianych zagadnień oraz twierdzeń można znaleźć w~większości dostępnych podręczników do mechaniki analitycznej. Niniejsza praca bazuje w głównej mierze na pozycjach \cite{TchMu18, RubKro12, Arn81,LegMakeSens}. 
+
+{\red
+  Każdy rozdział warto rozpocząć od podania informacji, w~jakim celu został on napisany i~co zawiera. We wstępie do rozdziału mogą też pojawić się inne informacje natury ogólnej: rys historyczny, metodologia postępowania, charakterystyka zastosowanych narzędzi, własności proponowanego rozwiązania.}
+
+\section{Ruch bryły sztywnej}\label{ch_02:ruch}
+W ogólności ruch bryły sztywnej jest złożeniem dwóch podstawowych ruchów -- przesunięcia oraz obrotu ciała sztywnego. Opis takiego ruchu bazujący na trójelementowym wektorze położenia $(x,y,z)^T$ z elementami $x$, $y$, $z$ jednoznacznie określającymi położenie w przestrzeni euklidesowej $\mathbb{E}^3$. [\ldots] Elementy grupy $\mathbb{SE}(3)$ można utożsamić z macierzami 4x4, które przyjmują postać
+\begin{equation} \label{equ:transf}
+  \boldsymbol{A} = \begin{bmatrix}
+    \boldsymbol{R} & \boldsymbol{T} \\
+    \boldsymbol{0}^T & 1 
+  \end{bmatrix},
+\end{equation}
+gdzie $\RR$ -- macierz 3$\times$3 opisująca część rotacyjną ruchu, $\TT$ -- trójelementowy wektor opisujący część translacyjną ruchu.  
+
+{\red
+  Wzory wystawione stanowią integralną część zawierających je zdań. Należy więc konstruować całość zgodnie z~zasadami gramatyki języka polskiego, stosując odpowiednią interpunkcję (przecinek/kropka po równaniu?). Po podaniu równania należy określić znaczenie wszystkich użytych w~nim elementów, które wcześniej nie były zdefiniowane (dotyczy też formuł umieszczanych w~tekście -- zobacz wyżej definicję wektora położenia). Wzory wystawione można uzyskać używając otoczeń \texttt{equation}, \texttt{equation*}\footnote{\red Z~numerem, bez numeru -- zasadniczo numerujemy tylko wzory, do których się odwołujemy, czasem te uważane za ,,ważne''. By numery automatycznie pojawiały się jedynie przy wzorach do których są w~tekście odwołania można dołączyć pakiet \texttt{mathtools}, w~tekście dokumentu użyć polecenia \texttt{\textbackslash mathtoolsset\{showonlyrefs=true\}}, a~następnie używać otoczenia \texttt{equation} w~wersji bez gwiazdki. Pakiet \texttt{mathtools} daje oczywiście dużo więcej możliwości \cite{mathtools}.}\footnote{\red  Jeśli równanie stanowi jeden akapit z~otaczającym je tekstem, przed/po nim nie może pojawić się w~pliku źródłowym pusta linia.}. Macierze, wektory konstruujemy korzystając z~otoczeń \texttt{bmatrix}, \texttt{pmatrix}. Więcej o~równaniach na początku rozdziału~\ref{czym_jest_bak}.}
+
+\noindent
+[\ldots] Ilustracja przekształcenia została przedstawiona na rysunku \ref{fig:transf_se3}.
+\begin{figure} [tp]
+  \centering%
+  \scalebox{1.0}{\def\svgscale{0.67} %\def\svgwidth{0.4\textwidth} %%alternatywnie do wyboru
+  \input{figures/chapter_02/przemieszczenie.pdf_tex}}
+  \caption{Przekształcenie układów współrzędnych, \cite{TchMu18}}
+  \label{fig:transf_se3}
+\end{figure}
+%%
+%% alternatywna wersja z~użyciem includesvg, który automatycznie konwertuje svg to pdf
+%% jeśli plik svg jest nowszy - niestety nie zawsze działa i w starszych wersjach svg daje zły boundingbox (page)
+%%
+% \begin{figure} [tp]
+%   \centering
+% %%  \includesvg[scale=0.67]{figures/chapter_02/przemieszczenie}
+% %%                                          w~starszych wersjach pakietu svg nie ma opcji scale :(
+%   \includesvg[width=0.5\textwidth]{figures/chapter_02/przemieszczenie}
+%   \caption{Przekształcenie układów współrzędnych, \cite{TchMu18}}
+%   \label{fig:transf_se3}
+% \end{figure}
+Ze względu na charakter ruchu badanych obiektów, w pracy zajmiemy się tylko częścią rotacyjną przekształcenia (\ref{equ:transf}), która pozwoli nam na analizę ewolucji zachowań bąków.
+
+{\red
+  Rysunki wektorowe dobrze jest opracowywać z~wykorzystaniem programu Inkscape\footnote{\red Który potrafi je zapisać w~formacie \texttt{PDF} z~wydzieloną warstwą tekstową. W~tym celu zapisujemy plik jako dokument w~formacie \texttt{PDF} i~w~pojawiającym się oknie konfiguracji zaznaczamy "Omit text in PDF and create LaTeX file" oraz "Użyj rozmiar strony eksportowanego obiektu" -- uzyskujemy w~ten sposób dwa pliki, odpowiednio z~rozszerzeniami \texttt{.pdf} i \texttt{.pdf\_tex}\footnotemark, z~których drugi dołączamy do pliku głównego poleceniem \texttt{\textbackslash input\{\}}.  W~załączeniu znajduje się plik źródłowy Inkscape'a \texttt{przemieszczenie.svg} (w katalogu \texttt{figures/chapter\_02}), zawierający grafikę z~rysunku~\ref{fig:transf_se3}.}\footnotetext{\red Konwersji źródłowego pliku zapisanego w~formacie \texttt{svg} można dokonać też z~poziomu shella poleceniem \texttt{inkscape -z -D --file=<infile.svg> --export-pdf=<outfile.pdf> --export-latex}. Alternatywnie, użycie w~miejsce polecenia \texttt{\textbackslash input\{\}} polecenia \texttt{\textbackslash includesvg\{\}} z~pakietu \texttt{svg} powoduje automatyczne przetwarzanie pliku \texttt{svg} w~\texttt{pdf} przy każdym uruchomieniu kompilatora pdflatecha\footnotemark, jeśli tylko plik \texttt{pdf} nie jest aktualny -- niestety nie we wszystkich systemach operacyjnych działa to poprawnie. W~źródłach tego dokumentu zaprezentowano oba sposoby.}\footnotetext{\red wywołanego być może z~dodatkową opcją \texttt{--shell-escape}}  \cite{inkscape} lub podobnego. Pozwala to na przygotowanie grafik wektorowych jak ta z~rysunku~\ref{fig:transf_se3} z~czcionkami spójnymi z~tymi w~tekście głównym. Wielkość rysunku można kontrolować przez podanie wartości parametru \texttt{\textbackslash svgscale} (skaluje elementy graficzne pozostawiając wielkość i~położenie czcionek bez zmian!) lub użycie polecenia \texttt{\textbackslash scalebox}\footnote{\red W~pliku źródłówym użyto przykładowo tego polecenia ze skalą 1.0.}. Alternatywnie rysunek z~Inkscape'a można dołączyć zapisując go w~formacie Ti{\it k}Z, ale to już zupełnie inna bajka.}
+%% \begin{figure} [tp]
+%%   \centering%
+%%   \scalebox{1.0}{\def\svgscale{0.67}
+%%   \input{figures/chapter_02/przemieszczenie.tex}}
+%%   \caption{Przekształcenie układów współrzędnych (eksport przez Ti{\it k}Za), \cite{TchMu18}}
+%%   \label{fig:transf_se3_tikz}
+%% \end{figure}
+
+
+
+\noindent
+[\ldots]
+
+\section{Formalizm Eulera-Newtona} \label{sec:newton}
+\noindent
+[\ldots] Układ równań Eulera-Newtona opisujący dynamikę bryły przyjmuje wtedy postać
+\begin{equation}
+  \label{rEN}
+  \begin{cases}
+    \FF = m_b \left(\dot{\pmb{v}}_B + \pmb{\omega}_B\times\dot{\pmb{v}}_B \right)\\
+    \angmom = I_B\pmb{\dot{\omega}}_B + \pmb{\omega}_B\times I_B\pmb{\omega}_B
+  \end{cases},
+\end{equation}
+gdzie $\FF$ -- siła zewnętrzna działająca na\ldots
+
+{\red
+  Układy równań wygodnie jest robić z~wykorzystaniem otoczenia \texttt{cases}, jak to zrobiono w~równaniu~\eqref{rEN}.}
+
+\noindent
+[\ldots]
+
+\noindent
+Dla tak zdefiniowanego lagranżianu równania ruchu wyrażone są za pomocą równań Eulera-Lagrange'a drugiego rodzaju postaci
+\begin{equation*}
+  \frac{d}{dt}\left( \frac{\partial(L(\qq,\dot{\qq})}{\partial\dot{\qq}}\right) - \frac{\partial L(\qq,\dot{\qq})}{\partial \qq} = \FF,
+\end{equation*}
+gdzie $\FF$ oznacza siły\ldots
+
+{\red
+  Jeśli dane równanie ma nie być opatrzone numerem używamy ,,starowanych'' wersji otoczeń matematycznych (np. \texttt{equation*} w~miejsce \texttt{equation})\footnote{\label{stopka_numery}\red W~kwestii numerowania równań matematycznych istnieją dwie szkoły. Według pierwszej numerujemy ,,ważniejsze'' równania (w~tym oczywiście te, do których są odwołania w~tekście), te ,,mniej ważne'' pozostawiając bez numerów. Druga szkoła mówi, że należy numerować jedynie te równania, do których są odwołania w~tekście. I~tutaj w~sukurs przychodzi nam pakiet \texttt{mathtools} i~jego opcja \texttt{showonlyrefs} -- wówczas wszystkie równania możemy dawać w~wersji bez gwiazdek na końcu, a~numery otrzymają jedynie te równania, do których pojawią się odwołania skonstruowane za pomocą mechanizmu odsyłaczy \texttt{\textbackslash label\{\}}-\texttt{\textbackslash eqref\{\}} (odkomentuj w~pliku \texttt{main.tex} odpowiednie linie, by zobaczyć efekt).}. W~celu dostosowania wielkości nawiasów do wysokości zawartego w~nich wyrażenia należy znaki nawiasów poprzedzić poleceniami \texttt{\textbackslash left}, \texttt{\textbackslash right}\footnote{\red Tak jak to zrobiono w~pierwszym elemencie komentowanego równania. Jeśli jeden z~nawiasów ma być pominięty należy w~jego miejsce dać znak kropki.}. }
+
+\noindent
+[\ldots]
+

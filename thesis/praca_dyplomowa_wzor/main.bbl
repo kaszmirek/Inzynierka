@@ -1,0 +1,653 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\noopsort}[1]{}
+\begin{thebibliography}{{\noopsort{Lzzachacz}Ł}ac17}
+
+\bibitem[AMS99]{amsmath}
+{\LaTeX}3~Project American Mathematical~Society.
+\newblock User's guide for the \texttt{amsmath} package.
+\newblock
+  \url{http://texdoc.net/texmf-dist/doc/latex/amsmath/amsldoc.pdf}\footnotetext{\red
+  {S}pis literatury powinien zawierać jedynie pozycje, do których są
+  odwołania w~tekście.}\stepcounter{footnote}\footnotetext{\red W~tym spisie
+  literatury ciągle jest kilka nieujednoliconych elemetów, jak na przykład
+  pisownia imion: czasami są podane w~całości, czasami tylko pierwsza
+  litera, czasami są wszystkie imiona podane w~pełnej postaci, czasami tylko
+  pierwsze. \BibTeX{} stara się ujednolicać takie rzeczy, ale robi to dobrze,
+  gdy wszystkie wpisy w~pliku bibliografii są podawane w~jednolity sposób.
+  Czego tu nie zrobiono.}, 1999.
+
+\bibitem[Arn81]{Arn81}
+W.~I. Arnold,
+\newblock {\em Metody matematyczne mechaniki klasycznej}.
+\newblock Państwowe Wydawnictwo Naukowe, 1981.
+
+\bibitem[Aub17]{tikz_preze}
+Nathalie Aubrun.
+\newblock How (and why) do {I} use {Ti{\it k}Z} to make my figures?
+\newblock CNRS, Lyon,
+  \url{https://tilingslyon2017.sciencesconf.org/data/tikz.pdf}, 2017.
+
+\bibitem[Auc]{auctex}
+{AUC\TeX} -- sophisticated document creation.
+\newblock \url{http://www.gnu.org/software/auctex}.
+
+\bibitem[Bag21]{sklad}
+J.~Bagrij.
+\newblock Born to create: Bękarty i wdowy, sieroty i szewcy -–
+  najpopularniejsze błędy łamania tekstu i proste sposoby na ich
+  eliminację.
+\newblock \url{https://born-to-create.pl/bledy-skladu-tekstu/}, 2021.
+
+\bibitem[Biba]{bibtex_alpha}
+The quick {\BibTeX} quide. {A}ll you ever need to know about {\BibTeX}:
+  {BibTeX} bibliography style: alpha.
+\newblock \url{https://www.bibtex.com/s/bibliography-style-base-alpha/}.
+
+\bibitem[Bibb]{bibtex_entries}
+The quick {\BibTeX} quide. {A}ll you ever need to know about {\BibTeX}: The 14
+  {BibTeX} entry types.
+\newblock \url{https://www.bibtex.com/e/entry-types/}.
+
+\bibitem[Boc19]{jedrzej}
+J.~Boczar,
+\newblock {\em Control system for two {HOG} wheel mobile robot}.
+\newblock Praca dyplomowa magisterska, Wydział Elektroniki, Politechnika
+  Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#studenckie}, 2019.
+
+\bibitem[BP15]{latex_kucharska}
+Marcin Borkowski,  Bartłomiej Przybylski,
+\newblock {\em książka kucharska {\LaTeX}}.
+\newblock Polskie Towarzystwo Matematyczne,
+  \url{https://www.ptm.org.pl/sites/default/files/latex-ksiazka-kucharska.pdf},
+  2015.
+
+\bibitem[Bra]{texmaker}
+Pascal Brachet.
+\newblock {TeX{\it MAKER}}.
+\newblock \url{http://www.xm1math.net/texmaker/}.
+
+\bibitem[Cas13]{biblatex_overleaf}
+Josh Cassidy.
+\newblock Getting started with {B}ib{\LaTeX}.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX},
+  2013.
+
+\bibitem[Cas19]{inkscape_preze}
+Gilles Castel.
+\newblock How {I} draw figures for my mathematical lecture notes using
+  {Inkscape}.
+\newblock University of Leuven, \url{https://castel.dev/post/lecture-notes-2/},
+  2019.
+
+\bibitem[Cata]{antyk}
+The \LaTeX~Font Catalogue.
+\newblock Antykwa {Toruńska}.
+\newblock \url{http://www.tug.dk/FontCatalogue/antykwatorunska/}.
+
+\bibitem[Catb]{concr}
+The \LaTeX~Font Catalogue.
+\newblock Computer {Concrete}.
+\newblock \url{http://www.tug.dk/FontCatalogue/computerconcreteeuler/}.
+
+\bibitem[Catc]{palla}
+The \LaTeX~Font Catalogue.
+\newblock New {PX}.
+\newblock \url{http://www.tug.dk/FontCatalogue/newpx/}.
+
+\bibitem[Cop66]{copernicus1965revolutionibus}
+N.~Copernicus,
+\newblock {\em De revolutionibus orbium coelestium}.
+\newblock Culture et civilisation, 1966.
+
+\bibitem[CP17]{minted}
+{CTAN Comprehensive {\TeX} Archive Network},  Geoffrey~M. Poore.
+\newblock The \texttt{minted} package: {Highlighted} source code in {\LaTeX}.
+\newblock \url{http://mirrors.ctan.org/macros/latex/contrib/minted/minted.pdf},
+  2017.
+
+\bibitem[{CTA}a]{biblatex}
+{CTAN Comprehensive {\TeX} Archive Network}.
+\newblock Bib{\LaTeX} -– sophisticated bibliographies in {\LaTeX}.
+\newblock \url{https://ctan.org/pkg/biblatex}.
+
+\bibitem[{CTA}b]{biber_ctan}
+{CTAN Comprehensive {\TeX} Archive Network}.
+\newblock biber –- a {\BibTeX} replacement for users of {B}ib{\LaTeX}.
+\newblock \url{https://ctan.org/pkg/biber}.
+
+\bibitem[{CTA}c]{bibtex_ctan}
+{CTAN Comprehensive {\TeX} Archive Network}.
+\newblock bibtex –- {P}rocess bibliographies for {\LaTeX}, etc.
+\newblock \url{https://ctan.org/pkg/bibtex}.
+
+\bibitem[{CTA}d]{csquotes}
+{CTAN Comprehensive {\TeX} Archive Network}.
+\newblock csquotes –- {C}ontext sensitive quotation facilities.
+\newblock \url{https://ctan.org/pkg/csquotes/}.
+
+\bibitem[{CTA}e]{natbib}
+{CTAN Comprehensive {\TeX} Archive Network}.
+\newblock natbib –- {F}lexible bibliography support.
+\newblock \url{https://ctan.org/pkg/natbib}.
+
+\bibitem[{CTA}f]{pgfplots}
+{CTAN Comprehensive {\TeX} Archive Network}.
+\newblock pgfplots -– {Create} normal/logarithmic plots in two and three
+  dimensions.
+\newblock \url{https://ctan.org/pkg/pgfplots}.
+
+\bibitem[Ema]{emacs}
+{GNU} {Emacs}.
+\newblock \url{http://www.gnu.org/s/emacs}.
+
+\bibitem[{FAQ}]{hyphen_on}
+{\TeX}~{FAQ}.
+\newblock Using a new language with babel.
+\newblock \url{https://texfaq.org/FAQ-newlang}.
+
+\bibitem[Fed06]{bibtex}
+A.~Feder.
+\newblock Your {\BibTeX} resource.
+\newblock \url{http://www.bibtex.org/}, 2006.
+
+\bibitem[FLH{\etalchar{+}}07]{feynman2007pan}
+R.P. Feynman, R.~Leighton, E.~Hutchings, T.~Biero{\'n},  J.~Dummy,
+\newblock {\em "Pan raczy {\.z}artowa{\'c}, panie Feynman!": przypadki
+  ciekawego cz{\l}owieka\footnote{\red {W} pracy tej dodano ostatniego autora,
+  by pokazać jak wygląda akronim tworzony przy większej liczbie autorów.
+  Zobacz też pozycję \cite{geogebra}.}}
+\newblock Znak, 2007.
+
+\bibitem[GIM]{gimp}
+{GIMP}.
+\newblock \url{https://www.gimp.org}.
+
+\bibitem[{GNO}]{dia}
+{GNOME Wiki}.
+\newblock Dia {Diagram} {Editor}.
+\newblock \url{https://wiki.gnome.org/Apps/Dia}.
+
+\bibitem[{\noopsort{Gozzzral}G}ó17]{goral}
+D.~{\noopsort{Gozzzral}G}óral,
+\newblock {\em Konstrukcja robota mobilnego napędzanego dwiema półsferami}.
+\newblock Praca dyplomowa inżynierska, Wydział Mechaniczny, Politechnika
+  Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#studenckie}, 2017.
+
+\bibitem[Gus54]{PauliBohr}
+E.~Gustafson.
+\newblock Pauli and {Bohr} watch a spinning top.
+\newblock \url{https://commons.wikimedia.org/wiki/File:Pauli_wolfgang_c4.jpg},
+  1954.
+
+\bibitem[H{\etalchar{+}}]{geogebra}
+Markus Hohenwarter,  i~in.
+\newblock Geogebra.
+\newblock \url{https://www.geogebra.org/}.
+
+\bibitem[Hin]{CArn}
+C.~Hind.
+\newblock Gyroscopes.
+\newblock \url{http://hindocarina.com/about/gyroscope/}.
+
+\bibitem[HM18]{mathtools}
+Morten Høgholm,  Lars Madsen.
+\newblock The \texttt{mathtools} package.
+\newblock \url{texdoc.net/show.php?pkg=mathtools}, 2018.
+
+\bibitem[Hun]{matplotlib}
+John~D. Hunter.
+\newblock matplotlib.
+\newblock \url{https://matplotlib.org/}.
+
+\bibitem[Hyn09]{latex_floats}
+Rob~J. Hyndman.
+\newblock Controlling figure and table placement in {LaTeX}.
+\newblock \url{https://robjhyndman.com/hyndsight/latex-floats/}, 2009.
+
+\bibitem[{Ink}]{inkscape}
+{Inkscape Community}.
+\newblock Inkscape.
+\newblock \url{https://inkscape.org/}.
+
+\bibitem[Jad]{Jadczyk}
+A.~Jadczyk.
+\newblock Układ otwarty.
+\newblock \url{https://www.salon24.pl/u/arkadiusz-jadczyk/search/?q=b%C4%85k}.
+
+\bibitem[Jar14]{schem_blokowy}
+Ramón Jaramillo.
+\newblock Example: {Block} diagram of {Third} order noise shaper in {Compact}
+  {Disc} {Players}.
+\newblock \url{http://www.texample.net/tikz/examples/noise-shaper/}, 2014.
+
+\bibitem[JM16]{JonMu2}
+P.~Joniak,  R.~Muszyński,
+\newblock Model robota mobilnego napędzanego dwiema półsferami.
+\newblock {\em Postępy robotyki}, strony 103--114, 2016.
+
+\bibitem[JM17]{JonMu}
+P.~Joniak,  R.~Muszyński,
+\newblock Path following for two hog wheels mobile robot.
+\newblock {\em Journal of Automation, Mobile Robotics \& Intelligent Systems},
+  strony 75--81, 2017.
+
+\bibitem[Jon14]{Joniak}
+P.~Joniak,
+\newblock {\em Badania symulacyjne zachowania robota mobilnego napędzanego
+  dwiema półsferami}.
+\newblock Projekt inżynierski, Wydział Elektroniki, Politechnika Wrocławska,
+  \url{https://kcir.pwr.edu.pl/~mucha/#studenckie}, 2014.
+
+\bibitem[KC22]{biber_man}
+Philip Kime,  François Charette.
+\newblock biber {A} backend bibliography processor for biblatex.
+\newblock \url{https://texdoc.org/serve/biber.pdf/0}, 2022.
+
+\bibitem[Kos08]{lshortpie}
+Ryszard Kostecki.
+\newblock W miarę krótki i praktyczny kurs {\LaTeX}a w $\pi^\varepsilon$
+  minut.
+\newblock \url{www.fuw.edu.pl/~kostecki/kurs_latexa.pdf}, 2008.
+
+\bibitem[Kub21]{kubik}
+T.~Kubik.
+\newblock Szablon pracy dyplomowej.
+\newblock Politechnika Wrocławska,
+  \url{http://tomasz.kubik.staff.iiar.pwr.wroc.pl/}, 2021.
+
+\bibitem[KZ86]{eulerfont}
+D.~E. Knuth,  H.~Zapf,
+\newblock {AMS} {Euler} --- {A} new typeface for mathematics.
+\newblock {\em Scholary Publishing}, 20:131--157, 1986.
+
+\bibitem[{LaT}]{latex}
+{LaTeX Project}.
+\newblock {\LaTeX} --- {A} document preparation system.
+\newblock \url{http://www.latex-project.org}.
+
+\bibitem[Lud]{kile}
+Michel Ludwig.
+\newblock Kile.
+\newblock \url{kile.sourceforge.net}.
+
+\bibitem[{\noopsort{Lzzachacz}Ł}ac17]{programy_przeglad}
+Magdalena {\noopsort{Lzzachacz}Ł}achacz.
+\newblock {Programy dla studentów: jak rozpocząć pracę z {LaTeX}-em?}
+\newblock
+  \url{https://www.dobreprogramy.pl/Programy-dla-studentow-jak-rozpoczac-prace-z-LaTeXem,News,84439.html},
+  2017.
+
+\bibitem[Mat]{matlab}
+MathWorks.
+\newblock Matlab.
+\newblock \url{https://www.mathworks.com/products/matlab.html}.
+
+\bibitem[Mus22]{wzor_praca}
+R.~Muszyński.
+\newblock Przykład składu pracy dyplomowej w systemie {\LaTeX} z
+  wykorzystaniem klasy \texttt{mgr.cls} adama ratajczaka.
+\newblock Politechnika Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#inne},
+  2022.
+
+\bibitem[New11]{newton}
+I.~Newton,
+\newblock {\em Matematyczne zasady filozofii przyrody}.
+\newblock Copernicus Center Press, 2011.
+
+\bibitem[Now97]{antykwa}
+J.~Nowacki,
+\newblock {Antykwa} {Toruńska} -– od początku do końca polska czcionka.
+\newblock {\em Biuletyn Polskiej Grupy Użytkowników Systemu \TeX}, 9:26--27,
+  1997.
+
+\bibitem[Now04]{antykwab}
+J.~Nowacki.
+\newblock Antykwa toruńska, wer. 2.01.
+\newblock
+  \url{https://wwwcdf.pd.infn.it/tex/fonts/antt/AntykwaTorunska-doc-pl-2_01.pdf},
+  2004.
+
+\bibitem[OR98]{cardano}
+J.~J. O'Connor,  E.~F. Robertson.
+\newblock Girolamo {C}ardano.
+\newblock \url{http://www-history.mcs.st-and.ac.uk/Biographies/Cardan.html},
+  1998.
+
+\bibitem[Oro18]{roberto}
+R.~Orozco,
+\newblock {\em Bąk jaki jest każdy widzi}.
+\newblock Praca dyplomowa inżynierska, Wydział Elektroniki, Politechnika
+  Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#studenckie}, 2018.
+
+\bibitem[Ovea]{tikz_overleaf}
+Overleaf.
+\newblock {\LaTeX} {Graphics} using {Ti{\it k}Z}: {A} {Tutorial} for
+  {Beginners}.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing}.
+
+\bibitem[Oveb]{bib_in_latex_overleaf}
+Overleaf.
+\newblock Bibliography management in {LaTeX}.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX}.
+
+\bibitem[Ovec]{biblatex_overleaf2}
+Overleaf.
+\newblock Bibliography management with biblatex.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex}.
+
+\bibitem[Oved]{bibtex_overleaf}
+Overleaf.
+\newblock Bibliography management with bibtex.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex}.
+
+\bibitem[Ovee]{natbib_overleaf}
+Overleaf.
+\newblock Bibliography management with natbib.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib}.
+
+\bibitem[Ovef]{latex_overleaf}
+Overleaf.
+\newblock Documentation.
+\newblock \url{https://www.overleaf.com/learn}.
+
+\bibitem[Oveg]{overleaf}
+Overleaf.
+\newblock Overleaf.
+\newblock \url{https://www.overleaf.com/}.
+
+\bibitem[Oveh]{xxxtex}
+Overleaf.
+\newblock The {TeX} family tree: {LaTeX}, {pdfTeX}, {XeTeX}, {LuaTeX} and
+  {ConTeXt}.
+\newblock
+  \url{https://www.overleaf.com/learn/latex/Articles/The_TeX_family_tree%3A_LaTeX%2C_pdfTeX%2C_XeTeX%2C_LuaTeX_and_ConTeXt}.
+
+\bibitem[Ovei]{cudzyslow_overleaf}
+Overleaf.
+\newblock Typesetting quotations.
+\newblock \url{https://www.overleaf.com/learn/latex/Typesetting_quotations}.
+
+\bibitem[Ovej]{tex_legacy}
+Overleaf.
+\newblock What's in a {Name}: {A} {Guide} to the {Many} {Flavours} of {TeX}.
+\newblock
+  \linebreak\url{https://www.overleaf.com/learn/latex/Articles/What%27s_in_a_Name%3A_A_Guide_to_the_Many_Flavours_of_TeX}.
+
+\bibitem[Par17]{texstudio_opis}
+Piotr Parafiniuk.
+\newblock {TeXstudio -– wygodne środowisko do tworzenia dokumentów w
+  {\LaTeX}}.
+\newblock
+  \url{https://www.dobreprogramy.pl/TeXstudio-wygodne-srodowisko-do-tworzenia-dokumentow-w-LaTeX,News,84750.html},
+  2017.
+
+\bibitem[Pat18]{emacslatex}
+Sachin Patil.
+\newblock How to create {\LaTeX} documents with {Emacs}.
+\newblock
+  \url{https://opensource.com/article/18/4/how-create-latex-documents-emacs},
+  2018.
+
+\bibitem[Phi14]{dia_fonty}
+Lighton Phiri.
+\newblock {LaTeX} font-consistent diagrams using dia.
+\newblock
+  \url{https://lightonphiri.org/blog/latex-consistent-diagrams-using-dia},
+  2014.
+
+\bibitem[Phy]{python}
+{Python}.
+\newblock \url{https://www.python.org/}.
+
+\bibitem[PK07]{lshort2e}
+Tomasz Przechlewski,  Ryszard Kubiak.
+\newblock Nie za krótkie wprowadzenie do systemu {\LaTeXe} {A}lbo {\LaTeXe}
+  w~129 minut.
+\newblock \url{https://ftp.gust.org.pl/pub/GUST/doc/lshort2e.pdf}, 2007.
+
+\bibitem[Pod]{interpunkcja}
+J.~Podracki.
+\newblock Klasyfikacja błędów interpunkcyjnych.
+\newblock Rada Języka Polskiego,
+  \url{https://rjp.pan.pl/index.php?option=com_content&view=article&id=1100:klasyfikacja-bdow-interpunkcyjnych}.
+
+\bibitem[Rat21]{Ratajczak}
+A.~Ratajczak.
+\newblock Klasa dokumentu -- \texttt{mgr.cls}.
+\newblock Politechnika Wrocławska,
+  \url{http://diablo.kcir.pwr.edu.pl/~ar/LaTeX/mgr.php}, 2021.
+
+\bibitem[RK12]{RubKro12}
+W.~Rubinowicz,  W.~Królikowski,
+\newblock {\em Mechanika teoretyczna}.
+\newblock Wydawnictwo Naukowe PWN, 2012.
+
+\bibitem[Ryb13]{ryba}
+M.~Rybczyński,
+\newblock {\em Model robota mobilnego napędzanego za pośrednictwem
+  półsfery}.
+\newblock Projekt inżynierski, Wydział Elektroniki, Politechnika Wrocławska,
+  \url{https://kcir.pwr.edu.pl/~mucha/#studenckie}, 2013.
+
+\bibitem[Sch]{matlab2tikz}
+Nico Schlömer.
+\newblock matlab2tkiz.
+\newblock
+  \url{https://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz}.
+
+\bibitem[SD]{led}
+A.~Skórczyński,  S.~Deorowicz.
+\newblock {LEd}.
+\newblock \url{http://www.latexeditor.org}.
+
+\bibitem[Sd{\etalchar{+}}22]{bib_porownanie}
+{\LaTeX}~{Stack Exchange}, doncherry,  i~in.
+\newblock bibtex vs. biber and biblatex vs. natbib.
+\newblock
+  \url{https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib},
+  2011--2022.
+
+\bibitem[Sh{\etalchar{+}}22]{latex_editors}
+{\LaTeX}~{Stack Exchange}, hayalci,  i~in.
+\newblock {LaTeX} {Editors}/{IDEs}.
+\newblock \url{https://tex.stackexchange.com/questions/339/latex-editors-ides},
+  2010--2022.
+
+\bibitem[Sou]{biber}
+Sourceforge.
+\newblock Biber –- a {\BibTeX} replacement for users of {B}ib{\LaTeX}.
+\newblock \url{http://biblatex-biber.sourceforge.net/}.
+
+\bibitem[Spu]{latex_kurs}
+Przemysław Spurek.
+\newblock {\LaTeX} -- {KURS}.
+\newblock \url{http://www.latex-kurs.x25.pl/}.
+
+\bibitem[ST{\etalchar{+}}22]{draft_option}
+{\LaTeX}~{Stack Exchange}, Tobi,  i~in.
+\newblock What does the draft mode change?
+\newblock
+  \url{https://tex.stackexchange.com/questions/49277/what-does-the-draft-mode-change},
+  2012--2022.
+
+\bibitem[{Str}15]{tikz_pol}
+{Łukasz} {Strąk}.
+\newblock Krótkie wprowadzenie do pakietu {Ti{\it k}Z}.
+\newblock Uniwersytet Śląski,
+  \url{https://docplayer.pl/19971343-Krotkie-wprowadzenie-do-pakietu-tikz.html},
+  2015.
+
+\bibitem[{Sł}a]{cudzyslow_pwn}
+{Słownik Języka Polskiego}.
+\newblock Cudzysłów.
+\newblock Wydawnictwo Naukowe {PWN},
+  \url{https://sjp.pwn.pl/zasady/Cudzyslow;629866.html}.
+
+\bibitem[{Sł}b]{myslniki_pwn}
+{Słownik Języka Polskiego}.
+\newblock Myślnik, pauza, minus.
+\newblock Wydawnictwo Naukowe {PWN},
+  \url{https://sjp.pwn.pl/poradnia/haslo/Myslnik-pauza-minus;16280.html}.
+
+\bibitem[{TeX}a]{czcionki}
+{TeX Users Group}.
+\newblock The {\LaTeX} {F}ont {C}atalogue -- {F}inding the right font.
+\newblock \url{https://tug.org/FontCatalogue/}.
+
+\bibitem[{TeX}b]{czcionki_sel}
+{TeX Users Group}.
+\newblock The {\LaTeX} font catalogue -- {F}ont documentation.
+\newblock \url{https://tug.org/FontCatalogue/docs.html}.
+
+\bibitem[{TeX}c]{czcionki_szer}
+{TeX Users Group}.
+\newblock The {\LaTeX} {F}ont {C}atalogue -- {S}erif {F}onts.
+\newblock \url{https://tug.org/FontCatalogue/seriffonts.html}.
+
+\bibitem[{TeX}d]{texworks}
+{TeX Users Group}.
+\newblock {TeXworks}.
+\newblock \url{http://www.tug.org/texworks/}.
+
+\bibitem[{Tik}]{tikzit}
+{TikZiT Project}.
+\newblock {TikZiT}.
+\newblock \url{https://tikzit.github.io/}.
+
+\bibitem[TM18]{TchMu18}
+K.~Tchoń,  R.~Muszyński,
+\newblock {\em Mechanika analityczna. Notatki do wykładów z~dziedziny
+  automatyki i robotyki}.
+\newblock Katedra Cybernetyki i Robotyki, Wydział Elektroniki, Politechnika
+  Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#skrypty}, 2018.
+
+\bibitem[Wika]{latex_wiki2}
+Wikibooks.
+\newblock {\LaTeX}.
+\newblock \url{https://pl.wikibooks.org/wiki/LaTeX}.
+
+\bibitem[Wikb]{grafika_wiki}
+Wikibooks.
+\newblock {\LaTeX}/{Importing} graphics.
+\newblock \url{https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics}.
+
+\bibitem[Wikc]{tikz_wiki}
+Wikibooks.
+\newblock {Ti{\it k}Z}.
+\newblock \url{https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ}.
+
+\bibitem[Wikd]{latex_wiki}
+Wikipedia.
+\newblock {\LaTeX}.
+\newblock \url{https://pl.wikipedia.org/wiki/LaTeX}.
+
+\bibitem[Wike]{wikibibtex}
+Wikipedia.
+\newblock {\BibTeX}.
+\newblock \url{https://pl.wikipedia.org/wiki/BibTeX}.
+
+\bibitem[Wikf]{wikibiber}
+Wikipedia.
+\newblock {Biber}.
+\newblock \url{https://en.wikipedia.org/wiki/Biber_(LaTeX)}.
+
+\bibitem[Wikg]{latex_editors_wiki}
+Wikipedia.
+\newblock Comparison of tex editors.
+\newblock \url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}.
+
+\bibitem[Wikh]{cudzyslow_wiki}
+Wikipedia.
+\newblock Cudzysłów.
+\newblock \url{https://pl.wikipedia.org/wiki/Cudzys%C5%82%C3%B3w}.
+
+\bibitem[Wiki]{literaturaa}
+Wikipedia.
+\newblock Cytowanie piśmiennictwa.
+\newblock \url{https://pl.wikipedia.org/wiki/Cytowanie_pi%C5%9Bmiennictwa}.
+
+\bibitem[Wikj]{dia_wiki}
+Wikipedia.
+\newblock Dia (program).
+\newblock \url{https://pl.wikipedia.org/wiki/Dia_(program)}.
+
+\bibitem[Wikk]{dvi_wiki}
+Wikipedia.
+\newblock {DVI} (plik {\TeX}).
+\newblock \url{https://pl.wikipedia.org/wiki/DVI_(plik_TeX)}.
+
+\bibitem[Wikl]{emacs_wiki}
+Wikipedia.
+\newblock Emacs.
+\newblock \url{http://pl.wikipedia.org/wiki/Emacs}.
+
+\bibitem[Wikm]{gimp_wiki}
+Wikipedia.
+\newblock {GIMP}.
+\newblock \url{https://pl.wikipedia.org/wiki/GIMP}.
+
+\bibitem[Wikn]{inkscape_wiki}
+Wikipedia.
+\newblock Inkscape.
+\newblock \url{https://pl.wikipedia.org/wiki/Inkscape}.
+
+\bibitem[Wiko]{myslniki_wiki}
+Wikipedia.
+\newblock Pauza i półpauza.
+\newblock \url{https://pl.wikipedia.org/wiki/Pauza_i_p%C3%B3%C5%82pauza}.
+
+\bibitem[Wikp]{przegCard}
+Wikipedia.
+\newblock Przegub {Cardana}.
+\newblock \url{https://pl.wikipedia.org/wiki/Przegub_Cardana}.
+
+\bibitem[Wikq]{harwardzkie}
+Wikipedia.
+\newblock Przypisy harwardzkie.
+\newblock \url{https://pl.wikipedia.org/wiki/Przypisy_harwardzkie}.
+
+\bibitem[Wikr]{list_wiki}
+Wikipedia.
+\newblock {\LaTeX}{Source Code Listings}.
+\newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}.
+
+\bibitem[Wiks]{vancouverskie}
+Wikipedia.
+\newblock System vancouverski.
+\newblock \url{https://pl.wikipedia.org/wiki/System_vancouverski}.
+
+\bibitem[Wikt]{vim_wiki}
+Wikipedia.
+\newblock Vim.
+\newblock \url{http://pl.wikipedia.org/wiki/Vim}.
+
+\bibitem[Wol]{wolMat}
+Wolfram.
+\newblock Mathematica.
+\newblock \url{http://www.wolfram.com/mathematica/}.
+
+\bibitem[Wro21]{literaturab}
+D.~Wrona.
+\newblock Przypisy i bibliografia w pracy licencjackiej, magisterskiej,
+  inżynierskiej.
+\newblock
+  \url{https://poprawaprac.pl/przypisy-i-bibliografia-w-pracy-licencjackiej-magisterskiej-inzynierskiej/},
+  2021.
+
+\bibitem[Zan]{texstudio}
+{Benito van der} Zander.
+\newblock {TeXstudio}.
+\newblock \url{https://www.texstudio.org/}.
+
+\bibitem[ZRM09]{LegMakeSens}
+R.K.P. Zia, E.F. Redish,  S.R. McKay,
+\newblock Making sense of the {Legendre Transform}.
+\newblock {\em American Journal of Physics}, 77(7):614--622, 2009.
+
+\end{thebibliography}

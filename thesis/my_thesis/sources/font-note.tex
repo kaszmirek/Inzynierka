@@ -1,0 +1,30 @@
+% Side note about LaTeX and the fonts being used in the thesis
+\mbox{}\vfill\hfill
+\begin{minipage}{0.618033988749895\textwidth}
+    \begin{refsection}[font-note-literature.bib] % separate bibliography for this minipage
+                                                 % this resource was added with \addsectionbib
+        {% smaller font for paragraph and bibliography
+            \scriptsize%
+            \renewcommand*{\bibfont}{\scriptsize}%
+            \noindent%
+            %
+            For typesetting this thesis,
+            the~\LaTeX{} document preparation system has been used.
+            \LaTeX{} has been developed by L.~Lamport~\cite{lamport:latex},
+            and~is an~overlay on top of the~\TeX{} system~\cite{knuth:texbook}.
+            %
+            Mathematical fonts called AMS~Euler which have been used in~this document,
+            have been commissioned by the American Mathematical Society
+            and~designed by H.\ Zapf~\cite{zapf:ams-euler} with the assistance of D.\ Knuth and his students.
+            %
+            The~URW~Palladio font, used for roman text,
+            is a~clone of H.\ Zapf's old-style typeface called Palatino~\cite{zapf:palatino}.
+            %
+            Typesetting of sans-serif monospaced text has been done using
+            Inconsolata font, created by R.\ Levien~\cite{levien:inconsolata}.
+            %
+            \noindent
+            \printbibliography[heading=none,locallabelwidth=true] % print section bibliography
+        }
+    \end{refsection}
+\end{minipage}

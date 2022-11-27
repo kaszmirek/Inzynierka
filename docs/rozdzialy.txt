@@ -1,0 +1,59 @@
+1. Wstęp
+    Ten rozdział pisze się na samym końcu, po rozdziale "Wnioski"!!!
+
+2. Cel i założenia
+
+3. Przegląd wybranych ultradźwiekowych czujników odległości
+
+    Proszę opisać kilka wybranych, możliwie reprezentatywnych
+    dalmierzy ultradźwiękowych.
+
+
+4. Analiza problemu
+
+    W tym rozdziale trzeba bardziej szczegółowo opisać jak chce Pan
+    zrealizować cele sformułowane w rozdziale 2.
+    Jakie będą konsekwencje i ewentualne wyzwania techniczne
+    związane z przyjętą strategią. Jaka ogólnie ma być komunikacja
+    z komputerem, tzn. czy to ma być tryb pytanie-odpowiedź, czy ciągłe
+    przesyłanie danych. Czy być może jakiś tryb mieszany.
+    Jaką chce Pan przyjąć formę przetwarzania danych i dlaczego. itd. itd.
+
+
+5. Specyfikacja realizacji sonaru ultradźwiękowego
+
+    W tej części trzeba podać jakie będą udostępniane funkcjonalności,
+    jak mają być realizowane pomiary, jakie polecenia będzie można
+    przesyłać do urządzenia, przewidywane parametry, np.
+    częstość powtórzeń pomiarów, zakres zmiany ilości sygnałów pobudzenia,
+    zakres zmian wypełnienia impulsów itp.
+
+
+6. Projekt konstrukcji sonaru oraz protokoły komunikacji
+
+    Tutaj powinien być opis części mechanicznej, schematy elektroniczne,
+    opis protokołu komunikacji wraz z opisem implementacji (w protokole)
+    listy poleceń.
+    Opis funkcjonalności, które będą oferowane przez aplikację
+    oraz sposob przetwarzania danych pomiarowych i ich reprezentacji.
+
+
+7. Realizacja sonaru ultradźwiękowego
+
+    Opis wykonanego urządzenia, zdjęcia.
+    Przykłady realizacji komunikacji z urządzeniem.
+
+
+8.  Testy i eksperymenty
+
+    Opis zrealizowanych eksperymentów, które demonstrują
+    najważniejsze cechy urządzenia i czujnika.
+
+
+9. Podsumowanie i wnioski
+
+    Ten rozdział pisze się jako przedostatni.
+    Ostatnim jest "Wstęp"
+
+
+

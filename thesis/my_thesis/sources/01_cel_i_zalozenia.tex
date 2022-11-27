@@ -1,0 +1,39 @@
+\chapter{Cel i założenia}\label{ch_02}
+
+Popularne dalmierze ultradźwiękowe wykorzystują przetworniki piezoelektryczne
+jako nadajniki i odbiorniki. Ich średnice wahają się w granicach
+od 10mm do 20mm.
+W przypadku prostych dalmierzy, gdy wyznaczana jest tylko odległość do
+obiektu, ich rozmiar nie jest krytyczny.
+Jednak w konstrukcjach sonarów ultradźwiękowych, które mają wyznaczyć
+również kierunek przylotu sygnału, rozmiar ten jest istotny.
+Jeżeli kierunek przylotu jest wyznaczany w oparciu o przesunięcie
+fazy odbieranego sygnału, wzajemna odległość odbiorników nie powinna
+przekraczać pół długości fali emitowanego sygnału.
+Wykorzystywane powszechnie przetworniki ultradźwiękowe pracują z częstotliwością
+40kHz. Pół długości fali akustycznej w powietrzu dla tej częstotliwości
+to ok. 4,3mm. Drugim warunkiem stosowalności tego podejścia
+jest to, aby odbiorniki sygnału można było modelować jako punkty materialne.
+Od strony technicznej oznacza to, że apertury tych odbiorników powinny być
+możliwe małe w stosunku do długości fali.
+Kryteriów tych nie spełniają popularne odbiorniki piezoelektryczne.
+
+Celem niniejszej pracy jest konstrukcja sonaru pozwalającego wyznaczyć
+odległość do miejsca odbicia sygnału oraz kierunku nadejścia sygnału.
+Pozwalać ma to tym samym na precyzyjną lokalizację obiektu.
+Zakłada się, że źródłem sygnału będzie przetwornik piezoelektryczny
+pracujący z częstotliwością 40kHz.
+Wyznaczanie kierunku przylotu ma zostać zrealizowane w oparciu
+o przesunięcie fazy odbieranego sygnału. Chcąc spełnić opisane powyżej
+warunki, jako odbiorniki zostaną zastosowane 3 mikrofony analogowe
+produkowane w technologii MEMS.
+Sonar powinien udostępniać komunikację poprzez interfejs USB.
+Dostępna powinna być też możliwość konfiguracji jego pracy,
+tzn. ilość pobudzeń generujących emitowany sygnał oraz czas opóźnienia
+przejścia w tryb odbioru.
+W ramach niniejsze pracy należy też zrealizować podstawowe oprogramowanie
+dla komputera typu PC, które pozwoli sterować sonarem, wykonać
+niezbędne pomiary oraz obliczenia. Dysponując tym oprogramowaniem
+należy przeprowadzić serię eksperymentów, które pozwolą zbadać i zweryfikować
+podstawowe własności sonaru. Ponadto oprogramowanie mikrokontrolera
+należy zdokumentować w systemie {\tt doxygen}.

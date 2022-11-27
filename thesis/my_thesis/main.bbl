@@ -1,0 +1,8 @@
+\providecommand{\noopsort}[1]{}
+\begin{thebibliography}{KiC}
+
+\bibitem[KiC]{kicad}
+kicad.
+\newblock \url{https://www.kicad.org/}.
+
+\end{thebibliography}

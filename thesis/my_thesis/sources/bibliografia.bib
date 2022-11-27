@@ -1,0 +1,144 @@
+% Do dodawania kluczy do odmiennego sortowania niż według autora
+% (bibtex nie radzi sobie z sortowaniem polskich znaków diakrytycznych)
+@PREAMBLE{ {\providecommand{\noopsort}[1]{}} }
+
+% Przykłady formatowania książek (Book), rozdziałów w książkach (InBook),
+% artykułów w czasopismach (Article), referatów konferencyjnych (InProceedings),
+% raportów (TechReport), prac nieopublikowanych (Unpublished)
+@book{Arn81,
+  author    = {W. I. Arnold},
+  title     = {Metody matematyczne mechaniki klasycznej},
+  publisher = {Państwowe Wydawnictwo Naukowe},
+  year      = 1981
+},
+
+@book{copernicus1965revolutionibus,
+  title     = {De revolutionibus orbium coelestium},
+  author    = {N. Copernicus},
+  year      = {1966},
+  publisher = {Culture et civilisation}
+}
+
+
+@book{feynman2007pan,
+  title     = {"Pan raczy {\.z}artowa{\'c}, panie Feynman!": przypadki ciekawego cz{\l}owieka\footnote{\red {W} pracy tej dodano ostatniego autora, by pokazać jak wygląda akronim tworzony przy większej liczbie autorów. Zobacz też pozycję \cite{geogebra}.}},
+  author    = {Feynman, R.P. and Leighton, R. and Hutchings, E. and Biero{\'n}, T. and Dummy, J.},
+  isbn      = {9788324007769},
+  url       = {https://books.google.pl/books?id=t9PLGAAACAAJ},
+  year      = {2007},
+  publisher = {Znak}
+}
+
+
+@inbook{lisa,
+  author    = {Lisa A. Urry and Michael L. Cain and Steven A. Wasserman and Peter V. Minorsky and Jane B. Reece},
+  title     = {Photosynthesis},
+  booktitle = {Campbell Biology},
+  year      = 2016,
+  publisher = {Pearson},
+  address   = {New York, NY},
+  pages     = {187--221}
+}
+
+@article{LegMakeSens,
+  author  = {R.K.P. Zia and E.F. Redish and S.R. McKay},
+  title   = {Making Sense of the {Legendre Transform}},
+  journal = {American Journal of Physics},
+  number  = 7,
+  volume  = 77,
+  pages   = {614--622},
+  year    = {2009},
+  eprint  = {arXiv:0806.1147},
+  doi     = {10.1119/1.3119512}
+}
+
+@article{JonMu,
+  author  = {P. Joniak and R. Muszyński},
+  journal = {Journal of Automation, Mobile Robotics \& Intelligent Systems},
+  title   = {Path following for two HOG wheels mobile robot},
+  year    = {2017},
+  vollume = {11},
+  pages   = {75--81}
+}
+
+
+@inproceedings{Bedrossian91,
+  author    = {Bedrossian, N. S.},
+  title     = {Classification of Singular Configurations for
+               Redundant Manipulators},
+  booktitle = {Proc. IEEE Int. Conf. Robotics Automat.},
+  year      = {1991},
+  address   = {Sacramento},
+  pages     = {818--823},
+  volume    = {{\bf 1}}
+}
+
+@techreport{TchonMemo93,
+  author      = {Tcho{\'n}, K.},
+  title       = {Normal Forms of Kinematic Singularities of {3R}
+                 Robot Manipulators},
+  institution = {Faculty of Applied Mathematics, University of Twente},
+  year        = {1993},
+  number      = {ISSN 0169-2690},
+  type        = {Memorandum}
+}
+
+@unpublished{Jarocki,
+  author = {Jarocki, R.},
+  title  = {On Some Forms of Singularities},
+  note   = {Politechnika Wrocławska},
+  year   = 2007
+}
+
+% Przykłady formatowania prac dyplomowych
+
+@mastersthesis{roberto,
+  author  = {R. Orozco},
+  title   = {Bąk jaki jest każdy widzi},
+  year    = {2018},
+  school  = {Wydział Elektroniki, Politechnika Wrocławska},
+  type    = {Praca dyplomowa inżynierska},
+  address = {\url{https://kcir.pwr.edu.pl/~mucha/#studenckie}}
+}
+
+
+% Przykłady formatowania odnośników do oprogramowania
+@misc{gimp,
+  key          = {GIMP},
+  title        = {{GIMP}},
+  howpublished = {\url{https://www.gimp.org}}
+}
+
+@misc{ltspice,
+  key          = {LTspice},
+  title        = {ltspice},
+  howpublished = {\url{https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html}}
+}
+
+@misc{kicad,
+  key          = {KiCad},
+  title        = {kicad},
+  howpublished = {\url{https://www.kicad.org/}}
+}
+
+@misc{stm32cubemx,
+  key          = {STM32CubeMX},
+  title        = {cubemx},
+  howpublished = {\url{https://www.st.com/en/development-tools/stm32cubemx.html}}
+}
+
+@misc{platformio,
+  key          = {PlatformIO},
+  title        = {platformio},
+  howpublished = {\url{https://platformio.org/}}
+}
+
+% Przykłady formatowania materiałów internetowych, w tym odwołań do Wikipedii
+
+@misc{sklad,
+  author       = {J. Bagrij},
+  title        = {Born to create: Bękarty i wdowy, sieroty i szewcy -– najpopularniejsze błędy łamania tekstu i proste sposoby na ich eliminację},
+  howpublished = {\url{https://born-to-create.pl/bledy-skladu-tekstu/}},
+  year         = 2021
+}
+

@@ -1,0 +1,262 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; File name: ` ~/.emacs '
+;;; ---------------------
+;;;
+;;; If you need your own personal ~/.emacs
+;;; please make a copy of this file
+;;; an placein your changes and/or extension.
+;;;
+;;; Copyright (c) 1997-2002 SuSE Gmbh Nuernberg, Germany.
+;;;
+;;; Author: Werner Fink, <feedback@suse.de> 1997,98,99,2002
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Test of Emacs derivates
+;;; -----------------------
+(if (string-match "XEmacs\\|Lucid" emacs-version)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;; XEmacs
+  ;;; ------
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (progn
+     (if (file-readable-p "~/.xemacs/init.el")
+        (load "~/.xemacs/init.el" nil t))
+  )
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;; GNU-Emacs
+  ;;; ---------
+  ;;; load ~/.gnu-emacs or, if not exists /etc/skel/.gnu-emacs
+  ;;; For a description and the settings see /etc/skel/.gnu-emacs
+  ;;;   ... for your private ~/.gnu-emacs your are on your one.
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (if (file-readable-p "~/.gnu-emacs")
+      (load "~/.gnu-emacs" nil t)
+    (if (file-readable-p "/etc/skel/.gnu-emacs")
+	(load "/etc/skel/.gnu-emacs" nil t)))
+
+  ;; Custum Settings
+  ;; ===============
+  ;; To avoid any trouble with the customization system of GNU emacs
+  ;; we set the default file ~/.gnu-emacs-custom
+  (setq custom-file "~/.gnu-emacs-custom")
+  (load "~/.gnu-emacs-custom" t t)
+;;;
+)
+;;;
+
+;; RM 02.2009 My additions based on galatea config
+
+;; My window config
+
+ (if window-system
+     (setq default-frame-alist
+          '(
+;;            (width . 80)     ; not gut - emacs starts smaller and
+;;            (height . 60)    ; then resizes alias used insteed
+             (background-mode . dark)
+;;            (scroll-bar-width . 0)
+            (tool-bar-lines . 0)
+;;            (menu-bar-lines . 0)
+;;            (scroll-bar-background . "grey75")
+;;            (scroll-bar-foreground)
+;;            (right-fringe . 8)
+;;            (left-fringe . 8)
+;;            (line-spacing)
+            (screen-gamma)
+            (border-color . "black")
+;;            (cursor-color . "DarkGoldenrod1")
+;;            (mouse-color . "DarkOrange")
+            (cursor-color . "DarkOrange") ;; colors by Paweł Apostel <263438@student.pwr.edu.pl>
+            (mouse-color . "DarkOrange2")
+;;             (background-color . "black")
+             (background-color . "gray10")
+;;             (foreground-color . "white")
+;;             (foreground-color . "LimeGreen")
+             (foreground-color . "DodgerBlue")
+;;             (foreground-color . "ivory")
+;;             (foreground-color . "#FFF286") ;; darker ivory
+;;             (foreground-color . "gray")
+            (vertical-scroll-bars)
+;;            (internal-border-width . 1)
+;;            (border-width . 2)
+             (font . "9x15")
+;;             (font . "9x15bold")
+             )))
+
+;; additional color scheme -- to select use M-x color-theme-<TAB> RET
+;; package emacs-goodies-el must be installed
+;(setq load-path (append load-path (list "~/.emacs.d/emacs-color-theme-solarized")))
+;(require 'color-theme-solarized)
+
+
+(setq current-language-environment "Polish")
+;;(set-default-coding-systems 'utf-8)
+;;(set-keyboard-coding-system 'utf-8)
+;;(set-clipboard-coding-system 'utf-8)
+;;(set-terminal-coding-system 'utf-8)
+;;(prefer-coding-system 'utf-8)
+
+;;(setq-default ispell-program-name "aspell")
+(setq ispell-dictionary "polish")
+
+
+;; Sprawdzanie pisowni w locie
+;;(add-hook 'latex-mode-hook 'flyspell-mode)
+(add-hook 'latex-mode-hook (lambda ()
+;    (turn-on-auto-fill)
+    (flyspell-mode t))) 
+;;(add-hook 'tex-mode-hook 'flyspell-mode)
+(add-hook 'tex-mode-hook (lambda ()
+ ;   (turn-on-auto-fill)
+    (flyspell-mode t))) 
+;;(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook (lambda ()
+    (flyspell-mode t))) 
+(add-hook          'c-mode-hook 'flyspell-prog-mode)
+(add-hook         'sh-mode-hook 'flyspell-prog-mode)
+(add-hook        'c++-mode-hook 'flyspell-prog-mode)
+(add-hook     'python-mode-hook 'flyspell-prog-mode)
+(add-hook   'makefile-mode-hook 'flyspell-prog-mode)
+(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
+;;(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+;;(setq flyspell-issue-welcome-flag nil)
+
+;; numerowanie kolumn
+(column-number-mode 1)
+(setq linum-format "%3d ") ;; sprobuj M-x linum-mode
+
+;; Copy oraz Paste z 'clipboard'
+(global-set-key [(shift delete)] 'clipboard-kill-region)
+(global-set-key [(control insert)] 'clipboard-kill-ring-save)
+(global-set-key [(shift insert)] 'clipboard-yank)
+
+;;uzupelnianie skladnii po nacisnieciu CTRL+TAB
+(global-set-key (kbd "C-<tab>") 'dabbrev-expand)
+
+;;skok do zadanej linii
+(global-set-key "\C-j" 'goto-line)
+
+
+
+;; ;;(defun make ()
+;; ;;   "Executes a \"make\" in the current directory"
+;; ;;   (interactive)
+;; ;;   (compile "make")
+;; ;;   )
+
+;; ;; (defun makeforce ()
+;; ;;   "Executes a \"make force\" in the current directory"
+;; ;;   (interactive)
+;; ;;   (compile "make force")
+;; ;;   )
+
+;; ;; (defun maketest ()
+;; ;;   "Executes a \"make test\" in the current directory"
+;; ;;   (interactive)
+;; ;;   (compile "make test")
+;; ;;   )
+
+;; ;; (defun makepspdf ()
+;; ;;   "Executes a \"make pspdf\" in the current directory"
+;; ;;   (interactive)
+;; ;;   (compile "make pspdf")
+;; ;;   )
+
+;; ;; (global-set-key [f8] 'make)
+;; ;; (global-set-key [(shift f8)] 'maketest)
+
+;; Przesuwanie zawartosci drugiego okna w gore 'crtl+PageUp'
+;; i 'crtl+PageDown' w dol
+(global-set-key [(control next)] 'scroll-other-window)
+(global-set-key [(control prior)] 'scroll-other-window-down)
+
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(put 'downcase-region 'disabled nil)
+
+;; Czyszczenie scratch-buffer
+(setq initial-scratch-message nil)
+
+
+;;; LaTeX-mode setup:
+
+;;Ustawienie trybu matematycznego w latexu (C-c ~ przełącza tryby)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+;; Magic space by Michal Jankowski <michalj@fuw.edu.pl>
+;; 'Ręcznie' można ją włączyć za pomocą M-x local-set-key SPC tex-magic-space.
+;; Można też użyć funkcji tex-toggle-magic-space, przypisanej do C-c SPC.
+(defun tex-magic-space ()
+  "Magic-space - inserts non-breakable space after a single-letter word."
+  (interactive)
+  (if (string-match
+       "^\\(\\s \\|~\\)?[aeiouwz]$"
+       (buffer-substring (max (point-min) (- (point) 2)) (point)))
+      (insert "~")
+    (insert " ")
+    (and auto-fill-function
+         (funcall auto-fill-function))))
+
+;; Przypisuje/wyłącza przypisanie tex-magic-space do spacji,
+;; (przydatne przy pisaniu matematyki), tylko dla trybów LaTeX-owych
+(defun tex-toggle-magic-space ()
+  "Toggles TeX magic space, which inserts non-breakable space after a single-letter word"
+  (interactive)
+;   (if (local-key-binding " " 'tex-magic-space)
+;       (local-unset-key " ")
+;     (local-set-key " " tex-magic-space)
+  (progn
+    (if (equal (lookup-key TeX-mode-map " ") 'tex-magic-space)
+	(progn
+	  (define-key TeX-mode-map " " nil)
+	  (local-unset-key " ")) ; to be sure
+      (define-key TeX-mode-map " " 'tex-magic-space))
+    (message "SPC is binded to %s" (lookup-key TeX-mode-map " "))))
+
+;;AUCTeX
+ 	
+;(load "auctex.el" nil t t)
+;(load "preview-latex.el" nil t t)
+
+
+;; ------------------------------------------------------------------------
+;; Przypisania klawiszy dla trybów LaTeX-owych
+
+;; Automatyczne włączenie magicznej spacji (przywiązuje samotne
+;; spójniki do nastepujących po nich wyrazów; przykład : a~teraz)
+;; For AUC TeX
+(eval-after-load "tex" '(define-key TeX-mode-map " " 'tex-magic-space))
+(eval-after-load "tex" '(define-key TeX-mode-map "\C-c " 'tex-toggle-magic-space))
+;; For tex-mode included in Emacs
+(eval-after-load "tex-mode" '(define-key tex-mode-map " " 'tex-magic-space))
+(eval-after-load "tex-mode" '(define-key tex-mode-map "\C-c " 'tex-toggle-magic-space))
+
+;;; Matlab-mode setup:
+
+;; Add local lisp folder to load-path
+(setq load-path (append load-path (list "~/.elisp")))
+
+;; Set up matlab-mode to load on .m files
+(autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
+(setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
+(autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
+
+;; Customization:
+(setq matlab-indent-function t)	; if you want function bodies indented
+(setq matlab-verify-on-save-flag nil) ; turn off auto-verify on save
+(defun my-matlab-mode-hook ()
+  (setq fill-column 76))		; where auto-fill should wrap
+(add-hook 'matlab-mode-hook 'my-matlab-mode-hook)
+(defun my-matlab-shell-mode-hook ()
+  '())
+(add-hook 'matlab-shell-mode-hook 'my-matlab-shell-mode-hook)
+
+;; Turn off Matlab desktop
+(setq matlab-shell-command-switches '("-nojvm"))
+
+;; Wylaczenie ekranu powitalnego
+;; umieszczone na koncu, by latwo poznawac, ze plik konfiguracyjny nie 
+;; wykonal sie do konca
+(setq inhibit-splash-screen t)
+

@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: sources/Od_Autora.aux
+A level-1 auxiliary file: sources/00_Wstep.aux
+A level-1 auxiliary file: sources/01_wprowadzenie_matematyczne.aux
+A level-1 auxiliary file: sources/02_czym_jest_bak.aux
+A level-1 auxiliary file: sources/05_zakonczenie.aux
+The style file: alphapl.bst
+A level-1 auxiliary file: sources/07_dodatek_bakiem_malowane.aux
+Database file #1: sources/bibliografia.bib
+You've used 115 entries,
+            2626 wiz_defined-function locations,
+            1056 strings with 18936 characters,
+and the built_in function-call counts, 32049 in all, are:
+= -- 3115
+> -- 1116
+< -- 93
++ -- 357
+- -- 309
+* -- 1447
+:= -- 5032
+add.period$ -- 322
+call.type$ -- 115
+change.case$ -- 589
+chr.to.int$ -- 75
+cite$ -- 115
+duplicate$ -- 1322
+empty$ -- 2876
+format.name$ -- 503
+if$ -- 6783
+int.to.chr$ -- 41
+int.to.str$ -- 0
+missing$ -- 19
+newline$ -- 574
+num.names$ -- 327
+pop$ -- 1112
+preamble$ -- 2
+purify$ -- 711
+quote$ -- 0
+skip$ -- 1242
+stack$ -- 0
+substring$ -- 938
+swap$ -- 131
+text.length$ -- 93
+text.prefix$ -- 96
+top$ -- 0
+type$ -- 892
+warning$ -- 0
+while$ -- 248
+width$ -- 118
+write$ -- 1336

@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: sources/00_Wstep.aux
+A level-1 auxiliary file: sources/01_cel_i_zalozenia.aux
+A level-1 auxiliary file: sources/02_przeglad_czujnikow.aux
+A level-1 auxiliary file: sources/03_analaiza_problemu.aux
+A level-1 auxiliary file: sources/04_specyfikacja.aux
+A level-1 auxiliary file: sources/05_konstrukcja.aux
+A level-1 auxiliary file: sources/06_realizacja.aux
+A level-1 auxiliary file: sources/07_testy.aux
+A level-1 auxiliary file: sources/08_wnioski.aux
+The style file: alphapl.bst
+A level-1 auxiliary file: sources/09_dodatek_datasheety.aux
+Database file #1: sources/bibliografia.bib
+You've used 1 entry,
+            2626 wiz_defined-function locations,
+            598 strings with 4990 characters,
+and the built_in function-call counts, 235 in all, are:
+= -- 21
+> -- 1
+< -- 0
++ -- 0
+- -- 0
+* -- 11
+:= -- 34
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 5
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 10
+empty$ -- 28
+format.name$ -- 0
+if$ -- 52
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 8
+num.names$ -- 0
+pop$ -- 9
+preamble$ -- 2
+purify$ -- 6
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 7
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 1
+top$ -- 0
+type$ -- 8
+warning$ -- 0
+while$ -- 0
+width$ -- 2
+write$ -- 12

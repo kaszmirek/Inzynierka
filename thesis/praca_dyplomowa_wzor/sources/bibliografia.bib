@@ -1,0 +1,765 @@
+% Do dodawania kluczy do odmiennego sortowania niż według autora
+% (bibtex nie radzi sobie z sortowaniem polskich znaków diakrytycznych)
+@PREAMBLE{ {\providecommand{\noopsort}[1]{}} }
+
+% Przykłady formatowania książek (Book), rozdziałów w książkach (InBook),
+% artykułów w czasopismach (Article), referatów konferencyjnych (InProceedings),
+% raportów (TechReport), prac nieopublikowanych (Unpublished)
+@book{Arn81,
+    author      = "W. I. Arnold",
+    title       = "Metody matematyczne mechaniki klasycznej",
+    publisher   = "Państwowe Wydawnictwo Naukowe",
+    year        =  1981
+},
+
+@book{copernicus1965revolutionibus,
+  title={De revolutionibus orbium coelestium},
+  author={N. Copernicus},
+  year={1966},
+  publisher={Culture et civilisation}
+}
+
+@book{newton,
+author = "I. Newton",
+title = "Matematyczne zasady filozofii przyrody",
+publisher = "Copernicus Center Press",
+year = "2011"
+}
+
+@book{feynman2007pan,
+  title={"Pan raczy {\.z}artowa{\'c}, panie Feynman!": przypadki ciekawego cz{\l}owieka\footnote{\red {W} pracy tej dodano ostatniego autora, by pokazać jak wygląda akronim tworzony przy większej liczbie autorów. Zobacz też pozycję \cite{geogebra}.}},
+  author={Feynman, R.P. and Leighton, R. and Hutchings, E. and Biero{\'n}, T. and Dummy, J.},
+  isbn={9788324007769},
+  url={https://books.google.pl/books?id=t9PLGAAACAAJ},
+  year={2007},
+  publisher={Znak}
+}
+
+@book{RubKro12,
+    author      = "W. Rubinowicz and W. Królikowski",
+    title       = "Mechanika teoretyczna",
+    publisher   = "Wydawnictwo Naukowe PWN",
+    year        =  2012
+},
+
+@book{TchMu18,
+    author      = "K. Tchoń and R. Muszyński",
+    title       = "Mechanika analityczna. Notatki do wykładów z~dziedziny automatyki i robotyki",
+    publisher   = "Katedra Cybernetyki i Robotyki, Wydział Elektroniki, Politechnika Wrocławska",
+    address = {\url{https://kcir.pwr.edu.pl/~mucha/#skrypty}},
+    year        =  2018
+},
+
+@book{latex_kucharska,
+    author      = "Marcin Borkowski and Bartłomiej Przybylski",
+    title       = "książka kucharska {\LaTeX}",
+    publisher   = "Polskie Towarzystwo Matematyczne",
+    address = {\url{https://www.ptm.org.pl/sites/default/files/latex-ksiazka-kucharska.pdf}},
+    year        =  2015
+},
+
+@inbook{lisa,
+  author    = {Lisa A. Urry and Michael L. Cain and Steven A. Wasserman and Peter V. Minorsky and Jane B. Reece},
+  title     = {Photosynthesis},
+  booktitle = {Campbell Biology},
+  year      = 2016,
+  publisher = {Pearson},
+  address   = {New York, NY},
+  pages     = {187--221}
+}
+
+@article{LegMakeSens,
+Author = {R.K.P. Zia and E.F. Redish and S.R. McKay},
+Title = {Making Sense of the {Legendre Transform}},
+journal = "American Journal of Physics",
+number = 7,
+volume = 77,
+pages = {614--622},
+Year = {2009},
+Eprint = {arXiv:0806.1147},
+Doi = {10.1119/1.3119512},
+}
+
+@article {JonMu,
+author = "P. Joniak and R. Muszyński",
+journal = {Journal of Automation, Mobile Robotics \& Intelligent Systems},
+title = {Path following for two HOG wheels mobile robot},
+year = {2017},
+vollume = "11", 
+pages = "75--81"
+}
+
+@article {JonMu2,
+author = "P. Joniak and R. Muszyński",
+journal = {Postępy robotyki},
+title = {Model robota mobilnego napędzanego dwiema półsferami},
+year = {2016},
+vollume = "1", 
+pages = "103--114"
+}
+
+@Article{antykwa,
+  author = 	 {J. Nowacki},
+  title = 	 {{Antykwa} {Toruńska} -– od początku do końca polska czcionka},
+  journal = 	 {Biuletyn Polskiej Grupy Użytkowników Systemu \TeX},
+  year = 	 1997,
+  volume = 	 9,
+  pages = 	 {26--27}}
+
+@Article{eulerfont,
+  author = 	 {D.~E. Knuth and H.~Zapf},
+  title = 	 {{AMS} {Euler} --- {A} new typeface for mathematics},
+  journal = 	 {Scholary Publishing},
+  year = 	 1986,
+  volume = 	 20,
+  pages = 	 {131--157}}
+
+@inproceedings{Bedrossian91,
+   author    = {Bedrossian, N. S.},
+   title     = {Classification of Singular Configurations for
+       Redundant Manipulators},
+   booktitle = {Proc. IEEE Int. Conf. Robotics Automat.},
+   year      = {1991},
+   address   = {Sacramento},
+   pages     = {818--823},
+   volume    = {{\bf 1}}
+}
+
+@techreport{TchonMemo93,
+   author    = {Tcho{\'n}, K.},
+   title     = {Normal Forms of Kinematic Singularities of {3R}
+       Robot Manipulators},
+   institution = {Faculty of Applied Mathematics, University of Twente},
+   year      = {1993},
+   number    = {ISSN 0169-2690},
+   type      = {Memorandum}
+}
+
+@Unpublished{Jarocki,
+  author = 	 {Jarocki, R.},
+  title = 	 {On Some Forms of Singularities},
+  note = 	 {Politechnika Wrocławska},
+  year = 	 2007}
+
+% Przykłady formatowania prac dyplomowych
+@mastersthesis{goral,
+author = "D. {\noopsort{Gozzzral}G}óral",
+title = "Konstrukcja robota mobilnego napędzanego dwiema półsferami",
+year = "2017",
+school = "Wydział Mechaniczny, Politechnika Wrocławska",
+type = "Praca dyplomowa inżynierska",
+address = {\url{https://kcir.pwr.edu.pl/~mucha/#studenckie}}
+}
+
+@mastersthesis{roberto,
+author = "R. Orozco",
+title = "Bąk jaki jest każdy widzi",
+year = "2018",
+school = "Wydział Elektroniki, Politechnika Wrocławska",
+type = "Praca dyplomowa inżynierska",
+address = {\url{https://kcir.pwr.edu.pl/~mucha/#studenckie}}
+}
+
+@mastersthesis{jedrzej,
+author = "J. Boczar",
+title = "Control system for two {HOG} wheel mobile robot",
+year = "2019",
+school = "Wydział Elektroniki, Politechnika Wrocławska",
+type = "Praca dyplomowa magisterska",
+address = {\url{https://kcir.pwr.edu.pl/~mucha/#studenckie}}
+}
+
+@mastersthesis{ryba,
+author = "M. Rybczyński",
+title = "Model robota mobilnego napędzanego za pośrednictwem półsfery",
+year = "2013",
+type = "Projekt inżynierski",
+school = "Wydział Elektroniki, Politechnika Wrocławska",
+address = {\url{https://kcir.pwr.edu.pl/~mucha/#studenckie}}
+}
+
+@mastersthesis{Joniak,
+author = "P. Joniak",
+title = "Badania symulacyjne zachowania robota mobilnego napędzanego dwiema półsferami",
+school = "Wydział Elektroniki, Politechnika Wrocławska",
+year = "2014",
+type = "Projekt inżynierski",
+address = {\url{https://kcir.pwr.edu.pl/~mucha/#studenckie}}
+}
+
+% Przykłady formatowania odnośników do oprogramowania
+@misc{gimp,
+  key = 	 {GIMP},
+  title = 	 {{GIMP}},
+  howpublished = {\url{https://www.gimp.org}}}
+
+@misc{geogebra,
+author = "Markus Hohenwarter and others",
+title = "GeoGebra",
+howpublished = {\url{https://www.geogebra.org/}} 
+}
+@misc{wolMat,
+author = "Wolfram",
+title = "Mathematica",
+howpublished = {\url{http://www.wolfram.com/mathematica/}} 
+}
+
+@misc{matlab,
+author = "MathWorks",
+title = "MATLAB",
+howpublished = {\url{https://www.mathworks.com/products/matlab.html}} 
+}
+
+@misc{matplotlib,
+  author =      {John D. Hunter},
+  title = 	 {matplotlib},
+  howpublished = {\url{https://matplotlib.org/}}}
+
+@misc{matlab2tikz,
+  author =      {Nico Schlömer},
+  title = 	 {matlab2tkiz},
+  howpublished = {\url{https://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz}}}
+
+@misc{python,
+  key = 	 {Phyton},
+  title = 	 {{Python}},
+  howpublished = {\url{https://www.python.org/}}}
+
+@misc{inkscape,
+author = {{Inkscape Community}},
+title = {Inkscape},
+howpublished = {\url{https://inkscape.org/}},
+}
+
+@misc{dia,
+author = {{GNOME Wiki}},
+title = {Dia {Diagram} {Editor}},
+howpublished = {\url{https://wiki.gnome.org/Apps/Dia}},
+}
+
+@misc{overleaf,
+author = {Overleaf},
+title = {Overleaf},
+howpublished = {\url{https://www.overleaf.com/}},
+}
+
+@misc{emacs,
+  key = 	 {Emacs},
+  title = 	 {{GNU} {Emacs}},
+  howpublished = {\url{http://www.gnu.org/s/emacs}}}
+
+@misc{emacslatex,
+  author = 	 {Sachin Patil},
+  title = 	 {How to create {\LaTeX} documents with {Emacs}},
+  howpublished = {\url{https://opensource.com/article/18/4/how-create-latex-documents-emacs}},
+  year = 	 2018}
+ 
+@misc{schem_blokowy,
+  author = 	 {Ramón Jaramillo},
+  title = 	 {Example: {Block} diagram of {Third} order noise shaper in {Compact} {Disc} {Players}},
+  howpublished = {\url{http://www.texample.net/tikz/examples/noise-shaper/}},
+  year = 	 2014}
+ 
+@misc{dia_fonty,
+  author = 	 {Lighton Phiri},
+  title = 	 {{LaTeX} Font-consistent Diagrams Using Dia},
+  howpublished = {\url{https://lightonphiri.org/blog/latex-consistent-diagrams-using-dia}},
+  year = 	 2014}
+ 
+@misc{auctex,
+  key = 	 {Auctex},
+  title = 	 {{AUC\TeX} -- Sophisticated document creation},
+  howpublished = {\url{http://www.gnu.org/software/auctex}}}
+
+@misc{latex,
+  author = 	 {{LaTeX Project}},
+  title = 	 {{\LaTeX} --- {A} document preparation system},
+  howpublished = {\url{http://www.latex-project.org}}}
+
+@misc{latex_floats,
+  author = 	 {Rob J. Hyndman},
+  title = 	 {Controlling figure and table placement in {LaTeX}},
+  howpublished = {\url{https://robjhyndman.com/hyndsight/latex-floats/}},
+  year =         2009}
+
+@misc{czcionki_szer,
+  author = 	 {{TeX Users Group}},
+  title = 	 {The {\LaTeX} {F}ont {C}atalogue -- {S}erif {F}onts},
+  howpublished = {\url{https://tug.org/FontCatalogue/seriffonts.html}}}
+
+@misc{czcionki,
+  author = 	 {{TeX Users Group}},
+  title = 	 {The {\LaTeX} {F}ont {C}atalogue -- {F}inding the right font},
+  howpublished = {\url{https://tug.org/FontCatalogue/}}}
+
+@misc{czcionki_sel,
+  author = 	 {{TeX Users Group}},
+  title = 	 {The {\LaTeX} Font Catalogue -- {F}ont documentation},
+  howpublished = {\url{https://tug.org/FontCatalogue/docs.html}}}
+
+@Misc{led,
+  author =       {A. Skórczyński and S. Deorowicz},
+  title = 	 {{LEd}},
+  howpublished = {\url{http://www.latexeditor.org}}}
+
+@Misc{texworks,
+  author =       {{TeX Users Group}},
+  title = 	 {{TeXworks}},
+  howpublished = {\url{http://www.tug.org/texworks/}}}
+
+@Misc{texstudio,
+  author = {{Benito van der} Zander},
+  title = 	 {{TeXstudio}},
+  howpublished = {\url{https://www.texstudio.org/}}}
+
+@Misc{texstudio_opis,
+  author =       {Piotr Parafiniuk},
+  title = 	 {{TeXstudio -– wygodne środowisko do tworzenia dokumentów w {\LaTeX}}},
+  howpublished = {\url{https://www.dobreprogramy.pl/TeXstudio-wygodne-srodowisko-do-tworzenia-dokumentow-w-LaTeX,News,84750.html}},
+  year =         2017}
+
+@Misc{texmaker,
+  author =       {Pascal Brachet},
+  title = 	 {{TeX{\it MAKER}}},
+  howpublished = {\url{http://www.xm1math.net/texmaker/}}}
+
+@Misc{kile,
+  author =       {Michel Ludwig},
+  title = 	 {Kile},
+  howpublished = {\url{kile.sourceforge.net}}}
+
+% Przykłady formatowania materiałów internetowych, w tym odwołań do Wikipedii
+@misc{minted,
+  author = 	 {{CTAN Comprehensive {\TeX} Archive Network} and Geoffrey M. Poore},
+  title = 	 {The \texttt{minted} package: {Highlighted} source code in {\LaTeX}},
+  howpublished = {\url{http://mirrors.ctan.org/macros/latex/contrib/minted/minted.pdf}},
+  year = 	 2017}
+
+@misc{pgfplots,
+author = {{CTAN Comprehensive {\TeX} Archive Network}},
+title = {pgfplots -– {Create} normal/logarithmic plots in two and three dimensions},
+howpublished = {\url{https://ctan.org/pkg/pgfplots}},
+}
+
+@misc{przegCard,
+author = "Wikipedia",
+title = "Przegub {Cardana}",
+howpublished = {\url{https://pl.wikipedia.org/wiki/Przegub_Cardana}}
+}
+
+@misc{emacs_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {Emacs},
+  howpublished = {\url{http://pl.wikipedia.org/wiki/Emacs}}}
+
+@misc{gimp_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {{GIMP}},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/GIMP}}}
+
+@misc{grafika_wiki,
+  author = 	 {Wikibooks},
+  title = 	 {{\LaTeX}/{Importing} graphics},
+  howpublished = {\url{https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics}}}
+
+@misc{inkscape_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {Inkscape},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/Inkscape}}}
+
+@misc{dia_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {Dia (program)},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/Dia_(program)}}}
+
+@misc{latex_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {{\LaTeX}},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/LaTeX}}}
+
+@misc{harwardzkie,
+  author = 	 {Wikipedia},
+  title = 	 {Przypisy harwardzkie},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/Przypisy_harwardzkie}}}
+
+@misc{vancouverskie,
+  author = 	 {Wikipedia},
+  title = 	 {System vancouverski},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/System_vancouverski}}}
+
+@misc{latex_wiki2,
+  author = 	 {Wikibooks},
+  title = 	 {{\LaTeX}},
+  howpublished = {\url{https://pl.wikibooks.org/wiki/LaTeX}}}
+
+@misc{list_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {{\LaTeX}{Source Code Listings}},
+  howpublished = {\url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}}
+  
+@misc{dvi_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {{DVI} (plik {\TeX})},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/DVI_(plik_TeX)}}}
+
+@misc{latex_editors_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {Comparison of TeX editors},
+  howpublished = {\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}}}
+
+@misc{tikz_wiki,
+  author = 	 {Wikibooks},
+  title = 	 {{Ti{\it k}Z}},
+  howpublished = {\url{https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ}}}
+
+@misc{vim_wiki,
+  author = 	 {Wikipedia},
+  title = 	 {Vim},
+  howpublished = {\url{http://pl.wikipedia.org/wiki/Vim}}}
+
+@misc{lshort2e,
+  author = 	 {Tomasz Przechlewski and Ryszard Kubiak},
+  title = 	 {Nie za krótkie wprowadzenie do systemu {\LaTeXe} {A}lbo
+                  {\LaTeXe} w~129 minut},
+  howpublished = {\url{https://ftp.gust.org.pl/pub/GUST/doc/lshort2e.pdf}},
+  year = 	 2007}
+
+@misc{antykwab,
+  author = 	 {J. Nowacki},
+  title = 	 {Antykwa Toruńska, wer. 2.01},
+  howpublished = {\url{https://wwwcdf.pd.infn.it/tex/fonts/antt/AntykwaTorunska-doc-pl-2_01.pdf}},
+  year = 	 2004}
+
+@misc{amsmath,
+  author = 	 {American Mathematical Society, {\LaTeX}3 Project},
+  title = 	 {User's Guide for the \texttt{amsmath} Package},
+  howpublished = {\url{http://texdoc.net/texmf-dist/doc/latex/amsmath/amsldoc.pdf}\footnotetext{\red {S}pis literatury powinien zawierać jedynie pozycje, do których są odwołania w~tekście.}\stepcounter{footnote}\footnotetext{\red W~tym spisie literatury ciągle jest kilka nieujednoliconych elemetów, jak na przykład pisownia imion: czasami są podane w~całości, czasami tylko pierwsza litera, czasami są wszystkie imiona podane w~pełnej postaci, czasami tylko pierwsze. \BibTeX{} stara się ujednolicać takie rzeczy, ale robi to dobrze, gdy wszystkie wpisy w~pliku bibliografii są podawane w~jednolity sposób. Czego tu nie zrobiono.}},
+  year = 	 1999}
+
+@misc{mathtools,
+  author = 	 {Morten Høgholm and Lars Madsen},
+  title = 	 {The \texttt{mathtools} package},
+  howpublished = {\url{texdoc.net/show.php?pkg=mathtools}},
+  year = 	 2018}
+
+@misc{lshortpie,
+  author = 	 {Ryszard Kostecki},
+  title = 	 {W miarę krótki i praktyczny kurs {\LaTeX}a w
+                  $\pi^\varepsilon$ minut},
+  howpublished = {\url{www.fuw.edu.pl/~kostecki/kurs_latexa.pdf}},
+  year = 	 2008}
+
+@Misc{programy_przeglad,
+  author =       {Magdalena {\noopsort{Lzzachacz}Ł}achacz},
+  title = 	 {{Programy dla studentów: jak rozpocząć pracę z {LaTeX}-em?}},
+  howpublished = {\url{https://www.dobreprogramy.pl/Programy-dla-studentow-jak-rozpoczac-prace-z-LaTeXem,News,84439.html}},
+  year =         2017}
+
+@misc{cardano,
+author = {J. J. O'Connor and E. F. Robertson},
+title = {Girolamo {C}ardano},
+publisher = {MacTutor},
+howpublished = {\url{http://www-history.mcs.st-and.ac.uk/Biographies/Cardan.html}},
+year = "1998"
+}
+
+@misc{draft_option,
+author = {{\LaTeX} {Stack Exchange} and Tobi and others},
+title = {What does the draft mode change?},
+howpublished = {\url{https://tex.stackexchange.com/questions/49277/what-does-the-draft-mode-change}},
+year = {2012--2022}
+}
+
+@misc{hyphen_on,
+author = {{\TeX} {FAQ}},
+title = {Using a new language with Babel},
+howpublished = {\url{https://texfaq.org/FAQ-newlang}},
+}
+
+@misc{latex_kurs,
+author = {Przemysław Spurek},
+title = {{\LaTeX} -- {KURS}},
+howpublished = {\url{http://www.latex-kurs.x25.pl/}},
+}
+
+@misc{inkscape_preze,
+author = {Gilles Castel},
+title = {How {I} draw figures for my mathematical lecture notes using {Inkscape}},
+howpublished = {University of Leuven, \url{https://castel.dev/post/lecture-notes-2/}},
+year = 2019
+}
+
+@misc{literaturaa,
+  author = 	 {Wikipedia},
+  title = 	 {Cytowanie piśmiennictwa},
+  howpublished = {\url{https://pl.wikipedia.org/wiki/Cytowanie_pi%C5%9Bmiennictwa}}
+}
+
+@misc{literaturab,
+  author = 	 {D. Wrona},
+  title = 	 {Przypisy i bibliografia w pracy licencjackiej, magisterskiej, inżynierskiej},
+  howpublished = {\url{https://poprawaprac.pl/przypisy-i-bibliografia-w-pracy-licencjackiej-magisterskiej-inzynierskiej/}},
+  year = 	 2021}
+
+@misc{tikz_preze,
+  author = 	 {Nathalie Aubrun},
+  title = 	 {How (and why) do {I} use {Ti{\it k}Z} to make my figures? },
+  howpublished = {CNRS, Lyon, \url{https://tilingslyon2017.sciencesconf.org/data/tikz.pdf}},
+  year = "2017",
+  }
+
+@misc{tikz_pol,
+  author = 	 {{Łukasz} {Strąk}},
+  title = 	 {Krótkie wprowadzenie do pakietu {Ti{\it k}Z}},
+  howpublished = {Uniwersytet Śląski, \url{https://docplayer.pl/19971343-Krotkie-wprowadzenie-do-pakietu-tikz.html}},
+  year = "2015",
+  }
+
+@misc{tikzit,
+author = {{TikZiT Project}},
+title = {{TikZiT}},
+howpublished = {\url{https://tikzit.github.io/}},
+}
+
+@misc{tex_legacy,
+author = {Overleaf},
+title = {What's in a {Name}: {A} {Guide} to the {Many} {Flavours} of {TeX}},
+howpublished = {\linebreak\url{https://www.overleaf.com/learn/latex/Articles/What%27s_in_a_Name%3A_A_Guide_to_the_Many_Flavours_of_TeX}},
+}
+
+@misc{xxxtex,
+author = {Overleaf},
+title = {The {TeX} family tree: {LaTeX}, {pdfTeX}, {XeTeX}, {LuaTeX} and {ConTeXt}},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Articles/The_TeX_family_tree%3A_LaTeX%2C_pdfTeX%2C_XeTeX%2C_LuaTeX_and_ConTeXt}},
+}
+
+@misc{latex_overleaf,
+author = {Overleaf},
+title = {Documentation},
+howpublished = {\url{https://www.overleaf.com/learn}},
+}
+
+@misc{tikz_overleaf,
+author = {Overleaf},
+title = {{\LaTeX} {Graphics} using {Ti{\it k}Z}: {A} {Tutorial} for {Beginners}},
+howpublished = {\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing}},
+}
+
+@misc{concr,
+author = {The \LaTeX Font Catalogue},
+title = {Computer {Concrete}},
+howpublished = {\url{http://www.tug.dk/FontCatalogue/computerconcreteeuler/}},
+}
+
+@misc{palla,
+author = {The \LaTeX Font Catalogue},
+title = {New {PX}},
+howpublished = {\url{http://www.tug.dk/FontCatalogue/newpx/}},
+}
+
+@misc{antyk,
+author = {The \LaTeX Font Catalogue},
+title = {Antykwa {Toruńska}},
+howpublished = {\url{http://www.tug.dk/FontCatalogue/antykwatorunska/}},
+}
+
+@misc{CArn,
+    author       = "C. Hind",
+    title        = "Gyroscopes",
+    howpublished = {\url{http://hindocarina.com/about/gyroscope/}}
+}
+
+@misc{PauliBohr,
+    author       = "E. Gustafson",
+    title        = "Pauli and {Bohr} watch a spinning top",
+    howpublished = {\url{https://commons.wikimedia.org/wiki/File:Pauli_wolfgang_c4.jpg}},
+    year         = 1954
+}
+
+@misc{Jadczyk,
+    author       = "A. Jadczyk",
+    title        = "Układ otwarty",
+    howpublished = {\url{https://www.salon24.pl/u/arkadiusz-jadczyk/search/?q=b%C4%85k}}
+}
+
+@misc{Ratajczak,
+    author       = "A. Ratajczak",
+    title        = "Klasa dokumentu -- \texttt{mgr.cls}",
+    howpublished = {Politechnika Wrocławska, \url{http://diablo.kcir.pwr.edu.pl/~ar/LaTeX/mgr.php}},
+    year         = 2021}
+
+@misc{wzor_praca,
+    author       = "R. Muszyński",
+    title        = "Przykład składu pracy dyplomowej w systemie {\LaTeX} z wykorzystaniem klasy \texttt{mgr.cls} Adama Ratajczaka",
+    howpublished = {Politechnika Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#inne}},
+    year         = 2022
+}
+
+@misc{kubik,
+    author       = "T. Kubik",
+    title        = "Szablon pracy dyplomowej",
+    howpublished = {Politechnika Wrocławska, \url{http://tomasz.kubik.staff.iiar.pwr.wroc.pl/}},
+    year         = 2021
+}
+
+@misc{interpunkcja,
+    author       = "J. Podracki",
+    title        = "Klasyfikacja błędów interpunkcyjnych",
+    howpublished = {Rada Języka Polskiego, \url{https://rjp.pan.pl/index.php?option=com_content&view=article&id=1100:klasyfikacja-bdow-interpunkcyjnych}},
+}
+
+@misc{myslniki_pwn,
+    author       = "{Słownik Języka Polskiego}",
+    title        = "Myślnik, pauza, minus",
+    howpublished = {Wydawnictwo Naukowe {PWN}, \url{https://sjp.pwn.pl/poradnia/haslo/Myslnik-pauza-minus;16280.html}},
+}
+
+@misc{myslniki_wiki,
+    author       = {Wikipedia},
+    title        = "Pauza i półpauza",
+    howpublished = {\url{https://pl.wikipedia.org/wiki/Pauza_i_p%C3%B3%C5%82pauza}},
+}
+
+@misc{cudzyslow_pwn,
+    author       = "{Słownik Języka Polskiego}",
+    title        = "Cudzysłów",
+    howpublished = {Wydawnictwo Naukowe {PWN}, \url{https://sjp.pwn.pl/zasady/Cudzyslow;629866.html}},
+}
+
+@misc{cudzyslow_wiki,
+    author       = {Wikipedia},
+    title        = "Cudzysłów",
+    howpublished = {\url{https://pl.wikipedia.org/wiki/Cudzys%C5%82%C3%B3w}},
+}
+
+@misc{cudzyslow_overleaf,
+author = {Overleaf},
+title = {Typesetting quotations},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Typesetting_quotations}},
+}
+
+@misc{bib_in_latex_overleaf,
+author = {Overleaf},
+title = {Bibliography management in {LaTeX}},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX}},
+}
+
+@misc{wikibibtex,
+author = "Wikipedia",
+title = "{\BibTeX}",
+howpublished = {\url{https://pl.wikipedia.org/wiki/BibTeX}}
+}
+
+@misc{bibtex,
+author = "A. Feder",
+title = "Your {\BibTeX} resource",
+howpublished = {\url{http://www.bibtex.org/}},
+year = 2006
+}
+
+@misc{csquotes,
+author = {{CTAN Comprehensive {\TeX} Archive Network}},
+title = {csquotes –- {C}ontext sensitive quotation facilities},
+howpublished = {\url{https://ctan.org/pkg/csquotes/}},
+}
+
+@misc{bibtex_ctan,
+author = {{CTAN Comprehensive {\TeX} Archive Network}},
+title = "bibtex –- {P}rocess bibliographies for {\LaTeX}, etc",
+howpublished = {\url{https://ctan.org/pkg/bibtex}}
+}
+
+@misc{bibtex_overleaf,
+author = {Overleaf},
+title = {Bibliography management with bibtex},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex}},
+}
+
+@misc{bibtex_entries,
+key = {Bibtex entries},
+title = {The quick {\BibTeX} quide. {A}ll you ever need to know about {\BibTeX}: The 14 {BibTeX} entry types},
+howpublished = {\url{https://www.bibtex.com/e/entry-types/}}
+}
+
+@misc{bibtex_alpha,
+key = {Bibtex alpha sytle},
+title = {The quick {\BibTeX} quide. {A}ll you ever need to know about {\BibTeX}: {BibTeX} bibliography style: alpha},
+howpublished = {\url{https://www.bibtex.com/s/bibliography-style-base-alpha/}}
+}
+
+@misc{biber,
+author = "Sourceforge",
+title = "Biber –- A {\BibTeX} replacement for users of {B}ib{\LaTeX}",
+howpublished = {\url{http://biblatex-biber.sourceforge.net/}}
+}
+
+@misc{biber_ctan,
+author = {{CTAN Comprehensive {\TeX} Archive Network}},
+title = "biber –- A {\BibTeX} replacement for users of {B}ib{\LaTeX}",
+howpublished = {\url{https://ctan.org/pkg/biber}}
+}
+
+@misc{biber_man,
+author = "Philip Kime and François Charette",
+title = "biber {A} backend bibliography processor for biblatex",
+howpublished = {\url{https://texdoc.org/serve/biber.pdf/0}},
+year = 2022
+}
+
+@misc{wikibiber,
+author = "Wikipedia",
+title = "{Biber}",
+howpublished = {\url{https://en.wikipedia.org/wiki/Biber_(LaTeX)}}
+}
+
+@misc{biblatex,
+author = {{CTAN Comprehensive {\TeX} Archive Network}},
+title = "Bib{\LaTeX} -– Sophisticated Bibliographies in {\LaTeX}",
+howpublished = {\url{https://ctan.org/pkg/biblatex}}
+}
+
+@misc{natbib,
+author = {{CTAN Comprehensive {\TeX} Archive Network}},
+title = "natbib –- {F}lexible bibliography support",
+howpublished = {\url{https://ctan.org/pkg/natbib}}
+}
+
+@misc{bib_porownanie,
+author = "{\LaTeX} {Stack Exchange} and doncherry and others",
+title = "bibtex vs. biber and biblatex vs. natbib",
+howpublished = {\url{https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib}},
+year = {2011--2022}
+}
+
+@misc{latex_editors,
+author = "{\LaTeX} {Stack Exchange} and hayalci and others",
+title = "{LaTeX} {Editors}/{IDEs}",
+howpublished = {\url{https://tex.stackexchange.com/questions/339/latex-editors-ides}},
+year = {2010--2022}
+}
+
+@misc{biblatex_overleaf,
+author = {Josh Cassidy },
+title = {Getting started with {B}ib{\LaTeX}},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX}},
+year = 2013}
+
+@misc{biblatex_overleaf2,
+author = {Overleaf},
+title = {Bibliography management with biblatex},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex}},
+}
+
+@misc{natbib_overleaf,
+author = {Overleaf},
+title = {Bibliography management with natbib},
+howpublished = {\url{https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib}},
+}
+
+@misc{sklad,
+author = "J. Bagrij",
+title = "Born to create: Bękarty i wdowy, sieroty i szewcy -– najpopularniejsze błędy łamania tekstu i proste sposoby na ich eliminację",
+howpublished = {\url{https://born-to-create.pl/bledy-skladu-tekstu/}},
+year = 2021
+}
+

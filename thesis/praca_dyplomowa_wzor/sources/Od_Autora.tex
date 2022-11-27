@@ -1,0 +1,256 @@
+\chapter*{Od Autorów}
+\addcontentsline{toc}{chapter}{Od Autorów}
+\markboth{Od Autorów}{Od Autorów}
+
+Niniejszy przykład przygotowano celem ułatwienia opracowania prac dyplomowych z~wykorzystaniem dostarczonego przez Adama Ratajczaka stylu \texttt{mgr} systemu \LaTeX{}. Styl \texttt{mgr} służy do przygotowywania prac dyplomowych na Wydziale Elektroniki, Fotoniki i~Mikrosystemów oraz Wydziale Informatyki i~Telekomunikacji Politechniki Wrocławskiej i~jego głównym zadaniem jest odpowiednie sformatowanie strony tytułowej dokumentu\footnote{W razie potrzeby plik z~opisem klasy \texttt{mgr} można znaleźć na stronie autora \cite{Ratajczak}; tam też można znaleźć dokument szczegółowo opisujący sposób korzystania z~klasy \texttt{mgr} (\texttt{manual.pdf}) -- prezentowany tu przykład zawiera już najnowszą wersję pliku ze stylem \texttt{mgr}.}. Aktualną wersję prezentowanego przykładu można znaleźć na stronie internetowej \cite{wzor_praca} w~części ,,Inne materiały''\footnote{Informacje o~zauważonych błędach/brakach prosimy kierować na adres \texttt{mucha@pwr.edu.pl}.}. Więcej porad technicznych dotyczących składu pracy dyplomowej można znaleźć w~szablonie przygotowanym przez Tomasza Kubika \cite{kubik}. Listę zmian pozwalających przekształcić ten przykładowy dokument w~swoją własną pracę dyplomową zebrano w~podrozdziale~\ref{sec:listakontrolna}.
+
+Dostarczony zestaw plików zawiera docelowy plik wzorcowy dokumentu z~pracą dyplomową w~formacie PDF \texttt{praca\_dyplomowa\_wzor.pdf} (który pewnie właśnie czytasz) oraz archiwum \texttt{praca\_dyplomowa\_wzor.zip}\footnote{Po jego rozpakowaniu otrzymujemy katalog \texttt{praca\_dyplomowa\_wzor} z~wszystkimi niezbędnymi do pracy plikami -- w~tym katalogu przeprowadzamy opisaną poniżej kompilację. By edytować dokument w~systemie Overleaf wystarczy wczytać do niego nierozpakowane archiwum (\texttt{New Project} $\rightarrow$ \texttt{Upload Project}).} zawierające zestaw jego plików źródłowych: plik główny \texttt{main.tex}\footnote{Pliki źródłowe przygotowano z~zastosowaniem systemu kodowania znaków UTF8 i~windowsowymi znakami nowej linii (CRLF). Konwersja znaków nowej linii do formatu uniksowgo (zazwyczaj niepotrzebna): \texttt{dos2unix plik\_we plik\_wy} lub \texttt{tr -d '\textbackslash r' < plik\_we > plik\_wy}.}, pliki z~treścią rozdziałów (znajdujące się w~katalogu \texttt{sources}), pliki rysunków (katalog \texttt{figures}). By skompilować dostarczone źródła do postaci wynikowej należy użyć kompilatora \LaTeX{}a oraz \BibTeX{}a w~sekwencji\footnote{Zakładamy tu, że wykorzystywana jest lokalna instalacja \LaTeX{}a z~poziomu powłoki tekstowej (np. \texttt{bash}). Takie rozwiązanie pozwala na pracę bez dostępu do internetu, jest bardzo szybkie i~daje się łatwo ,,automatyzować'' wedle potrzeby -- przez użycie skryptów powłoki, uruchamianie procesu kompilacji z~poziomu używanego edytora (np. emacsa:), integrację z~lokalną ,,wyświetlarką pdfów''. Warto spróbować! Przy korzystaniu z~innych rozwiązań, jak te wymienione w~podrozdziale~\ref{narzedzia}, należy zadbać, by w~ich ramach została wykonana odpowiednia sekwencja poleceń w~celu uzyskania aktualnego, wynikowego pliku PDF.}\footnote{W~niektórych systemach może potrzebne być użycie opcji pdflatecha \texttt{--shell-escape}.}\vspace{-3mm}
+\begin{verbatim}
+  pdflatex main
+  bibtex main
+  pdflatex main
+  pdflatex main
+\end{verbatim}
+Bezbłędny przebieg wykonania powyższych poleceń wyprodukuje plik \texttt{main.pdf}, który powinien wyglądać identycznie jak ten wzorzec, co równocześnie potwierdzi poprawność i~kompletność wykorzystywanej instancji systemu \LaTeX. Dokument można kompilować we fragmentach z~zachowaniem poprawności wszystkich odwołań używając w~jego preambule polecenie \texttt{\textbackslash includeonly} z~podaną listą plików rozdziałów do dołączenia\footnote{Przykład użycia zamieszczono w~pliku \texttt{main.tex}.}.
+
+W~tym przykładzie zdecydowano się na wykorzystanie do składu tekstu kroju pisma zaprojektowanego specjalnie dla języka polskiego o~nazwie Antykwa Toruńska \cite{antykwa,antykwab} wraz matematyczną czcionką o~nazwie AMS Euler \cite{eulerfont}, o~czym napisano w~dodanej pod spisem treści notce. Domyślne kroje pisma można łatwo przywrócić usuwając odpowiednie pakiety z~preambuły dokumentu\footnote{W preambule pokazano także, w~jaki sposób można włączyć inne kroje -- zwracamy uwagę, szczególnie osób piszących prace po angielsku, na kroje o~nazwach Computer Concrete oraz URW Palladio (pierwszy będący odmianą kroju Concrete Roman, zaś drugi kroju Palatino) \cite{concr, palla, antyk}.}. 
+
+Prezentowany dokument, oprócz wskazania sposobu wykorzystania stylu \texttt{mgr}, opisuje podstawowe zasady tworzenia pracy dyplomowej. Jednakże należy podkreślić, że intencją autorów nie jest dostarczenie jeszcze jednego dokumentu traktującego o~metodach formatowania tekstu w~środowisku \LaTeX, ale zilustrowanie w~jednym miejscu sposobów uzyskania podstawowych elementów występujących w~typowej pracy dyplomowej\footnote{Dziś częstokroć dany efekt można uzyskać w~\LaTeX{}u na kilka sposobów i~wybór/znalezienie tego ,,najlepszego/właściwego'' może zająć sporo czasu. Stąd pomysł, by w~tym dokumencie podzielić się ,,doświadczeniem'' zdobytym przez wcześniejsze ,,pokolenia dyplomantów''. Jeśli masz więc jakieś uwagi śmiało pisz na \texttt{mucha@pwr.edu.pl}.}. Zamysł całości jest taki: Znajdź w~dostarczonym pdfie element, którego potrzebujesz i~zobacz w~jego źródłach, w~jaki sposób został uzyskany.
+
+W~kolejnych rozdziałach tekst zapisany kolorem czerwonym stanowi komentarz do przytoczonych fragmentów pracy autorstwa Roberto Orozco \cite{roberto}, zwracający uwagę na rzeczy, które te fragmenty ilustrują. Komentarz każdorazowo dotyczy tekstu go poprzedzającego. W~źródle dokumentu można zobaczyć jak dany efekt uzyskano. A~poniżej zebrano podstawowe wytyczne dotyczące redakcji tekstu. Więcej o~zasadach użycia systemu \LaTeX{} można poczytać w~,,Nie za krótkim wprowadzeniu\ldots'' \cite{lshort2e} oraz szerzej w~,,Książce kucharskiej\ldots'' \cite{latex_kucharska}. Łagodne wprowadzenie do \LaTeX{}a zapewnia także kurs w~pdfie \cite{lshortpie}, kurs w~htmlu \cite{latex_kurs}, czy dokumentacja środowiska Overleaf \cite{latex_overleaf}. W~razie czego warto też zajrzeć na stronę Wikibooks \cite{latex_wiki2}.
+
+Autorzy są wdzięczni Jędrzejowi Boczarowi, dyplomantowi specjalności Embedded Robotics w~roku 2019, za uprzejmą współpracę i~recenzję całości \cite{jedrzej}.
+
+\section{Narzędzia}
+\label{narzedzia}
+
+\begin{enumerate}
+%\setlength{\itemsep}{0pt}
+\item \LaTeX{} jest językiem znaczników do formatowania dokumentów tekstowych, także zawierających elementy graficzne, który dostarcza zestawu makr stanowiących nadbudowę dla systemu składu \TeX, \cite{latex, latex_wiki, latex_wiki2}. Podstawowym oprogramowaniem służącym do kompilacji dokumentów opisanych w~tym języku jest system \LaTeX\footnote{który korzystając z~systemu \TeX{} na podstawie plików źródłowych produkuje plik wynikowy w~formacie \texttt{DVI} (\emph{ang. device independent}) stanowiący bazę do uzyskania innych formatów jak PDF czy PS \cite{dvi_wiki}}. Jednakże ponieważ obecnie dostępnych jest kilka alternatywnych dla \TeX{}a narzędzi, takich jak pdf\TeX, Xe\TeX{} czy Lua\TeX, towarzyszą im dedykowane systemy kompilacji jak pdf\LaTeX{} czy Xe\LaTeX. Autorzy tego dokumentu do jego kompilacji wykorzystali system pdf\LaTeX\footnote{który na podstawie plików źródłowych produkuje bezpośrednio plik wynikowy w~formacie PDF}, zaś zainteresowanych ,,innymi smakami \TeX{}a'' odsyłają do takich pozycji jak \cite{latex_kucharska,tex_legacy,xxxtex}.
+  
+\item Ponieważ sam \LaTeX{} jest systemem składu tekstu wyposażonym jedynie w~interfejs wiersza poleceń (\emph{ang. command-line interface})\footnote{nazywany przez niektórych interfejsem linii komend}, do pracy z~nim potrzebny jest edytor tekstowy, który pozwoli wprowadzić pożądaną treść do komputera. Wygodnie jest korzystać w~tym celu z~któregoś z~edytorów dostosowanych do składni \LaTeX{}a\footnote{Ale oczywiście możliwe jest użycie dowolnego edytora tekstu, byle tylko pozwalał on na zapisywanie plików w~wybranej do pracy stronie kodowej.}. W~przypadku przynajmniej podstawowej znajomości składni \LaTeX{}a na wygodną pracę pozwoli odpowiednio skonfigurowany edytor ogólnego przeznaczenia, jak chociażby GNU Emacs\footnote{W celu ułatwienia konfiguracji emacsa do tego opisu dołączony jest przykładowy plik konfiguracyjny \texttt{emacs\_conf}. Jego zawartość w~miarę potrzeby należy dodać do lokalnego pliku konfiguracyjnego emacsa (\texttt{.emacs}). Zaleca się również zainstalowanie pakietu \texttt{color-theme-solarized} i~odmarkowanie odpowiednich linii w~dostarczonym pliku konfiguracyjnym. A~przede wszystkim warto zadbać, by w~emacsie był zainstalowany pakiet AUC\TeX, \cite{auctex}, który definiuje użyteczne pozycje w~menu, jak \texttt{Preview}, \texttt{LaTeX}, czy \texttt{Command}, wiele skrótów klawiszowych, a~także możliwość częściowego podglądu dokumentu bezpośrednio w~emacsie.} \cite{emacs, emacs_wiki} czy Vim\footnote{Oba te edytory są kontekstowe i~potrafią pracować w~trybie \texttt{LaTeX}, który znacznie ułatwia tworzenie dokumentów latechowych -- jak to wygląda w~przypadku emacsa można zobaczyć na stronie~\cite{emacslatex}.} \cite{vim_wiki}. Uwadze początkujących poleca się edytory w~pełni dedykowane \LaTeX{}owi, takie jak TeXworks \cite{texworks}, TeXstudio \cite{texstudio,texstudio_opis} (który jest klonem starszego środowiska TEX{\it MAKER} \cite{texmaker}), LEd \cite{led}, Kile \cite{kile}, czy ostatnio coraz bardziej popularny, działający z~wykorzystaniem chmury serwis Overleaf \cite{overleaf}. Przegląd zawierający opis niektórych środowisk do pracy z~\LaTeX{}em można znaleźć w~\cite{programy_przeglad} -- bardziej obszernie o~sprawie traktują strony~\cite{latex_editors,latex_editors_wiki}. Do wprowadzenia tekstu tego poradnika autorzy korzystali z~edytora emacs \smiley\footnote{Taka ciekawostka: W~polskiej typografii zaleca się, by po emotikonach nie stosować już znaków interpunkcyjnych \smiley}
+
+\item \label{spis_literatury} Spis literatury wygodnie jest tworzyć korzystając z~narzędzi do formatowania bibliografii takich jak \BibTeX\footnote{Emacs jest wyposażony w~tryb \texttt{BibTeX}, który jest automatycznie uruchamiany po wczytaniu pliku z~rozszerzeniem \texttt{.bib} i~znacznie ułatwia jego edycję.}, \cite{bibtex_ctan,wikibibtex,bibtex} czy Biber, \cite{biber_ctan,wikibiber,biber}. W~pracy można się wspomóc pakietami \LaTeX{}a dedykowanymi do składu bibliografii, takimi jak \verb+biblatex+, \cite{biblatex} czy \verb+natbib+, \cite{natbib}. Porównanie wymienionych narzędzi można znaleźć w~\cite{bib_porownanie}; o~ich wykorzystaniu traktują takie pozycje jak \cite{bib_in_latex_overleaf,bibtex_overleaf,biblatex_overleaf,biblatex_overleaf2,biber_man,natbib_overleaf}. W~tym dokumencie do przygotowania spisu literatury wykorzystano system \BibTeX.
+  
+\item \label{grafika_narzedzia} Przygotowanie dokumentu może wymagać opracowania wykresów, diagramów, czy innych elementów graficznych. Należy zadbać by w~miarę możliwości były one zapisane w~formacie wektorowym (PDF, PS, EPS). Przy wykorzystaniu elementów rastrowych należy zadbać, by były one zapisane z~wykorzystaniem metod kompresji bezstratnej (jak w~formacie PNG); przy braku takiej możliwości dopuszcza się wykorzystanie obrazów skompresowanych stratnie (jak w~formacie JPG), jednakże wysokiej jakości. Należy zadbać także o~ich odpowiednią rozdzielczość: uważa się, że wydruki kolorowe wymagają rozdzielczości 150dpi, czarno-białe 300dpi\footnote{W przypadku publikacji elektronicznych zastosowana rozdzielczość powinna stanowić kompromis pomiędzy jakością grafiki a~wielkością uzyskanego pliku wynikowego -- jeden dołączony w~nieprzemyślany sposób plik rastrowy o~niepotrzebnie wielkiej rozdzielczości potrafi zwiększyć kilkadziesiąt razy wielkość docelowego dokumentu PDF.}. 
+
+  Do tworzenia grafik wektorowych w~rodzaju diagramów, schematów blokowych zaleca się wykorzystanie programu Inkscape\footnote{Więcej na ten temat, w~szczególności jak otrzymać czcionki spójne z~użytymi w~tekście, opisano w~komentarzu do rysunku~\ref{fig:transf_se3} na stronie~\pageref{fig:transf_se3}.} \cite{inkscape,inkscape_preze,inkscape_wiki}. Grafiki do wykorzystania w~dokumencie \LaTeX{}owym powinny zostać zapisane w~formacie PDF\footnote{Zaleca się, by pliki wektorowe zapisane w~innych formatach przed dołączeniem zostały przekształcone również do formatu PDF (narzędzia \texttt{ps2pdf}, \texttt{epstopdf}).}. No chyba, że ktoś jest miłośnikiem języka Ti{\it k}Z, który daje naprawdę ogromne możliwości \cite{tikz_pol, tikz_preze, tikz_overleaf, tikz_wiki}. A~Inkscape pozwala na zapisywanie plików w~formacie Ti{\it k}Z -- potrafi to też MatLab\footnote{\texttt{matlab2tikz} \cite{matlab2tikz}} \cite{matlab}, Mathematica  \cite{wolMat}, GeoGebra \cite{geogebra}, Python\footnote{biblioteka \texttt{matplotlib} \cite{matplotlib}} \cite{python}. Do przygotowania diagramów przydatny może okazać się też program Dia \cite{dia,dia_wiki}, który też zna się na  Ti{\it k}Zie i~lubi z~Pythonem \smiley
+
+  Obróbki formatów bitmapowych można dokonywać z~łatwością programem GIMP \cite{gimp,gimp_wiki} i~wieloma pomniejszymi. Przegląd informacji na temat dołączania grafik, formatach graficznych, narzędziach do obróbki i~konwersji można znaleźć w~\cite{grafika_wiki}.
+
+\end{enumerate}
+
+\section{Układ pracy}
+
+Praca dyplomowa powinna mieć następujący układ.
+\begin{enumerate}
+\addtolength{\itemsep}{-2mm}
+\item Strona tytułowa.
+\item Spis treści.
+\item Wstęp umiejscawiający podjętą tematykę z~celem i~zakresem pracy oraz jej układem.
+\item Rozdział(y) ,,teoretyczny/-e'', wprowadzający/-e w~podjętą w~pracy tematykę, opisujący/-e wykorzystane narzędzia (preliminaria matematyczne, formalizmy, metodologie, systemy).
+\item Rozdział opisujący w~sposób ogólny ideę/sposób/metodę rozwiązania postawionego problemu.
+\item Rozdział szczegółowo opisujący zrealizowane rozwiązanie/eksperyment.
+\item Rozdział zawierający wyniki przeprowadzonych testów/badań/eksperymentów wraz z~ich opracowaniem i~analizą.
+\item Zakończenie zawierające podsumowanie i~wnioski. Ewentualnie wskazanie sposobu kontynuowania pracy.
+\item Spis cytowanej w~pracy literatury.
+\item Spis tabel.
+\item Spis rysunków.
+\item Dodatki.
+\end{enumerate}
+Więcej informacji o~zawartości poszczególnych elementów pracy można znaleźć w~komentarzach zawartych w~kolejnych rozdziałach niniejszego poradnika.
+
+
+\section{Formatowanie}
+
+\begin{enumerate}
+
+% \addtolength{\itemsep}{0pt}
+
+\item Zasadniczo, nie należy nadużywać w~tekście różnego kroju pisma w~celu wyróżnienia jego fragmentów. Jednakże czasami \emph{można} coś podkreślić poleceniem \texttt{\textbackslash emph\{\}}\footnote{W takiej roli lepiej nie używać polecenia \texttt{\textbackslash textit\{\}}, gdyż użyte w~tekście złożonym czcionką pochyłą nie przyniesie zamierzonego efektu.} czy \textbf{może} nawet poleceniem \texttt{\textbackslash textbf\{\}}. Do zapisania \texttt{nazw} programów może przydać się jeszcze polecenie \texttt{\textbackslash texttt\{\}} czy też \texttt{\textbackslash verb}. \textsc{Jednakże} \texttt{stosowanie} \textit{zbyt} \textup{wielu} \textsl{wyróżnień} \textbf{\emph{zdecydowanie}} \textnormal{zmniejszy} \textsf{czytelność} \textbf{wprowadzanego} \textrm{w ten} \textmd{sposób} tekstu. Podobnie samowolne różnicowanie wielkości czcionki (od {\tiny\texttt{\textbackslash tiny}}, poprzez {\scriptsize\texttt{\textbackslash scriptsize}}, {\footnotesize\texttt{\textbackslash footnotesize}}, {\small\texttt{\textbackslash small}}, {\normalsize\texttt{\textbackslash normalsize}}, {\large\texttt{\textbackslash large}}, {\Large\texttt{\textbackslash Large}}, {\LARGE\texttt{\textbackslash LARGE}}, {\huge\texttt{\textbackslash huge}}, aż po {\Huge\texttt{\textbackslash Huge})} jest zabronione.
+
+\item W~\LaTeX{}u podział na akapity wskazuje się wstawiając w~pliku źródłowym puste linie. Stąd należy uważać, by nie pojawiły się w~nim puste linie po/wokół wzorów/rysunków/tabel, gdy nie mamy do czynienia z~nowym akapitem\footnote{Oto przykład. I~tak to równianie
+\begin{equation}
+  x^2+y^2=z^2
+\end{equation}
+nie jest ostatnim elementem akapitu, więc w~pliku źródłowym tekst wpisany jest bezpośrednio po nim, co powoduje, że następująca po równaniu linia złożona jest bez wcięcia akapitowego; zaś równanie umieszczone poniżej jest
+\begin{equation}
+  x^2+y^2=z^2.
+\end{equation}
+
+A~tu zaczyna się akapit kolejny, więc w~pliku źródłowym poprzedza go pusta linia, przez co w~efekcie właśnie składany fragment tekstu zaczyna się od wcięcia akapitowego.}.
+
+\item W~przypadku zaistnienia potrzeby wyliczania zestawu elementów należy
+stosować otoczenie \verb+\begin{itemize}...\end{itemize}+. W~tekście
+objawi się ono jako
+\begin{itemize}
+\item element pierwszy,
+\item element drugi,
+\item oraz kolejny.
+\end{itemize}
+Jeśli wymagane jest ponumerowanie kolejnych pozycji, wówczas w~sukurs
+przychodzi otoczenie
+\verb+\begin{enumerate}...\end{enumerate}+, które daje
+\begin{enumerate}
+\item element pierwszy\footnote{Tu pozycje ,,numerowane'' zostały
+  literami ze względu na zagnieżdżenie otoczeń
+  \texttt{i\-te\-mi\-ze/e\-nu\-me\-ra\-te} -- styl numerowania dobierany jest
+  automatycznie, zależnie od poziomu zagnieżdżenia. By go zmienić
+  można posłużyć się pakietem \texttt{enumitem}. Do tak numerowanych elementów odwołujemy się wykorzystując standardowy mechanizm odsyłaczy \texttt{\textbackslash label\{\}-\textbackslash ref\{\}} (zilustrowany w~rozdziale~\ref{odsylacze}).},
+\item element drugi,
+\item oraz kolejny.
+\end{enumerate}
+Do opisu elementów należy użyć przy pracy z~\LaTeX{}em dostępnego
+w~nim otoczenia \verb+\begin{description}...\end{description}+:
+\begin{description}
+\item[twierdzenie] --- rzecz o~zasadniczym znaczeniu, które pojawia
+  się zawsze wtedy, gdy istnieje potrzeba wypowiedzenia\ldots
+\item[lemat] --- twierdzenie pomocnicze, które\ldots
+\item [definicja] --- a~to przyjmujemy na wiarę.
+\end{description}
+
+Przy zagnieżdżeniu tych środowisk dostaniemy przykładowo:
+\begin{itemize}
+\item element pierwszy,
+  \begin{itemize}
+  \item element pierwszy,
+  \item element drugi,
+  \end{itemize}
+\item element drugi,
+  \begin{enumerate}
+  \item element pierwszy,
+  \item element drugi,
+  \end{enumerate}
+\item oraz kolejny
+  \begin{description}
+    \item[rzecz ważna] --- wiadomo co i
+    \item[takie tam] --- już nie tak ważne.
+  \end{description}
+\end{itemize}
+Należy tu jednak zachować umiar i~zdrowy rozsądek.
+
+\item \textbf{Środowiska do wyróżnień} Otoczenie \verb+quote+ nadaje się do składania dłuższych cytatów oraz przykładów. I~tak, jeżeli chodzi o~dlugość wierszy to regułą
+kciuka jest, że:
+\begin{quote}
+Przeciętnie wiersz nie powinien zawierać więcej niż 66 znaków.
+Dlatego w~{\LaTeX}u standardowe strony mają szerokie marginesy.
+\end{quote}
+Dlatego też w~gazetach stosuje się druk wielołamowy. 
+
+Istnieją ponadto dwa otoczenia o podobnym zastosowaniu:
+\verb+quotation+ i~\verb+verse+. Przy wyróżnieniach dłuższych niż
+jeden akapit należy zastosować środowisko \verb+quotation+, zaś
+\verb+verse+ zapewne w~opracowywanych tu dokumentach nie znajdzie
+zastosowania \smiley
+
+Do wyróżnień można też definiować własne środowiska korzystając z~polecenia
+\verb+\newtheorem+ (w preambule dokumentu). W~tym dokumencie dla
+przykładu utworzono dwa takie środowiska: \verb+uwaga+ oraz
+\verb+twr+, które objawiają się jak poniżej i~pozwalają na odwoływanie
+się do nich poprzez odsyłacze \texttt{\textbackslash label\{\}-\textbackslash ref\{\}}. 
+
+\begin{uwaga}
+  Samo wykorzystanie systemu składu tekstu \LaTeX{} nie zapewni
+  profesjonalnego wyglądu składanego dokumentu.
+\end{uwaga}
+
+\begin{twr}
+  Jednakże odrobina wysiłku i~przestrzeganie podstawowych reguł
+  pozwoli na uzyskanie takiego efektu.
+\end{twr}
+
+\end{enumerate}
+
+\section{Pomniejsze}
+
+\begin{enumerate}
+%  \setlength{\itemsep}{0pt}
+
+\item Podczas składu tekstu należy zadbać, by w~\LaTeX{}u były włączone polskie wzorce przenoszenia wyrazów (\emph{ang. hyphenation})\footnote{Jeśli nie są one włączone, w~pliku dziennika (rozszerzenie \texttt{.log}) pojawi się wpis w~rodzaju \texttt{No hyphenation patterns were loaded for the language `Polish'}. Jak je włączyć można poczytać np. tutaj \cite{hyphen_on}.}. Jeśli jakiś wyraz nie jest dzielony przez \LaTeX{}a poprawnie, można zadać jego podział zaznaczając wszystkie możliwe miejsca jego podziału sekwencją \verb+\-+, np.\ wpisując go z~zaznaczeniem dozwolonych miejsc podziału, jak tu \verb+za\-z\-na\-cza\-jąc+\footnote{Można to zrobić w~miejscu wystąpienia wyrazu lub w~preambule dokumentu używając polecenia \texttt{\textbackslash hyphenation\{za\textbackslash-z\textbackslash-na\textbackslash-cza\textbackslash-jąc\}}.}.  By zabronić dzielenia danego wyrazu wystarczy dodać sekwencję \verb+\-+ na jego początku (\verb+\-tutaj+). 
+  
+\item Odróżniamy myślnik\footnote{zwany też pauzą} (---) od półpauzy (--), łącznika\footnote{zwanego też dywizem} (-) i~znaku minusa ($-$) -- to cztery odmiennie wyglądające poziome znaki \cite{myslniki_pwn,myslniki_wiki}! By zapewnić prawidłowe łamanie tekstu na łącznikach (np. w~wyrazie biało\dywiz czerwony) dajemy w~miejsce dywiza ,,-'' polecenie \verb|\dywiz| (np. tak: \verb|biało\dywiz czerwony|, co pozwoli przenieść zapisane z~dywizem słowo biało\dywiz czerwony ooooo~tak: biało\dywiz czerwony, czyli zgodnie z~zasadami polskiej pisowni). Jeśli kogoś razi długość myślnika, dopuszcza się użycie w~jego miejsce półpauzy (--- $\rightarrow$ --)\footnote{co uczyniono w~tym dokumencie}.
+
+\item W~przypadku odmiany obcych nazwisk i~im podobnych czasami istnieje potrzeba użycia kasownika\footnote{oznaczanego znakiem apostrofu '} -- stosujemy go, gdy ostania litera odmienianego wyrazu jest niema\footnote{w podstawowej formie wyrazu nie wymawiamy jej}, np. formalizm Lagrange'a\footnote{czytaj ,,lagranża''}, pamięć w~iPhone'ach, epicki szpagat Jeana Claude’a van Damme’a, żona Kennedy’ego (ale formalizm Newtona, dzieła Charlesa\footnote{bo Charles /czarls/, ale rondo Charles’a de Gaulle’a, bo Charles /szarl/ i Gaulle /gol/ -- wszystko zależy od tego, czy ostatnią literę formy podstawowej wymawiamy, czy nie} Dickensa, program o Kennedym).
+  
+\item Do oznaczenia cytowań i~elementów im podobnych używamy stosowanego w~polskim piśmiennictwie cudzysłowu apostrofowego, złożonego z~dwóch znaków: otwierającego -- zapisywanego w~\LaTeX{}u przy użyciu dwóch przecinków~(\verb+,,+) i~zamykającego -- w~\LaTeX{}u dwa apostrofy (\verb+''+), co daje ,,taki efekt'', \cite{cudzyslow_pwn,cudzyslow_wiki}. W~przypadku potrzeby umieszczenia cudzysłowu wewnątrz cudzysłowu używamy cudzysłowu ostrokątnego: otwierającego (w~\LaTeX{}u dwa znaki większości~\verb+>>+) i~zamykającego (\verb+<<+), co daje ,,taki \guillemotright{}oto\guillemotleft{} efekt''\footnote{Uzyskane w~ten sposób znaki nazywane są szewronami a~użycie ich w~sposób jak tu (ostrza skierowane do środka) daje tak zwany cudzysłów niemiecki (w odróżnieniu od cudzysłowu francuskiego, w~niektórych źródłach, w~tym w~kultowym ,,Nie za krótkim wprowadzeniu\ldots'' \cite{lshort2e}, błędnie zalecanego do zastosowania w~takiej jak tu roli -- obowiązują zasady podane w~Słowniku Języka Polskiego \cite{cudzyslow_pwn} a~tam, gdy występuje cudzysłów w~cudzysłowie zalecane jest używanie ,,cudzysłowu o~ostrzach skierowanych do środka''). Więcej na temat ,,cudzysłologii'' wie pakiet \texttt{csquotes} \cite{csquotes} a~chcący wiedzieć więcej na temat ,,{\LaTeX} a~sprawa cudzysłowu'' mogą zajrzeć do \cite{cudzyslow_overleaf} (Uwaga! Zalecane tam użycie cudzysłowu francuskiego jako wewnętrznego dotyczy dokumentów anglojęzycznych).}\footnote{Niestety z~nieznanej przyczyny w~przypadku Antykwy Toruńskiej takie wywołanie (zdefiniowane w~pakiecie \texttt{polski}) nie daje poprawnych szewronów \frownie{} co powoduje, że musimy je przywoływać standardowymi poleceniami \texttt{\textbackslash guillemotright} i~\texttt{\textbackslash guillemotleft}\setcounter{footnote}{1}\footnotemark{} (dla kompletności: podstawowe, polskie znaki cudzysłowów  przypisane do dwuznaków \texttt{,{},} i~\texttt{\'{}\'} produkują polecenia \texttt{\textbackslash quotedblbase} i~\texttt{\textbackslash textquotedblright}).}\footnotetext{Ciekawe, że uzyskiwane za pomocą tych poleceń znaki graficzne po francusku (skąd się wywodzą) nazywają się \emph{guillemet}, co oczywiście oznacza cudzysłów -- użyte zaś w~nazwach tych poleceń słowo \emph{guillemot} to po francusku\ldots nurnik \smiley{} W~sensie taki ptaszek \smiley\footnotemark{} Czyżby nawet twórcy {\LaTeX}a nie byli doskonali?}\footnotetext{To jeszcze jedna ciekawostka-skojarzenie. Ornitologiczne. Swego czasu okoliczni studenci znaki typograficzne których nazw nie znali zaczęli nazywać ogólnym pojęciem ,,ćwirbelek'', które zapewne niejednemu z~nas kojarzy się po prostu z~wróbelkiem. Ot po prostu to takie różne ,,ptaszki'' -- ,,ćwirbelki''. Czyżby twórcy {\LaTeX}a poszli tym samym tropem przy nadawaniu nazw poleceniom \texttt{\textbackslash guillemotright} i~\texttt{\textbackslash guillemotleft}? I~jak będzie po francusku ,,ćwirbelek''\footnotemark? Albo chociażby po angielsku?  Wiesz? Masz pomysł? Pisz śmiało na \texttt{mucha@pwr.edu.pl}.}\footnotetext{Wiadomo: ,,Quidquid Latine dictum sit, altum videtur'' \smiley}.
+  
+\item Wielokropek uzyskujemy poleceniem \texttt{\textbackslash ldots}.
+
+\item Dobrze jest zadbać by po jednoliterowych spójnikach, przyimkach i~im podobnych umieszczana była twarda spacja, oznaczana w~\LaTeX{}u znakiem tyldy (np.\ ,,\verb+i~podobnych+'') -- zapobiegnie to pojawianiu się w~tekście tak zwanych sierot. Tak samo połączone z~poprzedzającym słowem powinny być numery rozdziałów, rysunków itp.\ (przykładowe odwołanie do rozdziału powinno mieć postać ,,\verb+jak wskazano w~rozdziale~\ref{ch_02:ruch}+'', co wyprodukuje tekst: jak wskazano w~rozdziale~\ref{ch_02:ruch})\footnote{Po odpowiednim skonfigurowaniu edytor emacs potrafi dodawać większość tak wymaganych twardych spacji w~sposób automatyczny w~trakcie wpisywania tekstu (przykład w~pliku \texttt{emacs\_config} pod nazwą ,,Magic space'').}.
+
+\item Nie przy każdym ustawieniu czcionek cyfry w~tekście (1234567890) są takie same jak w~,,matematyce'' ($1234567890$) -- jeśli te tu przy wybranej konfiguracji czcionek się nie różnią, to nie ma problemu, inaczej uważać.
+
+\item Podobnie może być z~interpunkcją -- zobacz czy zobaczysz tutaj to samo: tekst .,;!?, matematyka $.,;!?$. Bo powinieneś \smiley
+
+\end{enumerate}
+
+
+\section{Pomocne}
+
+\LaTeX{} pozwala na wykorzystanie wielu pakietów/opcji pomocnych na etapie opracowywania dokumentu. Poniżej kilka słów o~wybranych. \vspace{-4.5mm}
+
+\paragraph{Opcja \texttt{draft}} Na etapie opracowywania dokumentu w~poleceniu \texttt{\textbackslash documentclass} warto dodać opcję \texttt{draft}\footnote{Opcje dodajemy w~nawiasach kwadratowych.}, która, co najważniejsze, powoduje, że wszystkie miejsca, w~których składany materiał wystaje na margines zostają oznaczone za pomocą pionowych prostokątów umieszczonych na marginesie\footnote{Fakt wystawania składanych elementów na margines odnotowywany jest standardowo w~pliku pomocnicznym z~rozszerzeniem \texttt{.log}\footnotemark{} przez umieszczenie w~nim ostrzeżenia \texttt{Overfull \textbackslash{}hbox (x.xxxpt too wide) in paragraph at lines y--z}, jednakże takie ich graficzne oznaczenie znacznie ułatwia proces ich usuwania.}\footnotetext{W pliku tym rejestrowany jest cały przebieg kompilacji dokumentu.}. Opcja ta powoduje też, że w~tekście w~miejsce plików zewnętrznych pojawią się ramki pokazujące wielkość zajmowanego przez nie miejsca i zawierające nazwę plików w~miejsce ich zawartości (mniejszy plik wynikowy, szybsza kompilacja), nieaktywne są odwołania dodawane przez pakiet \texttt{hyperref} i~inne pomniejsze \cite{draft_option}.\vspace{-4.5mm}
+
+\paragraph{Pakiet \texttt{showkeys}} Użycie pakietu \texttt{showkeys} spowoduje podanie w~dokumencie wynikowym przy wszystkich etykietach, odwołaniach użytych do ich oznaczenia kluczy\footnote{Odkomentuj w~pliku głównym \texttt{main.tex} tego dokumentu linię \texttt{\textbackslash usepackage\{showkeys\}} by zobaczyć ten efekt \smiley}.\vspace{-4.5mm}
+
+\paragraph{Pakiet \texttt{todonotes}} Do robienia w~tekście notatek edytorskich może służyć polecenie \texttt{\textbackslash todo}\todo{tak to wygląda wówczas}{} z~pakietu \texttt{todonotes}. Warto korzystać z~tego mechanizmu do zapisywania wszystkich uwag, pomysłów, braków dotyczących tekstu, do uwzględnienia\footnote{lub nie ;P} później. Po zrealizowaniu zapisanych rzeczy w~notce można ją wyłączyć dodając opcję \texttt{done}\footnote{Niedostępne w~starszych wersjach pakietu.}. By wyłączyć wszystkie notki w~dokumencie do pakietu \texttt{todonotes} należy dodać opcję \texttt{disable}.
+
+Alternatywnie zamiast notki na marginesie można użyć notatki w~tekście dodając do polecenia \texttt{\textbackslash todo} opcję \texttt{inline}, co da \todo[inline]{Inline wygląda tak, że można tu napisać trochę więcej rzeczy i~można, i~można, i~można, i~to się nawet dobrze łamie ale psuje się łam akapitu \frownie{}  Co nie zawsze w~sumie musi stanowić problem.} taki wygląd jak zobaczyliśmy właśnie.
+
+Dodatkowo, by wpisać informacje o~brakujących rysunkach można zastosować polecenie \texttt{\textbackslash missingfigure} używając go wewnątrz otoczenia \texttt{figure},
+\begin{figure}[tp]
+  \missingfigure{Dodać rysunek, który zilustruje całość.}
+  \caption{Bardzo ważna ilustracja}
+  \label{fig:tc}
+\end{figure}
+co da efekt jak ten tutaj (zobacz rysunek~\ref{fig:tc}). Na wytworzenie listy rzeczy do zrobienia pozwala polecenie
+\texttt{\textbackslash listoftodos}, które dodano na końcu tego dokumentu (zajrzyj na jego ostatnią stronę:).\vspace{-4.5mm}
+
+\paragraph{Plik pomocniczy \texttt{.log}} W~trakcie kompilowania tekstu wszystkie komunikaty o~podejmowanych przez kompilator czynnościach umieszczane są w~pomocniczym pliku dziennika z~rozszerzeniem \texttt{.log}. Tamże umieszczane są komunikaty o~błę\-dach/o\-strze\-że\-nia. Stąd warto zajrzeć do tego pliku by stwierdzić, czy w~opracowywanym tekście nie pojawiły się jakieś wady, które powinniśmy z~niego usunąć\footnote{I tak pewnie ,,Twój'' plik \texttt{main.log} zawiera wpis \texttt{LaTeX Font Warning: Some font shapes were not available, defaults substituted.} \smiley}.
+
+\section{Lista kontrolna -- etapy edycji pracy}
+\label{sec:listakontrolna}
+
+W~podrozdziale zebrano listę czynności, które należy wykonać, by pliki źródłowe dostarczonego tu przykładu przekształcić w~pliki źródłowe swojej własnej pracy dyplomowej. Kolejność wykonywania poszczególnych kroków nie jest krytyczna, należy jedynie zadbać by je wszystkie zrealizować.
+
+\begin{enumerate}
+
+\item W~pliku \texttt{main.tex} w~części oznaczonej komentarzem ,,\texttt{Tytularia}'' w~instrukcjach \texttt{\textbackslash author}, \texttt{\textbackslash title} itd. podaj dane swojej pracy (nie zapomnij o~zmianie argumentów znajdującej się też tamże instrukcji \texttt{\textbackslash hypersetup}). 
+  
+\item W~pliku \texttt{main.tex} w~części oznaczonej komentarzem ,,\texttt{Część właściwa do\-ku\-men\-tu}'' w~poleceniach \texttt{\textbackslash include} podaj nazwy plików, które będą zawierały kolejne rozdziały pracy\footnote{Zasadniczo w~tym miejscu mógłby pojawić się bezpośrednio tekst pracy dyplomowej, ale umieszczanie wszystkiego w~jednym pliku przy pracach tego rozmiaru nie jest wygodnym rozwiązaniem, choć podzielenie całości na kilka plików w~przypadku niektórych środowisk (takich jak Overleaf) może wymagać osobnego ,,zdefiniowania'' struktury projektu (przynajmniej wskazania ,,pliku nadrzędnego'').}. By kompilacja przebiegała prawidłowo wskazane pliki muszą istnieć.
+
+\item W~pliku \texttt{main.tex} w~części oznaczonej komentarzem ,,\texttt{Wybór kroju pisma}'' dokonaj... wyboru kroju pisma (zestawu czcionek) którym zostanie złożona Twoja praca. W~tym przykładzie dokument jest składany Antykwą Toruńską dla tekstu i~czcionką AMS Euler dla wyrażeń matematycznych. By przywrócić domyślny krój pisma (zazwyczaj Computer Modern) wystarczy zakomentować polecenia \texttt{\textbackslash usepackage\{anttor\}}, \texttt{\textbackslash usepackage\{eulervm\}}. Do składu tekstu po angielsku zaleca się użycie czcionki Computer Concrete (pakiet \texttt{beton}, który automatycznie włączy czcionkę matematyczną Concrete Math, jednakże warto zauważyć, że czcionka Computer Concrete dobrze komponuje się z~matematyczną czcionką AMS Euler (pakiet \texttt{eulervm}))\footnote{Wszystkie te czcionki możesz zobaczyć na stronie \cite{czcionki_szer}. W~razie potrzeby tu jest lista wszystkich latechowych czcionek \cite{czcionki}, a~tu informacja o~ich konfigurowaniu \cite{czcionki_sel} (aczkolwiek sprawa nie jest prosta:).}.
+
+\item W~pliku \texttt{main.tex} w~części oznaczonej komentarzem ,,\texttt{Pakietologia}'' w~zależności od potrzeb możesz modyfikować wykorzystywane w~pracy pakiety i~ich opcje.
+
+\item W~pliku \texttt{main.tex} w~częściach oznaczonych komentarzem ,,\texttt{Często używane polecenia}'' oraz ,,\texttt{Definicje symboli matematycznych}'' możesz dodawać dowolnie własne nowe polecenia i~symbole.
+
+\item W~pliku \texttt{main.tex} w~części oznaczonej komentarzem ,,\texttt{Ścieżki do rysunków}'' możesz podać listę katalogów zawierających zamieszczane w~pracy grafiki. 
+  
+\item Na początku pliku \texttt{main.tex} podano kilka przykładów definicji parametrów klasy \texttt{mgr} -- wybierz właściwy lub dodaj swój własny zależnie od potrzeb.
+
+\item W~pliku \texttt{main.tex} w~części oznaczonej komentarzem ,,\texttt{Wybór strony kodowej}'' możesz ewentualnie zmienić wykorzystywaną stronę kodową na inną niż UTF8, a~w~części ,,\texttt{Geometria strony}'' rozmiary i~położenie zadrukowywanej części strony,  tylko po co \smiley
+  
+\item No a~teraz nie pozostaje już nic innego tylko pisać, pisać i~pisać \smiley{} I~nie zapomnieć o~ortografii, interpunkcji i~składni. W~kwestii ortografii sprawa jest o~tyle prosta, że obecnie praktycznie wszystkie edytory pozwalają na jej sprawdzanie zarówno w~locie\footnote{przykładowo w~emacsie tryb \texttt{flyspell-mode}} jak i~wsadowo\footnote{w~emacsie polecenie \texttt{ispell-buffer}}. By uniknąć mozolnego wypatrywania ,,podkreślonych na czerwono'', błędnie zapisanych wyrazów i~ich ,,ręcznego'' poprawiania, co zazwyczaj prowadzi do przeoczenia pewnej liczby z~nich, polecamy szczególnie tę drugą metodę. Gorzej z~interpunkcją i~składnią. W~sprawie pierwszej z~wymienionych można wspomóc się radami Rady Języka Polskiego \cite{interpunkcja} i~na pewno warto pamiętać, że znaki interpunkcyjne praktycznie zawsze piszemy łącznie z~poprzedzającymi je wyrazami. A~co ze składnią? No cóż, tu możemy jedynie napisać, że\ldots składnia, jaka jest, każdy widzi -- i~każdy ma taką składnię, na jaką zasłużył. Czy tam zapracował \smiley
+
+\item W~trakcie pisania warto pamiętać o~bieżącym uzupełnianiu i~cytowaniu literatury. Pozostawienie tego zadania na koniec pracy prowadzi zazwyczaj do katastrofy -- w~pracy pojawiają się dwa odwołania na krzyż, często przypadkowe, bo ,,coś musi być''. W~tym przykładzie do składu bibliografii używamy systemu \BibTeX{}. Plikiem źródłowym jest plik \verb+bibliografia.bib+\footnote{Wiele edytorów kontekstowych, jak na przykład emacs, po wczytaniu do nich pliku z~rozszerzeniem \texttt{.bib} udostępnia pozycję menu w~rodzaju \texttt{Entry-Types}, która dostarcza listę rodzajów możliwych wpisów, co znacząco ułatwia pracę. Jest też tamże pozycja \texttt{BibTeX-Edit} ułatwiająca obróbkę plików \BibTeX{}a.} z~którego \BibTeX{} produkuje dołączany do pracy plik \verb+main.bbl+, który zawiera tylko te pozycje z~pliku \verb+bibliografia.bib+, które zostały w~pracy zacytowane. W~załączonym pliku \verb+bibliografia.bib+ zebrano praktycznie wszystkie rodzaje pozycji literatury jakie mogą pojawić się w~typowej pracy dyplomowej\footnote{Znajdziesz tam przykłady formatowania odwołań do książek, rozdziałów książek, artykułów w~czasopismach, referatów konferencyjnych, raportów, pozycji nieopublikowanych, prac dyplomowych, odnośników do oprogramowania czy materiałów internetowych, w~tym do Wikipedii \smiley{} I~to ze znanym autorem wpisu, czy nie znanym, ze znanym rokiem publikacji, czy też nie.}, co powinno w~typowych sytuacjach wystarczyć za wzór; w~razie potrzeby odsyłamy do~\cite{bibtex_entries}. W~celu uzyskania bibliografii w~dokumencie, po jego skompilowaniu należy użyć polecenia \texttt{bibtex nazwa\_dokumentu\_bez\_rozszerzenia} i~ponownie skompilować całość (dwukrotnie:).
+
+W~tym przykładzie użyto stylu bibliografii o~nazwie \verb+alpha+\footnote{W polskiej wersji zdefiniowany jest on w~dostępnym w~internecie pliku \texttt{plalpha.bst}, jednakże ze względu na znajdujące się w~nim błędy tutaj korzystamy z~jego poprawionej wersji umieszczonej w~pliku \texttt{alphapl.bst}.}\footnote{Niestety \BibTeX{} nie radzi sobie dobrze z~sortowaniem pozycji, których akronimy zawierają znaki diakrytyczne\footnotemark{} -- jak próbować temu zaradzić można zobaczyć w~umieszczonych w~pliku \texttt{bibliografia.bib} pozycjach opatrzonych etykietami \texttt{goral} i~\texttt{programy\_przeglad}.}\footnotetext{Poprawną obsługę narodowych znaków diakrytycznych, także zapisanych z~wykorzystaniem kodowania UTF8 zapewnia wspomniany w~punkcie~\ref{spis_literatury} podrozdziału~\ref{narzedzia} pakiet Bib\LaTeX.}, \cite{bibtex_alpha}. Stanowi on alternatywę/uzupełnienie powszechnie zalecanych jako ,,najbardziej czytelne'', tak zwanych ,,stylów nawiasowych''\footnote{W których to, jak np. w~przypisach harwardzkich~\cite{harwardzkie}, w~taki czy inny sposób w~tekście, w~miejscu cytowania podaje się odsyłacze w~postaci nazwiska autorów cytowanej pracy wraz z~rokiem publikacji. W~stylu \texttt{alpha} w~miejsce pełnych nazwisk jako odsyłacze używane są ich fragmenty w~przypadku pozycji jednoautorskich lub akronimy utworzone z~pierwszych liter nazwisk autorów w~pracach wieloautorskich, również uzupełnione rokiem publikacji.}, które obeznanemu czytelnikowi znacząco ułatwiają czytanie pracy i~kojarzenie odwołań do literatury, co jest utrudnione w~przypadku stosowania tak zwanych ,,stylów numerowanych''\footnote{takich jak np. system vancouverski~\cite{vancouverskie}}.  Zainteresowanych tematem odsyłamy do~\cite{literaturaa, literaturab}. Styl bibliografii można zmienić modyfikując argument polecenia \verb+\bibliographystyle+. 
+  
+\item A~po napisaniu całości warto zadbać o~ostateczny sznyt pracy. System \LaTeX{} robi naprawdę dobrą robotę w~zakresie formatowania dokumentów tekstowych, ale nie jest w~stanie zrobić wszystkiego. I~tak warto sprawdzić, czy w~pracy nie ma: 
+  \begin{itemize}
+  \item linii/rysunków, które wystają na margines\footnote{Co jest niedopuszczalne!}. W~ich lokalizacji może pomóc opcja \verb+draft+ dodana w~poleceniu \texttt{\textbackslash documentclass}\footnote{Na początku dostarczonego pliku \texttt{main.tex} znajdziesz przykład.}, która powoduje oznaczenie w~dokumencie wynikowym takich wystających elementów. By je usunąć można ,,zmusić'' \LaTeX{}a do lokalnej zmiany łamu tekstu (np. podając sposób dzielenia wyrazu (\verb+\-+), zalecając przejście do nowej linii (\verb+\linebreak+\footnote{nie mylić z~\texttt{\textbackslash newline}})), a~gdy to nie przynosi efektu, po prostu\ldots przeredagowując nieco tekst\footnote{Jasne, forma nie może brać góry nad treścią, ale ,,drobne'' zmiany nie przynoszące uszczerbku treści zazwyczaj są możliwe do wprowadzenia \smiley} -- w~przypadku rysunków trzeba je po prostu zmniejszyć;
+
+  \item stron, na których pojawiają się ,,duże'' odstępy akapitowe, pojedyncze linie tekstu na końcu rozdziału, rażąco ,,nieestetyczny'' łam. Tutaj panaceum może być ,,nieduża'' modyfikacja odstępów w~występujących wcześniej w~rozdziale wypunktowaniach (np. \verb+\addtolength{\itemsep}{-1mm}+, \verb+\selength{\itemsep}{0mm}+ ), drobna zmiana wielkości znajdujących się w~nim rysunków, zmiana sposobu ich pozycjonowania\footnote{opcje \texttt{htbp!} czy też nawet \texttt{H} z~pakietem \texttt{float}}, dopisanie ,,trochę'' tekstu\footnote{Odważniejsi mogą spróbować coś z~pracy ,,usunąć'' \smiley}, można też w~ostateczności próbować zmieniać ,,globalne'' ustawienia \LaTeX{}a w~rodzaju maksymalnej liczby i~maksymalnego obszaru zajmowanego na stronie przez obiekty pływające\footnote{Co ustawiamy w~preambule dokumentu i~co zrobiono w~tym przykładzie: zobacz preambułę pliku \texttt{main.tex} w~części opatrzonej komentarzem ,,\texttt{ustawienie maksymalnej liczby i obszaru dla obiektów pływających}''.}, jednakże trzeba zważyć że te zmiany będą wpływały na wygląd całego dokumentu -- w~przypadku potrzeby ,,poprawienia'' formatowania spisu treści czy literatury możemy próbować modyfikować wielkość odstępów pomiędzy ich elementami\footnote{Przykłady w~preambule pliku \texttt{main.tex} z~komentarzem ,,\texttt{modyfikacja odstępów między pozycjami w spisie treści}'' i ,,\texttt{modyfikacja odstępów między pozycjami w bibliografii}''.};
+    
+  \item tudzież innych bękartów, sierot\footnote{o których tutaj była już mowa}, wdów czy szewców, ale o~tym więcej w~\cite{sklad};
+
+  \item ,,niedoskonałości'' odnotowanych w~pliku \texttt{main.log} -- tu warto poszukać komunikatów zawierających słowa \verb+overfull+, \verb+underfull+, \verb+font warning+, \verb+float too large+\footnote{W tym przykładzie celowo jeden z~rysunków zdefiniowano tak, że wystaje na margines -- spróbuj go znaleźć i~zmienić tak, by ,,przestał to robić'' (możesz przy okazji ,,przetestować'' opcję \texttt{draft} o~której pisaliśmy wcześniej).}.
+    
+  \end{itemize}
+  
+\end{enumerate}
+
+Powodzenia!!!
+
+I~smacznego latechowania \smiley

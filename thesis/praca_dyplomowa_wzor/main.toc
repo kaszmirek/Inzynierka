@@ -1,0 +1,24 @@
+\contentsline {chapter}{Od Autorów}{3}{chapter*.2}%
+\contentsline {section}{\numberline {0.1}Narzędzia}{4}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Układ pracy}{6}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Formatowanie}{7}{section.0.3}%
+\contentsline {section}{\numberline {0.4}Pomniejsze}{9}{section.0.4}%
+\contentsline {section}{\numberline {0.5}Pomocne}{11}{section.0.5}%
+\contentsline {paragraph}{Opcja \texttt {draft}}{11}{section*.3}%
+\contentsline {paragraph}{Pakiet \texttt {showkeys}}{11}{section*.4}%
+\contentsline {paragraph}{Pakiet \texttt {todonotes}}{11}{section*.5}%
+\contentsline {paragraph}{Plik pomocniczy \texttt {.log}}{11}{section*.8}%
+\contentsline {section}{\numberline {0.6}Lista kontrolna -- etapy edycji pracy}{12}{section.0.6}%
+\contentsline {chapter}{\numberline {1}Wstęp}{17}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Preliminaria matematyczne}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Ruch bryły sztywnej}{21}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Formalizm Eulera-Newtona}{23}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Czym jest bąk? I\nobreakspace {}cała reszta}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Bąki swobodne}{26}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Inne sprawy}{29}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Wykresy, schematy, diagramy, czyli sprawa \texttt {Svg}a i\nobreakspace {}Ti{\it k}Za}{29}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Kod źródłowy, pseudokod, czyli trudna sprawa}{30}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Podsumowanie}{33}{chapter.4}%
+\contentsline {chapter}{Literatura}{35}{section*.10}%
+\contentsline {chapter}{Spis rysunk\'ow}{43}{section*.12}%
+\contentsline {chapter}{\numberline {A}Bąkiem malowane}{45}{appendix.A}%

@@ -1,0 +1,17 @@
+Przykład składu pracy dyplomowej z wykorzystaniem systemu LaTeX i klasy mgr (autorstwa Adama Ratajczaka).
+
+Data ostatniej modyfikacji: Zobacz datę ostatniej kompilacji na stronie tytułowej
+                            w pliku praca_dyplomowa_wzor.pdf
+
+Kompilacja (może być potrzeba kilkukrotnego wywołania):
+pdflatex [-shell-escape] main.tex
+bibtex main
+
+Pliki źródłowe kodowane w utf-8 z windowsowymi znakami nowej linii (CRLF)
+Konwersja znaków nowej linii do formatu uniksowgo (zazwyczaj niepotrzebna):
+dos2unix plik_we plik_wy
+lub:
+tr -d '\r' < plik_we > plik_wy
+
+Więcej: czytaj praca_dyplomowa_wzor.pdf
+
