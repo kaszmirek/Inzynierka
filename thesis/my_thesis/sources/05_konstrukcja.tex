@@ -2,11 +2,11 @@
 
 \label{konstrukcja}
 
-Tutaj powinien być opis części mechanicznej, schematy elektroniczne,
-opis protokołu komunikacji wraz z opisem implementacji (w protokole)
-listy poleceń.
-Opis funkcjonalności, które będą oferowane przez aplikację
-oraz sposob przetwarzania danych pomiarowych i ich reprezentacji.
+% Tutaj powinien być opis części mechanicznej, schematy elektroniczne,
+% opis protokołu komunikacji wraz z opisem implementacji (w protokole)
+% listy poleceń.
+% Opis funkcjonalności, które będą oferowane przez aplikację
+% oraz sposob przetwarzania danych pomiarowych i ich reprezentacji.
 
 \section{Komunikacja}
 
@@ -130,13 +130,17 @@ następnie podawany jest numer komendy na którą sonar odpowiada, status wykona
 
 \section{Elektronika}
 Projekt bazuje na autorskiej płytce z obwodem drukowanym, który został zaprojektowany przy pomocy 
-otwartoźródłowego narzędzia do projektowania elektroniki ,,KiCad" \cite{kicad}.
+otwartoźródłowego narzędzia do projektowania elektroniki ,,KiCad" \cite{kicad}. 
+Całe urządzenie składa się z płytki deweloperskiej oraz zaprojektowanego na cele pracy dyplomowej 
+PCB\footnote[1]{Printed Circuit Board ang. Płytka obwodu drukowanego}, które
+jest podłączone do Nucleo w formie ,,shieldu"\todo{pokazać jak wygląda shield} poprzez listwy kołkowe.
+Całą elektronikę można podzielić na kilka bloków, które spełniają określone fukcje, 
+jest to międzyinnymi sekcja zasilania, część nadawcza, część odbiorcza, zestaw filtrów sygnału przychodzącego oraz komparatory progujące sygnał.
+\todo{wstawić diagram funkcjonalny}
 
 \subsection{Zasilanie}
 Całe urządzenie zasilane jest z portu USB komputera, które jednocześnie służy do komunikacji. 
-Przewód jest podłączony bezpośrednio do płytki deweloperskiej Nucleo, 
-a zaprojektowane na cele pracy dyplomowej PCB\footnote[1]{Printed Circuit Board ang. Płytka obwodu drukowanego}, 
-jest podłączone do Nucleo w formie ,,shieldu"\todo{pokazać jak wygląda shield} poprzez listwy kołkowe. 
+Przewód jest podłączony bezpośrednio do płytki deweloperskiej Nucleo, gdyż posiada ona już wbudowane złącze. 
 Mimo, że płytka deweloperska posiada wyprowadzenia zarówno 5V jak i 3.3V, które potrzebowałem, 
 postanowiłem zaimplementować układ stabilizacji w celu lepszej izolacji zasilania układów analogowych od cyfrowych co powinno przełożyć się na mniejsze zakłócenia.
 \begin{figure}[ht!]
@@ -146,20 +150,75 @@ postanowiłem zaimplementować układ stabilizacji w celu lepszej izolacji zasil
     \label{fig:ldo}
 \end{figure}
 
-
-\subsection{Część nadawcza}
-
+\subsection{Nadajnik}
+Rolę nadajnika pełni przetwornik piezoelektryczny o średnicy 16mm i częstotliwości rezonansowej 40 \si{kHz}, która to jest poza spektrum słyszalnych częstotliwości.
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width = \textwidth]{piezo.png}
-    \caption{Wzmacniacz sygnału nadajnika piezoelektrycznego}
+    \includegraphics[width = 0.3\textwidth]{piezo.jpeg}
+    \caption{Nadajnik piezoelektryczny}
     \label{fig:piezo}
 \end{figure}
 
-\subsection{Część odbiorcza}
+\subsection{Wzmacniacz nadajnika}
+W celu uzyskania mocnego sygnału ultradźwiękowego z przetwornika piezoelektrycznego zaprojektowano układ wzmacniający z transformatorem. 
+Synał nadający częstotliwość wysyłany jest z mikroprocesora, następnie jest wzmacniany parą tranzystorów, razem tworzących układ Darlingtona, 
+który zapewnia duże wzmocnienie prądowe sygnału i zachowuje krótkie czasy przełączania charakterystyczne dla tranzystorów bipolarnych.
+
+Transformator w tym układzie służy do podniesienia napięcia które trafia na przetwornik, docelowo jest to nawet szczytowo 80 Voltów co sprawia, 
+że sygnał jest bardzo mocny.
+
+Układ posiada również zabezpieczenie przed zbyt długim czasem otwarcia tranzystora, sygnał jest przepuszczany przez kondensator, 
+co sprawia, że tylko szybkozmienne przebiegi są w stanie dotrzeć na bazę klucza. 
+Zbyt długa ekspozycja transformatora na przepływ prądu mogłaby go narazić na przegrzanie.
+
+Ze względu na indukcyjny charakter uzwojeń transformatora podczas szybkiej zmiany generowanego pola magnetycznego następuje 
+konwersja tej energii do postaci prądu zwrotnego wyindukowanego na tej cewce, aby uchronić się przed niepożądanym działaniem tego zjawiska, 
+równolegle z uzwojeniem pierwotnym sprzężona jest dioda Schottkiego, która pozwala zniwelować ten prąd.
+
+Dodatkowo jako element ułatwiajacy pracę nad urządzeniem, dodany został LED, który emituje światło w trakcie przepływu prądu przez transformator.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width = 0.7\textwidth]{piezo_amp.png}
+    \caption{Wzmacniacz sygnału nadajnika piezoelektrycznego}
+    \label{fig:piezo_amp}
+\end{figure}
+
+\subsection{Filtry sygnału audio}
+
+Rolę odbiorników będą pełnić trzy dookólne mikrofony MEMS, które cechują się względnie liniową charakterystyką przenoszenia pasma. 
+Dlatego też konieczne będzie zastosowanie dla każdego z nich zestawu filtrów pasmowych, które przepuszczą nam tylko i wyłącznie częstotliwości bliskie częstotliwości 
+sygnału jaki generuje przetwornik piezoelektryczny, a zablokują wszytskie nieporządane. 
+Pojedynczy stopień filtra, dawałby na wyjściu zbyt niski zakres poziomu napięć, 
+z tego powodu sygnał przechodzi przez 3 stopnie wzmacniaczy operacyjnych. Takie rozwiązanie zarówno filtruje sygnał i wzmacnia go.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = \textwidth]{filter.png}
+    \caption{Zestaw filtrów dla sygnału z mikrofonów}
+    \label{fig:filter}
 \end{figure}
 
+\todo{opisać obszernie wybór wzmacniaczy operacyjnych}
+
+Zazwyczaj układy analogowe oparte o wzmacniacze operacyjne zasilane są napięciem symetrycznym a sygnał przemienny oscyluje wokół masy. 
+W tym projekcie 
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{op_point.png}
+    \caption{Wzmacniacz prądowy napięcia odniesienia}
+\end{figure}
+
+
+
 \subsection{Symulacja części odbiorczej}
+\begin{figure}[ht!]
+    \centering
+    \missingfigure{screen z symulacji}
+\end{figure}
+
+\subsection{Progowanie sygnału}
+\begin{figure}[ht!]
+    \centering
+    \missingfigure{progowanie sygnału}
+\end{figure}
+
+
