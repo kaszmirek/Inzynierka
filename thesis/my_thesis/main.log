@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.16)  29 NOV 2022 21:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.16)  6 DEC 2022 01:09
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -158,45 +158,56 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \extratabsurround=\skip49
 \backup@length=\skip50
 \ar@cellbox=\box59
-)) (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
+)) (/usr/share/texmf-dist/tex/latex/units/units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip51
+\L@UnitsRaiseTextstyle=\skip52
+\L@UnitsRaiseScriptstyle=\skip53
+)
+LaTeX Info: Redefining \unit on input line 41.
+) (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip51
-\cftbeforetoctitleskip=\skip52
-\cftaftertoctitleskip=\skip53
-\cftbeforepartskip=\skip54
-\cftpartnumwidth=\skip55
-\cftpartindent=\skip56
-\cftbeforechapskip=\skip57
-\cftchapindent=\skip58
-\cftchapnumwidth=\skip59
-\cftbeforesecskip=\skip60
-\cftsecindent=\skip61
-\cftsecnumwidth=\skip62
-\cftbeforesubsecskip=\skip63
-\cftsubsecindent=\skip64
-\cftsubsecnumwidth=\skip65
-\cftbeforesubsubsecskip=\skip66
-\cftsubsubsecindent=\skip67
-\cftsubsubsecnumwidth=\skip68
-\cftbeforeparaskip=\skip69
-\cftparaindent=\skip70
-\cftparanumwidth=\skip71
-\cftbeforesubparaskip=\skip72
-\cftsubparaindent=\skip73
-\cftsubparanumwidth=\skip74
-\cftbeforeloftitleskip=\skip75
-\cftafterloftitleskip=\skip76
-\cftbeforefigskip=\skip77
-\cftfigindent=\skip78
-\cftfignumwidth=\skip79
+\cftparskip=\skip54
+\cftbeforetoctitleskip=\skip55
+\cftaftertoctitleskip=\skip56
+\cftbeforepartskip=\skip57
+\cftpartnumwidth=\skip58
+\cftpartindent=\skip59
+\cftbeforechapskip=\skip60
+\cftchapindent=\skip61
+\cftchapnumwidth=\skip62
+\cftbeforesecskip=\skip63
+\cftsecindent=\skip64
+\cftsecnumwidth=\skip65
+\cftbeforesubsecskip=\skip66
+\cftsubsecindent=\skip67
+\cftsubsecnumwidth=\skip68
+\cftbeforesubsubsecskip=\skip69
+\cftsubsubsecindent=\skip70
+\cftsubsubsecnumwidth=\skip71
+\cftbeforeparaskip=\skip72
+\cftparaindent=\skip73
+\cftparanumwidth=\skip74
+\cftbeforesubparaskip=\skip75
+\cftsubparaindent=\skip76
+\cftsubparanumwidth=\skip77
+\cftbeforeloftitleskip=\skip78
+\cftafterloftitleskip=\skip79
+\cftbeforefigskip=\skip80
+\cftfigindent=\skip81
+\cftfignumwidth=\skip82
 \c@lofdepth=\count276
 \c@lotdepth=\count277
-\cftbeforelottitleskip=\skip80
-\cftafterlottitleskip=\skip81
-\cftbeforetabskip=\skip82
-\cfttabindent=\skip83
-\cfttabnumwidth=\skip84
+\cftbeforelottitleskip=\skip83
+\cftafterlottitleskip=\skip84
+\cftbeforetabskip=\skip85
+\cfttabindent=\skip86
+\cfttabnumwidth=\skip87
 ) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
@@ -262,16 +273,16 @@ Package caption Info: Unknown document class (or package),
 Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionskip \sbox \@tempboxa {#1~~#2}\ifdim \wd \@tempboxa >\hsize #1~~#2\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempboxa \hfil }\fi \vskip \belowcaptionskip  on input line 1176.
 )
 \c@KVtest=\count280
-\sf@farskip=\skip85
+\sf@farskip=\skip88
 \sf@captopadj=\dimen179
-\sf@capskip=\skip86
-\sf@nearskip=\skip87
+\sf@capskip=\skip89
+\sf@nearskip=\skip90
 \c@subfigure=\count281
 \c@subfigure@save=\count282
 \c@subtable=\count283
 \c@subtable@save=\count284
-\sf@top=\skip88
-\sf@bottom=\skip89
+\sf@top=\skip91
+\sf@bottom=\skip92
 ) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks23
 \pgfutil@tempdima=\dimen180
@@ -478,8 +489,8 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \tikztiming@numint=\count307
 \tikztiming@numfrac=\count308
-\tikztiming@xunit=\skip90
-\tikztiming@yunit=\skip91
+\tikztiming@xunit=\skip93
+\tikztiming@yunit=\skip94
 \tikztiming@debug=\count309
 \c@tikztiming@nrows=\count310
 \c@tikztimingrows=\count311
@@ -561,7 +572,8 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 ) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
 \c@pgfplotstable@counta=\count319
 \t@pgfplotstable@a=\toks40
-) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count320
  (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
 \pgfplots@numplots=\count321
@@ -583,17 +595,17 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count323
 \calc@Adimen=\dimen302
 \calc@Bdimen=\dimen303
-\calc@Askip=\skip92
-\calc@Bskip=\skip93
+\calc@Askip=\skip95
+\calc@Bskip=\skip96
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count324
-\calc@Cskip=\skip94
+\calc@Cskip=\skip97
 ) (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 ) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
-\@mathmargin=\skip95
+\@mathmargin=\skip98
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -634,15 +646,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \totwidth@=\dimen310
 \lineht@=\dimen311
 \@envbody=\toks43
-\multlinegap=\skip96
-\multlinetaggap=\skip97
+\multlinegap=\skip99
+\multlinetaggap=\skip100
 \mathdisplay@stack=\toks44
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
 )
 \g_MT_multlinerow_int=\count337
 \l_MT_multwidth_dim=\dimen312
-\origjot=\skip98
+\origjot=\skip101
 \l_MT_shortvdotswithinadjustabove_dim=\dimen313
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen314
 \l_MT_above_intertext_sep=\dimen315
@@ -751,14 +763,12 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip99
+\Hy@SectionHShift=\skip102
 ) (/usr/share/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2021/12/24 v2.6 Yet another Pygments shim for LaTeX
  (/usr/share/texmf-dist/tex/latex/fvextra/fvextra.sty
 Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
- (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
-) (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+ (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2022/04/12 4.2 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count348
 \FV@InFile=\read3
@@ -789,7 +799,7 @@ LaTeX Info: Redefining \\ on input line 3056.
 \c@FV@TrueTabGroupLevel=\count358
 \c@FV@TrueTabCounter=\count359
 \FV@TabBox@Group=\box102
-\FV@TmpLength=\skip100
+\FV@TmpLength=\skip103
 \c@FV@HighlightLinesStart=\count360
 \c@FV@HighlightLinesStop=\count361
 \FV@LoopCount=\count362
@@ -827,7 +837,7 @@ runsystem(rm -- "main.w18")...executed.
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 ) (/usr/share/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip101
+\OuterFrameSep=\skip104
 \fb@frw=\dimen335
 \fb@frh=\dimen336
 \FrameRule=\dimen337
@@ -851,49 +861,38 @@ Package: todonotes 2021/06/04 v1.1.5 Todonotes source and documentation.
 Package: todonotes 2021/06/04
 \c@@todonotes@numberoftodonotes=\count376
 )
-Package hyperref Info: Option `unicode' set `true' on input line 240.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 240.
-Package hyperref Info: Option `colorlinks' set `true' on input line 240.
-Package hyperref Info: Option `breaklinks' set `true' on input line 240.
+Package hyperref Info: Option `unicode' set `true' on input line 241.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 241.
+Package hyperref Info: Option `colorlinks' set `true' on input line 241.
+Package hyperref Info: Option `breaklinks' set `true' on input line 241.
 \c@uwaga=\count377
 \c@twr=\count378
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 293.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 294.
 runsystem(which pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
 
- (./main.aux (./sources/00_Wstep.aux) (./sources/01_cel_i_zalozenia.aux) (./sources/02_przeglad_czujnikow.aux) (./sources/03_analaiza_problemu.aux
-
-LaTeX Warning: Label `fig:uml' multiply defined.
-
-) (./sources/04_specyfikacja.aux) (./sources/05_konstrukcja.aux) (./sources/06_realizacja.aux) (./sources/07_testy.aux
-
-LaTeX Warning: Label `fig:oscylo_piezo' multiply defined.
-
-
-LaTeX Warning: Label `fig:oscylo_piezo' multiply defined.
-
-) (./sources/08_wnioski.aux) (./sources/09_dodatek_datasheety.aux))
+ (./main.aux (./sources/00_Wstep.aux) (./sources/01_cel_i_zalozenia.aux) (./sources/02_przeglad_czujnikow.aux) (./sources/03_analaiza_problemu.aux) (./sources/04_specyfikacja.aux) (./sources/05_konstrukcja.aux) (./sources/06_realizacja.aux) (./sources/07_testy.aux) (./sources/08_wnioski.aux) (./sources/09_dodatek_datasheety.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -950,14 +949,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) (/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 293.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 294.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.5).
 
-Package hyperref Info: Link coloring ON on input line 293.
+Package hyperref Info: Link coloring ON on input line 294.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -967,53 +966,53 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count385
 )
-LaTeX Info: Redefining \ref on input line 293.
-LaTeX Info: Redefining \pageref on input line 293.
-LaTeX Info: Redefining \nameref on input line 293.
+LaTeX Info: Redefining \ref on input line 294.
+LaTeX Info: Redefining \pageref on input line 294.
+LaTeX Info: Redefining \nameref on input line 294.
  (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
 \@temphbadness=\count386
 \@tempvbadness=\count387
-\@temphfuzz=\skip102
-\@temptextwidth=\skip103
-\@temptextheight=\skip104
-\@temptopmargin=\skip105
-\@tempheadheight=\skip106
-\@tempheadsep=\skip107
-\@tempoddsidemargin=\skip108
-\@tempevensidemargin=\skip109
-LaTeX Font Info:    Trying to load font information for OT1+antt on input line 298.
+\@temphfuzz=\skip105
+\@temptextwidth=\skip106
+\@temptextheight=\skip107
+\@temptopmargin=\skip108
+\@tempheadheight=\skip109
+\@tempheadsep=\skip110
+\@tempoddsidemargin=\skip111
+\@tempevensidemargin=\skip112
+LaTeX Font Info:    Trying to load font information for OT1+antt on input line 299.
  (/usr/share/texmf-dist/tex/latex/antt/ot1antt.fd
 File: ot1antt.fd 2005/10/05 v1.2 font definition file for OT1/antt (MW)
 )
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 298.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 299.
  (/usr/share/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 298.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 299.
  (/usr/share/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 298.
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 299.
  (/usr/share/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 298.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 299.
  (/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-\@tempheightkier=\skip110
-\@tempheighttkier=\skip111
-\@tempheightspec=\skip112
-\@tempheighttspec=\skip113
+\@tempheightkier=\skip113
+\@tempheighttkier=\skip114
+\@tempheightspec=\skip115
+\@tempheighttspec=\skip116
  [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./sources/copyleft.tex
-<figures/CC-BY-SA_icon_svg.png, id=163, 1027.84pt x 362.35374pt>
+<figures/CC-BY-SA_icon_svg.png, id=171, 1027.84pt x 362.35374pt>
 File: figures/CC-BY-SA_icon_svg.png Graphic file (type png)
 <use figures/CC-BY-SA_icon_svg.png>
 Package pdftex.def Info: figures/CC-BY-SA_icon_svg.png  used on input line 8.
@@ -1028,14 +1027,14 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.305 \cleardoublepage
+l.306 \cleardoublepage
                        [1 <./figures/CC-BY-SA_icon_svg.png>] (./main.toc
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family antt in TS1 encoding.
-(textcomp)             Default family used instead on input line 16.
+(textcomp)             Default family used instead on input line 15.
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family antt in TS1 encoding.
-(textcomp)             Default family used instead on input line 17.
+(textcomp)             Default family used instead on input line 16.
  [2
 
 
@@ -1059,17 +1058,6 @@ Rozdzia\PlPrIeC {\l } 1.
 
  (./sources/01_cel_i_zalozenia.tex
 Rozdzia\PlPrIeC {\l } 2.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 41.
-
-Overfull \hbox (8.50197pt too wide) in paragraph at lines 41--41
-[][][]\T1/antt/m/n/10 przeredagowa¢ 
- []
-
-
-Overfull \hbox (8.50197pt too wide) in paragraph at lines 41--41
-[][][]\T1/antt/m/n/10 przeredagowa¢ 
- []
-
 ) [5
 
 
@@ -1081,42 +1069,60 @@ Overfull \hbox (8.50197pt too wide) in paragraph at lines 41--41
 
  (./sources/02_przeglad_czujnikow.tex
 Rozdzia\PlPrIeC {\l } 3.
+<./figures/chapter_02//mic_response.png, id=238, 578.16pt x 359.84438pt>
+File: ./figures/chapter_02//mic_response.png Graphic file (type png)
+<use ./figures/chapter_02//mic_response.png>
+Package pdftex.def Info: ./figures/chapter_02//mic_response.png  used on input line 17.
+(pdftex.def)             Requested size: 227.62204pt x 141.6675pt.
+LaTeX Font Info:    Trying to load font information for TS1+antt on input line 23.
+(/usr/share/texmf-dist/tex/latex/antt/ts1antt.fd
+File: ts1antt.fd 2005/10/05 v1.2 font definition file for TS1/antt (MW)
 ) [6
 
 
 
 
 
-]
+ <./figures/chapter_02//mic_response.png (PNG copy)>]
+<./figures/chapter_02//mic.png, id=256, 355.3275pt x 170.88844pt>
+File: ./figures/chapter_02//mic.png Graphic file (type png)
+<use ./figures/chapter_02//mic.png>
+Package pdftex.def Info: ./figures/chapter_02//mic.png  used on input line 36.
+(pdftex.def)             Requested size: 227.62204pt x 109.47252pt.
+<./figures/chapter_02//ECHOONE.png, id=258, 995.72pt x 1027.84pt>
+File: ./figures/chapter_02//ECHOONE.png Graphic file (type png)
+<use ./figures/chapter_02//ECHOONE.png>
+Package pdftex.def Info: ./figures/chapter_02//ECHOONE.png  used on input line 53.
+(pdftex.def)             Requested size: 136.5746pt x 140.97948pt.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 58.
+) [7 <./figures/chapter_02//mic.png (PNG copy)> <./figures/chapter_02//ECHOONE.png>]
 \openout2 = `sources/03_analaiza_problemu.aux'.
 
  (./sources/03_analaiza_problemu.tex
 Rozdzia\PlPrIeC {\l } 4.
-LaTeX Font Info:    Trying to load font information for TS1+antt on input line 18.
-(/usr/share/texmf-dist/tex/latex/antt/ts1antt.fd
-File: ts1antt.fd 2005/10/05 v1.2 font definition file for TS1/antt (MW)
-)
-<./figures/chapter_03//sonar_uml.png, id=237, 673.51625pt x 390.45876pt>
+<./figures/chapter_03//sonar_uml.png, id=269, 673.51625pt x 390.45876pt>
 File: ./figures/chapter_03//sonar_uml.png Graphic file (type png)
 <use ./figures/chapter_03//sonar_uml.png>
-Package pdftex.def Info: ./figures/chapter_03//sonar_uml.png  used on input line 32.
+Package pdftex.def Info: ./figures/chapter_03//sonar_uml.png  used on input line 33.
 (pdftex.def)             Requested size: 364.19664pt x 211.13652pt.
-File: ./figures/chapter_03//sonar_uml.png Graphic file (type png)
-<use ./figures/chapter_03//sonar_uml.png>
-Package pdftex.def Info: ./figures/chapter_03//sonar_uml.png  used on input line 45.
-(pdftex.def)             Requested size: 227.62204pt x 131.9618pt.
-) [7
+[8
 
 
 
 
 
-] [8 <./figures/chapter_03//sonar_uml.png>]
+]
+<./figures/chapter_03//rozmieszczenie_mic.drawio.png, id=275, 372.39125pt x 161.60374pt>
+File: ./figures/chapter_03//rozmieszczenie_mic.drawio.png Graphic file (type png)
+<use ./figures/chapter_03//rozmieszczenie_mic.drawio.png>
+Package pdftex.def Info: ./figures/chapter_03//rozmieszczenie_mic.drawio.png  used on input line 52.
+(pdftex.def)             Requested size: 227.62204pt x 98.7828pt.
+ [9 <./figures/chapter_03//sonar_uml.png> <./figures/chapter_03//rozmieszczenie_mic.drawio.png>]) [10]
 \openout2 = `sources/04_specyfikacja.aux'.
 
  (./sources/04_specyfikacja.tex
 Rozdzia\PlPrIeC {\l } 5.
-) [9
+) [11
 
 
 
@@ -1137,7 +1143,7 @@ File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family antt in TS1 encoding.
 (textcomp)             Default family used instead on input line 92.
- [10
+ [12
 
 
 
@@ -1145,69 +1151,108 @@ Package textcomp Info: Symbol \textrightarrow not provided by
 
 ]
 
-LaTeX Warning: Marginpar on page 11 moved.
+LaTeX Warning: Marginpar on page 13 moved.
 
-<./figures/chapter_05//LDO.png, id=267, 316.18124pt x 161.85469pt>
+<./figures/chapter_05//LDO.png, id=305, 316.18124pt x 161.85469pt>
 File: ./figures/chapter_05//LDO.png Graphic file (type png)
 <use ./figures/chapter_05//LDO.png>
 Package pdftex.def Info: ./figures/chapter_05//LDO.png  used on input line 148.
 (pdftex.def)             Requested size: 227.62204pt x 116.52292pt.
-<./figures/chapter_05//piezo.jpeg, id=268, 461.725pt x 461.725pt>
+<./figures/chapter_05//piezo.jpeg, id=306, 461.725pt x 461.725pt>
 File: ./figures/chapter_05//piezo.jpeg Graphic file (type jpg)
 <use ./figures/chapter_05//piezo.jpeg>
 Package pdftex.def Info: ./figures/chapter_05//piezo.jpeg  used on input line 157.
 (pdftex.def)             Requested size: 136.5746pt x 136.57405pt.
-[11 <./figures/chapter_05//LDO.png (PNG copy)>]
-<./figures/chapter_05//piezo_amp.png, id=280, 1014.79124pt x 374.14781pt>
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+<./figures/chapter_05//piezo_amp.png, id=307, 1014.79124pt x 374.14781pt>
 File: ./figures/chapter_05//piezo_amp.png Graphic file (type png)
 <use ./figures/chapter_05//piezo_amp.png>
-Package pdftex.def Info: ./figures/chapter_05//piezo_amp.png  used on input line 181.
+Package pdftex.def Info: ./figures/chapter_05//piezo_amp.png  used on input line 179.
 (pdftex.def)             Requested size: 318.66946pt x 117.49179pt.
-<./figures/chapter_05//filter.png, id=281, 971.88094pt x 411.78844pt>
+[13 <./figures/chapter_05//LDO.png (PNG copy)>]
+<./figures/chapter_05//filter.png, id=321, 971.88094pt x 411.78844pt>
 File: ./figures/chapter_05//filter.png Graphic file (type png)
 <use ./figures/chapter_05//filter.png>
-Package pdftex.def Info: ./figures/chapter_05//filter.png  used on input line 195.
+Package pdftex.def Info: ./figures/chapter_05//filter.png  used on input line 193.
 (pdftex.def)             Requested size: 455.24408pt x 192.88712pt.
- [12 <./figures/chapter_05//piezo.jpeg> <./figures/chapter_05//piezo_amp.png (PNG copy)>]
-<./figures/chapter_05//op_point.png, id=289, 493.845pt x 197.23688pt>
+ [14 <./figures/chapter_05//piezo.jpeg> <./figures/chapter_05//piezo_amp.png (PNG copy)>]
+<./figures/chapter_05//op_point.png, id=329, 493.845pt x 197.23688pt>
 File: ./figures/chapter_05//op_point.png Graphic file (type png)
 <use ./figures/chapter_05//op_point.png>
-Package pdftex.def Info: ./figures/chapter_05//op_point.png  used on input line 206.
+Package pdftex.def Info: ./figures/chapter_05//op_point.png  used on input line 208.
 (pdftex.def)             Requested size: 227.62204pt x 90.90761pt.
-) [13 <./figures/chapter_05//filter.png (PNG copy)> <./figures/chapter_05//op_point.png (PNG copy)>] [14]
+ [15 <./figures/chapter_05//filter.png (PNG copy)> <./figures/chapter_05//op_point.png (PNG copy)>]
+<./figures/chapter_05//thereshold.png, id=337, 525.46312pt x 149.8097pt>
+File: ./figures/chapter_05//thereshold.png Graphic file (type png)
+<use ./figures/chapter_05//thereshold.png>
+Package pdftex.def Info: ./figures/chapter_05//thereshold.png  used on input line 223.
+(pdftex.def)             Requested size: 227.62204pt x 64.89465pt.
+<./figures/chapter_05//comparator.png, id=338, 1025.33063pt x 607.51968pt>
+File: ./figures/chapter_05//comparator.png Graphic file (type png)
+<use ./figures/chapter_05//comparator.png>
+Package pdftex.def Info: ./figures/chapter_05//comparator.png  used on input line 230.
+(pdftex.def)             Requested size: 227.62204pt x 134.85983pt.
+<./figures/chapter_05//cube.png, id=339, 598.48593pt x 573.64313pt>
+File: ./figures/chapter_05//cube.png Graphic file (type png)
+<use ./figures/chapter_05//cube.png>
+Package pdftex.def Info: ./figures/chapter_05//cube.png  used on input line 239.
+(pdftex.def)             Requested size: 227.62204pt x 218.17046pt.
+<./figures/chapter_05//cube_clocks.png, id=340, 849.1725pt x 651.18282pt>
+File: ./figures/chapter_05//cube_clocks.png Graphic file (type png)
+<use ./figures/chapter_05//cube_clocks.png>
+Package pdftex.def Info: ./figures/chapter_05//cube_clocks.png  used on input line 246.
+(pdftex.def)             Requested size: 455.24408pt x 349.09975pt.
+) [16 <./figures/chapter_05//thereshold.png (PNG copy)> <./figures/chapter_05//comparator.png (PNG copy)>] [17 <./figures/chapter_05//cube.png (PNG copy)> <./figures/chapter_05//cube_clocks.png (PNG copy)>]
 \openout2 = `sources/06_realizacja.aux'.
 
  (./sources/06_realizacja.tex
 Rozdzia\PlPrIeC {\l } 7.
-) [15
-
-
-
-
-
-]
-\openout2 = `sources/07_testy.aux'.
-
- (./sources/07_testy.tex
-Rozdzia\PlPrIeC {\l } 8.
-[16
-
-
-
-
-
-]) [17]
-\openout2 = `sources/08_wnioski.aux'.
-
- (./sources/08_wnioski.tex
-Rozdzia\PlPrIeC {\l } 9.
+<./figures/chapter_06//jlc.jpg, id=353, 2194.1975pt x 1631.09375pt>
+File: ./figures/chapter_06//jlc.jpg Graphic file (type jpg)
+<use ./figures/chapter_06//jlc.jpg>
+Package pdftex.def Info: ./figures/chapter_06//jlc.jpg  used on input line 13.
+(pdftex.def)             Requested size: 227.62204pt x 169.19171pt.
+<./figures/chapter_06//nadajnik-odbiornik.jpg, id=354, 1528.71124pt x 1555.8125pt>
+File: ./figures/chapter_06//nadajnik-odbiornik.jpg Graphic file (type jpg)
+<use ./figures/chapter_06//nadajnik-odbiornik.jpg>
+Package pdftex.def Info: ./figures/chapter_06//nadajnik-odbiornik.jpg  used on input line 22.
+(pdftex.def)             Requested size: 227.62204pt x 231.65254pt.
+<./figures/chapter_06//shieldnanucleo.jpg, id=355, 2194.1975pt x 1919.17pt>
+File: ./figures/chapter_06//shieldnanucleo.jpg Graphic file (type jpg)
+<use ./figures/chapter_06//shieldnanucleo.jpg>
+Package pdftex.def Info: ./figures/chapter_06//shieldnanucleo.jpg  used on input line 31.
+(pdftex.def)             Requested size: 227.62204pt x 199.07356pt.
 ) [18
 
 
 
 
 
-] (./main.bbl) [19
+ <./figures/chapter_06//jlc.jpg>] [19 <./figures/chapter_06//nadajnik-odbiornik.jpg> <./figures/chapter_06//shieldnanucleo.jpg>]
+\openout2 = `sources/07_testy.aux'.
+
+ (./sources/07_testy.tex
+Rozdzia\PlPrIeC {\l } 8.
+[20
+
+
+
+
+
+]) [21] [22]
+\openout2 = `sources/08_wnioski.aux'.
+
+ (./sources/08_wnioski.tex
+Rozdzia\PlPrIeC {\l } 9.
+) [23
+
+
+
+
+
+] (./main.bbl) [24
 
 
 
@@ -1218,7 +1263,7 @@ Rozdzia\PlPrIeC {\l } 9.
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [20
+ [25
 
 
 
@@ -1231,7 +1276,7 @@ Dodatek A.
 
 
 pdfTeX warning: pdflatex (file ./figures/chapter_09/schemat_plytki.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./figures/chapter_09/schemat_plytki.pdf, id=350, 1195.01572pt x 845.04686pt>
+<./figures/chapter_09/schemat_plytki.pdf, id=432, 1195.01572pt x 845.04686pt>
 File: ./figures/chapter_09/schemat_plytki.pdf Graphic file (type pdf)
 <use ./figures/chapter_09/schemat_plytki.pdf>
 Package pdftex.def Info: ./figures/chapter_09/schemat_plytki.pdf  used on input line 5.
@@ -1239,7 +1284,7 @@ Package pdftex.def Info: ./figures/chapter_09/schemat_plytki.pdf  used on input 
 
 
 pdfTeX warning: pdflatex (file ./figures/chapter_09/schemat_plytki.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./figures/chapter_09/schemat_plytki.pdf, id=352, page=2, 1195.01572pt x 845.04686pt>
+<./figures/chapter_09/schemat_plytki.pdf, id=434, page=2, 1195.01572pt x 845.04686pt>
 File: ./figures/chapter_09/schemat_plytki.pdf Graphic file (type pdf)
 <use ./figures/chapter_09/schemat_plytki.pdf, page 2>
 Package pdftex.def Info: ./figures/chapter_09/schemat_plytki.pdf , page2 used on input line 9.
@@ -1247,49 +1292,46 @@ Package pdftex.def Info: ./figures/chapter_09/schemat_plytki.pdf , page2 used on
 
 
 pdfTeX warning: pdflatex (file ./figures/chapter_09/schemat_plytki.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./figures/chapter_09/schemat_plytki.pdf, id=354, page=5, 1195.01572pt x 845.04686pt>
+<./figures/chapter_09/schemat_plytki.pdf, id=436, page=5, 1195.01572pt x 845.04686pt>
 File: ./figures/chapter_09/schemat_plytki.pdf Graphic file (type pdf)
 <use ./figures/chapter_09/schemat_plytki.pdf, page 5>
 Package pdftex.def Info: ./figures/chapter_09/schemat_plytki.pdf , page5 used on input line 13.
 (pdftex.def)             Requested size: 455.24408pt x 212.04659pt.
-<./figures/chapter_09/board_render.png, id=356, 482.55281pt x 568.37344pt>
+<./figures/chapter_09/board_render.png, id=438, 482.55281pt x 568.37344pt>
 File: ./figures/chapter_09/board_render.png Graphic file (type png)
 <use ./figures/chapter_09/board_render.png>
 Package pdftex.def Info: ./figures/chapter_09/board_render.png  used on input line 17.
 (pdftex.def)             Requested size: 455.24408pt x 536.22246pt.
-) [21
+) [26
 
 
 
-] [22 <./figures/chapter_09/schemat_plytki.pdf> <./figures/chapter_09/schemat_plytki.pdf> <./figures/chapter_09/schemat_plytki.pdf>] [23 <./figures/chapter_09/board_render.png (PNG copy)>] (./main.tdo)
+] [27 <./figures/chapter_09/schemat_plytki.pdf> <./figures/chapter_09/schemat_plytki.pdf> <./figures/chapter_09/schemat_plytki.pdf>] [28 <./figures/chapter_09/board_render.png (PNG copy)>] (./main.tdo)
 \tf@tdo=\write9
 \openout9 = `main.tdo'.
 
- [24
+ [29
 
 
 
 
 ] (./main.aux (./sources/00_Wstep.aux) (./sources/01_cel_i_zalozenia.aux) (./sources/02_przeglad_czujnikow.aux) (./sources/03_analaiza_problemu.aux) (./sources/04_specyfikacja.aux) (./sources/05_konstrukcja.aux) (./sources/06_realizacja.aux) (./sources/07_testy.aux) (./sources/08_wnioski.aux) (./sources/09_dodatek_datasheety.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A85E72ADEF5943B5336AE542D24CD603;6322.
+(rerunfilecheck)             Checksum: A73CC80F2745F3986C960E5B996F482F;6865.
  ) 
 Here is how much of TeX's memory you used:
- 45226 strings out of 478238
- 1065808 string characters out of 5850455
- 1516426 words of memory out of 5000000
- 62530 multiletter control sequences out of 15000+600000
- 580553 words of font info for 99 fonts, out of 8000000 for 9000
+ 45471 strings out of 478238
+ 1072042 string characters out of 5850455
+ 1522673 words of memory out of 5000000
+ 62720 multiletter control sequences out of 15000+600000
+ 584426 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,117p,804b,1085s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/antt/antt-qx.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/antt-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/antt-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/anttcap-ec.enc}</usr/share/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texmf-dist/fonts/type1/public/antt/anttb.pfb></usr/share/texmf-dist/fonts/type1/public/antt/anttr.pfb></usr/share/texmf-dist/fonts/type1/public/antt/anttri.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
-Output written on main.pdf (25 pages, 789295 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/antt-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/antt-qx.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/antt-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/antt/anttcap-ec.enc}</usr/share/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texmf-dist/fonts/type1/public/antt/anttb.pfb></usr/share/texmf-dist/fonts/type1/public/antt/anttr.pfb></usr/share/texmf-dist/fonts/type1/public/antt/anttri.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
+Output written on main.pdf (30 pages, 3459540 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 403 compressed objects within 5 object streams
- 92 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 572 PDF objects out of 1000 (max. 8388607)
+ 479 compressed objects within 5 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 453 words of extra memory for PDF output out of 10000 (max. 10000000)
 

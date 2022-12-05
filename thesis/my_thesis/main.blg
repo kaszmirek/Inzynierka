@@ -13,44 +13,44 @@ A level-1 auxiliary file: sources/08_wnioski.aux
 The style file: alphapl.bst
 A level-1 auxiliary file: sources/09_dodatek_datasheety.aux
 Database file #1: sources/bibliografia.bib
-You've used 1 entry,
+You've used 3 entries,
             2626 wiz_defined-function locations,
-            598 strings with 4990 characters,
-and the built_in function-call counts, 235 in all, are:
-= -- 21
-> -- 1
-< -- 0
-+ -- 0
-- -- 0
-* -- 11
-:= -- 34
-add.period$ -- 2
-call.type$ -- 1
-change.case$ -- 5
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 10
-empty$ -- 28
-format.name$ -- 0
-if$ -- 52
+            605 strings with 5309 characters,
+and the built_in function-call counts, 705 in all, are:
+= -- 67
+> -- 10
+< -- 1
++ -- 2
+- -- 2
+* -- 30
+:= -- 97
+add.period$ -- 7
+call.type$ -- 3
+change.case$ -- 15
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 31
+empty$ -- 80
+format.name$ -- 4
+if$ -- 158
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 8
-num.names$ -- 0
-pop$ -- 9
+newline$ -- 17
+num.names$ -- 3
+pop$ -- 28
 preamble$ -- 2
-purify$ -- 6
+purify$ -- 18
 quote$ -- 0
-skip$ -- 11
+skip$ -- 33
 stack$ -- 0
-substring$ -- 7
-swap$ -- 1
-text.length$ -- 0
-text.prefix$ -- 1
+substring$ -- 21
+swap$ -- 3
+text.length$ -- 1
+text.prefix$ -- 3
 top$ -- 0
-type$ -- 8
+type$ -- 24
 warning$ -- 0
-while$ -- 0
-width$ -- 2
-write$ -- 12
+while$ -- 2
+width$ -- 4
+write$ -- 32

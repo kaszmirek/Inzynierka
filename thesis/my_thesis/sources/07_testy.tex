@@ -1,12 +1,18 @@
 \chapter[Testy i eksperymenty]{Testy i eksperymenty}
 
-\label{testy}
+\label{chapter:testy}
 
 Opis zrealizowanych eksperymentów, które demonstrują
 najważniejsze cechy urządzenia i czujnika.
 
 \section{Test przetwornika piezoelektrycznego}
-
+Pierwszym testem był test przetwornika, który jest nadajnikiem sygnału. Zasilono go bezpośrednio z generatora wbudowanego w oscyloskop, 
+parametry zadane to sygnał sinusoidalny o napięciu \unit[5]{V} ,,peak to peak" czyli wartości szczytowej.
+Elementem odbiorczym był inny przetwornik piezoelektryczny służący tylko do testów, został on umieszczony w odległości \unit[10]{cm} od nadajnika. 
+Jego częstotliwość rezonansowa również wynosiła \unit[40]{kHz}.
+Po podłączeniu sondy oscyloskopu do odbiornika ukazał się bardzo wyraźny sygnał w kształcie sinusoidy ustawionej na nadajniku.
+Dźwięki otoczenia miały bardzo znikomy wpływ na zakłócenia, stanowiąc niewielki procent amplitudy. 
+Zmiana częstotliwości o chociażby \unit[1]{kHz} wiązała się kilkudziesięciokrotnym spadkiem mocy sygnału, co potwierdzało dane z noty katalogowej elementu piezoelektrycznego.
 \begin{figure}[!ht]
     \centering
     \missingfigure{screen z oscylo z przebiegiem sygnału z piezo}
@@ -22,21 +28,22 @@ Z identycznym stanowiskiem pomiarowym co sekcję wyżej sprawdzono wpływ odleg�
     \centering
     \missingfigure{screen z oscylo z przebiegiem sygnału z piezo}
     \caption{Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym, wpływ na odległość}
-    \label{fig:oscylo_2piezo}
+    \label{fig:oscylo_piezo2}
 \end{figure}
 
-\section{Pierwsze uruchomeinie}
-Pierwsze uruchomienie elektroniki ujawniło drobny błąd projektowy, wszystkie LEDY sygnalizacyjne zostały przylutowane w złej polaryzacji.
-Szybka zmiana ustawień diod i następne uruchomienie, nie pokazywało oznak większych błędów. Pobór prądu\todo{podać ile prądu ciągnie}, jak i temperatura elementów na 
-płytce była w normie.
+\section{Pierwsze uruchomienie}
+PCB z przylutowanymi elementami zostało podłączone do zasilacza laboratoryjnego dostarczającego \unit[5]{V} i ograniczeniem prądowym ustawionym na \unit[100]{mA}. 
+Pierwsze uruchomienie sterownika\todo{???} sonaru ujawniło drobny błąd projektowy, wszystkie diody elektroluminoescencyjne zostały przylutowane w złej polaryzacji.
+Szybka zmiana ustawień diod i następne uruchomienie, nie pokazywało oznak większych błędów. Pobór prądu wyniósł\todo{podać ile prądu ciągnie}, a temperatura elementów na 
+płytce nie odstawała od temperatury pokojowej.
 
 \section{Uruchomienie i test wzmacniacza sygnału przetwornika piezoelektrycznego}
 
 \begin{figure}[!ht]
     \centering
     \missingfigure{screen z oscylo z przebiegiem sygnału z piezo}
-    \caption{Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}
-    \label{fig:oscylo_piezo}
+    \caption{Nadajnik sterowany przez wzmacniacz}
+    \label{fig:oscylo_piezo3}
 \end{figure}
 
 \section{Test mikrofonów i filtrów}
@@ -46,6 +53,6 @@ płytce była w normie.
     \centering
     \missingfigure{screen z oscylo z przebiegiem sygnału z piezo}
     \caption{Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}
-    \label{fig:oscylo_piezo}
+    \label{fig:oscylo_piezo4}
 \end{figure}
 

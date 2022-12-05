@@ -1,6 +1,6 @@
 \chapter[Projekt konstrukcji sonaru oraz protokoły komunikacji]{Projekt konstrukcji sonaru oraz protokoły komunikacji}
 
-\label{konstrukcja}
+\label{chapter:konstrukcja}
 
 % Tutaj powinien być opis części mechanicznej, schematy elektroniczne,
 % opis protokołu komunikacji wraz z opisem implementacji (w protokole)
@@ -18,7 +18,7 @@ co pozwala na skomunikowanie mikrokontrolera z komputerem bez dodatkowego sprzę
 
 \subsection{Komputer \textrightarrow{} sonar}
 Użytkownik systemu może wysłać z komputera instrukcję do wywołania całej sekwencji działania urządzenia. 
-Ramka danych zaczyna się znakiem specjalnym ułatwiającym rozpoznanie wiadomości, 
+Ramka danych zaczyna się znakiem, który nie będzie nigdy występował  ułatwiającym rozpoznanie wiadomości, 
 następnie musi zostać podany numer komendy informujący sonar jaką czynność powienien wykonać, 
 parametry określające warunki tej czynności, a na koniec suma kontrolna wiadomości.
 
@@ -128,11 +128,11 @@ następnie podawany jest numer komendy na którą sonar odpowiada, status wykona
 \todo{zrobić ładniejszą ramkę}
 
 
-\section{Elektronika}
+\section{Konstrukcja układów elektronicznych sonaru}
 Projekt bazuje na autorskiej płytce z obwodem drukowanym, który został zaprojektowany przy pomocy 
 otwartoźródłowego narzędzia do projektowania elektroniki ,,KiCad" \cite{kicad}. 
 Całe urządzenie składa się z płytki deweloperskiej oraz zaprojektowanego na cele pracy dyplomowej 
-PCB\footnote[1]{Printed Circuit Board ang. Płytka obwodu drukowanego}, które
+PCB\footnote[1]{Printed Circuit Board}, które
 jest podłączone do Nucleo w formie ,,shieldu"\todo{pokazać jak wygląda shield} poprzez listwy kołkowe.
 Całą elektronikę można podzielić na kilka bloków, które spełniają określone fukcje, 
 jest to międzyinnymi sekcja zasilania, część nadawcza, część odbiorcza, zestaw filtrów sygnału przychodzącego oraz komparatory progujące sygnał.
@@ -141,8 +141,8 @@ jest to międzyinnymi sekcja zasilania, część nadawcza, część odbiorcza, z
 \subsection{Zasilanie}
 Całe urządzenie zasilane jest z portu USB komputera, które jednocześnie służy do komunikacji. 
 Przewód jest podłączony bezpośrednio do płytki deweloperskiej Nucleo, gdyż posiada ona już wbudowane złącze. 
-Mimo, że płytka deweloperska posiada wyprowadzenia zarówno 5V jak i 3.3V, które potrzebowałem, 
-postanowiłem zaimplementować układ stabilizacji w celu lepszej izolacji zasilania układów analogowych od cyfrowych co powinno przełożyć się na mniejsze zakłócenia.
+Mimo, że płytka deweloperska posiada wyprowadzenia zarówno \unit[5]{V} jak i \unit[3,3]{V}, 
+postanowiłem zaimplementować układ stabilizatora liniowego obniżajcego napięcie do \unit[3,3]{V} w celu lepszej izolacji zasilania układów analogowych od cyfrowych co powinno przełożyć się na mniejsze zakłócenia.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = 0.5\textwidth]{LDO.png}
@@ -151,30 +151,28 @@ postanowiłem zaimplementować układ stabilizacji w celu lepszej izolacji zasil
 \end{figure}
 
 \subsection{Nadajnik}
-Rolę nadajnika pełni przetwornik piezoelektryczny o średnicy 16mm i częstotliwości rezonansowej 40 \si{kHz}, która to jest poza spektrum słyszalnych częstotliwości.
+Rolę nadajnika pełni przetwornik piezoelektryczny o średnicy \unit[16]{mm} i częstotliwości rezonansowej \unit[40]{kHz},\todo{dodać model przetwornika} która to jest poza spektrum słyszalnych częstotliwości.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = 0.3\textwidth]{piezo.jpeg}
     \caption{Nadajnik piezoelektryczny}
     \label{fig:piezo}
 \end{figure}
+\todo{dodać źródło}
 
 \subsection{Wzmacniacz nadajnika}
 W celu uzyskania mocnego sygnału ultradźwiękowego z przetwornika piezoelektrycznego zaprojektowano układ wzmacniający z transformatorem. 
 Synał nadający częstotliwość wysyłany jest z mikroprocesora, następnie jest wzmacniany parą tranzystorów, razem tworzących układ Darlingtona, 
 który zapewnia duże wzmocnienie prądowe sygnału i zachowuje krótkie czasy przełączania charakterystyczne dla tranzystorów bipolarnych.
-
-Transformator w tym układzie służy do podniesienia napięcia które trafia na przetwornik, docelowo jest to nawet szczytowo 80 Voltów co sprawia, 
+Transformator w tym układzie służy do podniesienia napięcia które trafia na przetwornik, docelowo jest to nawet szczytowo \unit[80]{V} co sprawia, 
 że sygnał jest bardzo mocny.
-
+\todo{akapity}
 Układ posiada również zabezpieczenie przed zbyt długim czasem otwarcia tranzystora, sygnał jest przepuszczany przez kondensator, 
 co sprawia, że tylko szybkozmienne przebiegi są w stanie dotrzeć na bazę klucza. 
 Zbyt długa ekspozycja transformatora na przepływ prądu mogłaby go narazić na przegrzanie.
-
 Ze względu na indukcyjny charakter uzwojeń transformatora podczas szybkiej zmiany generowanego pola magnetycznego następuje 
 konwersja tej energii do postaci prądu zwrotnego wyindukowanego na tej cewce, aby uchronić się przed niepożądanym działaniem tego zjawiska, 
 równolegle z uzwojeniem pierwotnym sprzężona jest dioda Schottkiego, która pozwala zniwelować ten prąd.
-
 Dodatkowo jako element ułatwiajacy pracę nad urządzeniem, dodany został LED, który emituje światło w trakcie przepływu prądu przez transformator.
 \begin{figure}[ht!]
     \centering
@@ -199,26 +197,56 @@ z tego powodu sygnał przechodzi przez 3 stopnie wzmacniaczy operacyjnych. Takie
 
 \todo{opisać obszernie wybór wzmacniaczy operacyjnych}
 
-Zazwyczaj układy analogowe oparte o wzmacniacze operacyjne zasilane są napięciem symetrycznym a sygnał przemienny oscyluje wokół masy. 
-W tym projekcie 
+Zazwyczaj układy analogowe oparte o wzmacniacze operacyjne zasilane są napięciem symetrycznym a sygnał przemienny oscyluje wokół potencjału masy. 
+W tym wypadku ze względu na zakres napięciowy wejść mikroprocesora do zasilania wzmacniaczy uperacyjnych 
+zostało użyte pojedyncze napięcie \unit[3,3]{V} zamiast symetrycznego co oznacza, 
+że chcąc uzyskać napięcie odniesienia w połowie zakresu zasilania należy ustalić je na poziomie \unit[1,65]{V}. 
+Tę wartość ustala dzielnik napięcia z dwóch identycznych rezostorów,
+a wzmacniacz operacyjny zwiększa wydajność prądową takiego źródła. 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.5\textwidth]{op_point.png}
     \caption{Wzmacniacz prądowy napięcia odniesienia}
-\end{figure}
-
-
-
-\subsection{Symulacja części odbiorczej}
-\begin{figure}[ht!]
-    \centering
-    \missingfigure{screen z symulacji}
+    \label{fig:op_point}
 \end{figure}
 
 \subsection{Progowanie sygnału}
+Wejścia licznika reagują na zbocza sygnału cyfrowego, co oznacza, że analogowy sygnał z wyjścia filtra musi zostać przetworzony na stany logiczne.
+Dokładna wartość napięcia nie jest potrzebna. Istotne są punkty przecięcia się sinusoidy z osią przebiegu.
+Takie zadanie idealnie spełnia komparator \ref*{fig:comparator}, próg od którego sygnał ma interpretować jako wysoki stan jest podawany w formie 
+napęcia z przetowrnika DAC mikrokontrolera dodatkowo wzmocnionego wzmacniaczem operacyjnym \ref*{fig:thereshold}.
+Pozwala to na reagowanie tylko na falę dźwiękową o wystarczająco dużej amplitudzie, 
+a po wykryciu mocnego sygnału wrócić z powrotem do poziomu napięcia odniesienia sygnału gdzie pomiar jest najdokładniejszy.
+
 \begin{figure}[ht!]
     \centering
-    \missingfigure{progowanie sygnału}
+    \includegraphics[width=0.5\textwidth]{thereshold.png}
+    \caption{Wzmacniacz wartości progowej}
+    \label{fig:thereshold}
 \end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{comparator.png}
+    \caption{Czterokanałowy komparator}
+    \label{fig:comparator}
+\end{figure}
+
+\section{Konfiguracja mikrokontrolera}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{cube.png}
+    \caption{Konfiguracja pinów mikrokontrolera}
+    \label{fig:cube}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\textwidth]{cube_clocks.png}
+    \caption{Konfiguracja zegarów mikrokontrolera}
+    \label{fig:cube_clocks}
+\end{figure}
+
 
 
