@@ -8,19 +8,57 @@
 % Opis funkcjonalności, które będą oferowane przez aplikację
 % oraz sposob przetwarzania danych pomiarowych i ich reprezentacji.
 
+\section{Schemat funkcjonalny}
+\todo{dać plan na sma koniec rozdziału}
+Założenia konstrukcyjne to przede wszystkim prostota budowy, modularność i skrócenie czasu realizacji. 
+Płytka deweloperska wysyła określoną przez użytkownika liczbę przebiegów sygnału PWM (Pulse Width Modulation), 
+następnie sygnał jest ten wzmacniany 
+do poziomu aż \unit[80]{V} by uzyskać maksymalną wydajność i trafia na przetwornik piezoelektryczny który generuje falę ultradźwiękową.
+Fala ta po odbiciu się od obiektu w polu wykrywania sonaru trafia z powrotem do urządzenia a konkretniej do mikrofonów MEMS umieszczonych na czole obudowy.
+Sygnał z mikrofonów jest filtrowany by przepuścić tylko pożądane przez nas częstotliwości bliskie częstotliwości nadajnika, 
+oraz wzmacniany w celu lepszej interpretacji przez dalsze układy.
+
+Po przefiltrowaniu, sygnał jest progowany. Mikrokontroler za pomocą przetwornika DAC ustala poziom napięcia, 
+który wyznaczy granicę pomiędzy wysokim a niskim stanem logicznym. To rozróżnienie jest nam potrzebne do pobudzenia cyfrowego wejścia licznika, 
+zmienność tej wartości pozwala nam również na reagowanie tylko na sygnał o odpowiedniej amplitudzie by móc z powrotem obniżyć próg 
+do miejsca przecięcia się sinusoidy z napięciem odniesienia, gdzie dokładność pomiaru jest największa.
+Mikroprocesor dzięki wspomnianym wcześniej licznikom odmierza czas między zboczami rosnącymi sprogowanego już sygnału.
+Wszystkie pomiary czasów przecięć z trzech odbiorników są wysyłane we wspólnej ramce danych do komputera gdzie za pomocą 
+różnic w tych czasach wyznaczony zostanie dystans obiektu oraz jego odchylenie względem sonaru.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{sonar_uml.png}
+    \caption{Schemat blokowy urządzenia}
+    \label{fig:uml}
+\end{figure}
+
 \section{Komunikacja}
 
 \subsection{Wybór protokołu}
-
+\todo{tutaj dać ten nadmiar tekstu z analizy}
 Wybrany został protokół UART, ze wględu na to, że płytka deweloperska STM32 NUCLEO-L476RG 
 z której skorzystano w projekcie posiada wbudowany konwerter UART$\rightarrow$~USB, 
 co pozwala na skomunikowanie mikrokontrolera z komputerem bez dodatkowego sprzętu.
+
+W celu uruchomienia sekwencji wykrywania obiektu operator powinień wysłać komendę przykładowo o nazwie "START". 
+Komenda taka posiadać będzie swoje ID w formie pojedynczej cyfry, pozwoli to zmniejszyć ilość znaków zamieszczanych w ramce danych. 
+Komunikacja tekstowa przede wszystkim pozwala na weryfikacje danych przez standardowy terminal tekstowy. 
+Ramka danych rozpocznie się znakiem ,,X", pomoże to programowi odfiltrować tylko dane przeznaczone dla niego. ,,X" został wybrany ze wględu na to, 
+że znak ten na pewno nie będzie występował w treści wiadomości w żadnej postaci.
+Wiadomość startu wraz z opcjonalnymi parametrami takimi jak ilość impulsów do wyemitowania czy próg czułości wykrywania sygnału wysłane są bajt po bajcie do urządzenia. 
+Sonar rozpoznając znak początku ramki przechodzi dalej do odczytywania ID komendy oraz jej parametrów, po odebraniu całej wiadomości program zaczyna sekwencję pomiaru.
+Następnie urządzenie wysyła do użytkownika odpowiedź, standardowo zaczyna znakiem rozpoznawczym a następnie zwraca numer ID komendy na którą ta wiadomość jest odpowiedzią,
+status wykonania zadania, w formie kodów błędów, liczba wykrytych przecieć zer, czas kontrolny\todo{sprawdzić czy na pewno}, oraz wartości liczników z każdego ze składowych pomiaru.
+Dane będą przetwarzane przez operacje na obiektach typu {\tt string}. Pozwoli to na wycięcie odpowiednich wartości ze scalonej ramki wysłanej jako jeden długi ciąg znaków.
 
 \subsection{Komputer \textrightarrow{} sonar}
 Użytkownik systemu może wysłać z komputera instrukcję do wywołania całej sekwencji działania urządzenia. 
 Ramka danych zaczyna się znakiem, który nie będzie nigdy występował  ułatwiającym rozpoznanie wiadomości, 
 następnie musi zostać podany numer komendy informujący sonar jaką czynność powienien wykonać, 
 parametry określające warunki tej czynności, a na koniec suma kontrolna wiadomości.
+
+\todo{dodac ustelenie czasu bez pomiaru bo piezo drga po odcieciu zasilania}
 
 \begin{figure}[!ht] %data in
     \centering
@@ -130,12 +168,12 @@ następnie podawany jest numer komendy na którą sonar odpowiada, status wykona
 
 \section{Konstrukcja układów elektronicznych sonaru}
 Projekt bazuje na autorskiej płytce z obwodem drukowanym, który został zaprojektowany przy pomocy 
-otwartoźródłowego narzędzia do projektowania elektroniki ,,KiCad" \cite{kicad}. 
+otwartoźródłowego narzędzia do projektowania elektroniki KiCad \cite{kicad}. 
 Całe urządzenie składa się z płytki deweloperskiej oraz zaprojektowanego na cele pracy dyplomowej 
-PCB\footnote[1]{Printed Circuit Board}, które
-jest podłączone do Nucleo w formie ,,shieldu"\todo{pokazać jak wygląda shield} poprzez listwy kołkowe.
-Całą elektronikę można podzielić na kilka bloków, które spełniają określone fukcje, 
-jest to międzyinnymi sekcja zasilania, część nadawcza, część odbiorcza, zestaw filtrów sygnału przychodzącego oraz komparatory progujące sygnał.
+PCB\footnote[1]{Printed Circuit Board}\todo{(ang. rozwiniecie)}, które
+jest podłączone do Nucleo w formie nakładki (ang. shield) \todo{pokazać jak wygląda shield} poprzez listwy kołkowe.
+Całą elektroniczną część urządzenia można podzielić na kilka bloków, ze względu na spełniane fukcje. 
+Do bloków tych zaliczamy sekcje zasilania, \todo{poprawić odmiane}część nadawcza, blok odbiorczy. Ten ostatni zawiera zestaw filtrów sygnału odbieranego oraz komparatory progujące.
 \todo{wstawić diagram funkcjonalny}
 
 \subsection{Zasilanie}
@@ -151,7 +189,7 @@ postanowiłem zaimplementować układ stabilizatora liniowego obniżajcego napi�
 \end{figure}
 
 \subsection{Nadajnik}
-Rolę nadajnika pełni przetwornik piezoelektryczny o średnicy \unit[16]{mm} i częstotliwości rezonansowej \unit[40]{kHz},\todo{dodać model przetwornika} która to jest poza spektrum słyszalnych częstotliwości.
+Rolę nadajnika pełni przetwornik piezoelektryczny \todo{model}o średnicy \unit[16]{mm} i częstotliwości rezonansowej \unit[40]{kHz}.\todo{dodać model przetwornika} która to jest poza spektrum słyszalnych częstotliwości \todo{opisać jaki zakres dla człowieka blabla}.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = 0.3\textwidth]{piezo.jpeg}
@@ -167,8 +205,8 @@ który zapewnia duże wzmocnienie prądowe sygnału i zachowuje krótkie czasy p
 Transformator w tym układzie służy do podniesienia napięcia które trafia na przetwornik, docelowo jest to nawet szczytowo \unit[80]{V} co sprawia, 
 że sygnał jest bardzo mocny.
 \todo{akapity}
-Układ posiada również zabezpieczenie przed zbyt długim czasem otwarcia tranzystora, sygnał jest przepuszczany przez kondensator, 
-co sprawia, że tylko szybkozmienne przebiegi są w stanie dotrzeć na bazę klucza. 
+Układ posiada również zabezpieczenie przed zbyt długim czasem otwarcia tranzystora, sygnał jest przepuszczany przez kondensator \todo{odwolanie do rysunku model dokaldny}, 
+co sprawia, że tylko szybkozmienne przebiegi są w stanie dotrzeć na bazę klucza. \todo{modele elementow}
 Zbyt długa ekspozycja transformatora na przepływ prądu mogłaby go narazić na przegrzanie.
 Ze względu na indukcyjny charakter uzwojeń transformatora podczas szybkiej zmiany generowanego pola magnetycznego następuje 
 konwersja tej energii do postaci prądu zwrotnego wyindukowanego na tej cewce, aby uchronić się przed niepożądanym działaniem tego zjawiska, 
@@ -183,7 +221,7 @@ Dodatkowo jako element ułatwiajacy pracę nad urządzeniem, dodany został LED,
 
 \subsection{Filtry sygnału audio}
 
-Rolę odbiorników będą pełnić trzy dookólne mikrofony MEMS, które cechują się względnie liniową charakterystyką przenoszenia pasma. 
+Przyjęto, że rolę odbiorników będą pełnić trzy dookólne mikrofony MEMS, które cechują się względnie liniową charakterystyką przenoszenia pasma. 
 Dlatego też konieczne będzie zastosowanie dla każdego z nich zestawu filtrów pasmowych, które przepuszczą nam tylko i wyłącznie częstotliwości bliskie częstotliwości 
 sygnału jaki generuje przetwornik piezoelektryczny, a zablokują wszytskie nieporządane. 
 Pojedynczy stopień filtra, dawałby na wyjściu zbyt niski zakres poziomu napięć, 
@@ -234,12 +272,43 @@ a po wykryciu mocnego sygnału wrócić z powrotem do poziomu napięcia odniesie
 
 \section{Konfiguracja mikrokontrolera}
 
+Mikrokontroler użyty w projekcie to STM32L476 został on wybrany ze względu na odpowiednią liczbę liczników, przetworników i interfejsów komunikacji. 
+Jego konfiguracja została przeprowadzona w programie STM32CUBEMX od firmy ST. 
+Graficzny interfejs pozwala w łatwy sposób zmienić ustawienia peryferiów, 
+taktowania zegarów systemowych czy nazwy zmiennych pomocniczych przydatnych na etapie programowania.
+Gotowa konfiguracja wejść i wyjść została przedstawiona na rysunku nr \ref{fig:cube}, gdzie przyjęto następujące oznaczenia:
+
+\begin{itemize}
+    \item MIC\_0 -- pin do pomiaru sygnału z mikrofonu nr 0
+    \item MIC\_1 -- pin do pomiaru sygnału z mikrofonu nr 1
+    \item MIC\_2 -- pin do pomiaru sygnału z mikrofonu nr 2
+    \item THR -- pin generujący napięcie progowania(thereshold) dla komparatora zewnętrznego 
+    \item PIEZO -- pin sterujący przetwornikiem piezoelektrycznym 
+    \item DBG\_LED -- pin obsługujący diodę diagnostyczną
+    \item DBG\_BUT -- pin obsługujący przycisk diagnostyczny
+\end{itemize}
+
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.5\textwidth]{cube.png}
+    \includegraphics[width=0.7\textwidth]{cube.png}
     \caption{Konfiguracja pinów mikrokontrolera}
     \label{fig:cube}
 \end{figure}
+
+Piny odpowiedzialne za pomiary sygnału z mikrofonów zostały skonfigurowane jako wejścia osobnych liczników. 
+Została wykorzystana funkcja input capture, która wywołuje przerwanie za każdym razem jak wykryje zbocze rosnące sygnału. 
+W przerwaniu zaczytywana jest wartość licznika i przekazywana do bufora wiadomości.
+Wyjście o nazwie THR zostało skonfigurowane jako przetwornik DAC, jego celem jest wygenerowanie napięcia, 
+które jest progiem wykrycia sygnału dla komparatora \ref{fig:comparator}. Wartość ta podlega zmianie w trakcie pracy urządzenia, 
+przez co użytkownik może dopasować czułość detektora.
+Przetwornik piezoelektryczny sterowany jest sygnałem PWM, licznik TIM16 został skonfigurowany do pracy w PWM Generation z dodatkową opcją One Pulse Mode. 
+Oznacza to, że licznik wykona dokładnie jeden okres sygnału o zadanych parametrach. 
+W celu powtórzenia impulsu wyznaczoną przez użytkownika liczbę razy wykorzystany został rejestr RCR (Repetition Counter).
+Elementy do debugowania zostały skonfigurowane jako zwykłe wyjście dla diody, oraz zwykłe wejście dla przycisku.
+
+Taktowanie mikroprocesora zostało ustawiane na zalecaną wartość \unit[80]{MHz}. 
+Jak widać na rysunku nr \ref{fig:cube_clocks} z tej wartości korzystają również wszystkie użyte w projekcie peryferia. 
+Co ma znaczenie podczas obliczania np częstotliwości sygnału PWM czy konwertowaniu wartości licznika na czas rzeczywisty.
 
 \begin{figure}[ht!]
     \centering

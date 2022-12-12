@@ -9,50 +9,64 @@
 
 \section{Dobór odbiornika}
 Wymagania jakie powinien spełniać odbiornik wynikają bezpośrednio z założeń projektu. 
-Pierwszym z nich jest zakres pasma przenoszenia czujnika który obejmie częstotliwość \unit[40]{kHz} na akceptowalnym poziomie sygnału, 
-czyli takiej częstotliwości na jakiej pracuje w rezonansie większość nadajników piezoelektrycznych dostępnych na rynku. 
+Pierwszym z nich jest czułość przetwornika na częstotliwości ultradźwiękowe. Na rysunku \ref{fig:mic_response} 
+widzimy przykładowy wykres pasma przenoszenia mikrofonu w odniesieniu do częstotliwości \unit[1]{kHz}. 
+W przypadku docelowego czujnika istotna jest czułość w wąskim paśmie \unit[40]{kHz}. 
+Czułość ta nie powinna znacząco odbiegać poniżej czułości referencyjnej, a w tym przypadku wynosi \unit[-2]{dB}, co jest akceptowalną wartością.
+Dokładna częstotliwość podyktowana jest głównie standardami branży. Większość przetworników piezoelektrycznych, 
+służących do generowania sygnału ma swój punkt rezonansu w wąskim paśmie bliskim \unit[40]{kHz}.
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.5\textwidth]{mic_response.png}
+    \includegraphics[width=0.8\textwidth]{mic_response.png}
     \caption{Pasmo przenoszenia mikrofonu SPU0410LR5H-QB}
-    \label{fig:}
+    \label{fig:mic_response}
 \end{figure}
+\vspace{2cm}
 \noindent
-Następnym wymaganiem jest rozmiar, by móc interpolować kierunek przyjścia sygnału w zakresie $180^\circ$, 
-odległość między odbiornikami nie powinna przekraczać pół długości fali czyli \unit[4,25]{mm}\footnote[1]{W powietrzu, w temperaturze 15 °C, prędkość rozchodzenia się dźwięku jest równa 340,3 m/s \cite{sound_speed}}
+
+Następnym wymaganiem jest rozmiar. 
+Wynika to z rodzaju pomiaru fali dźwiękowej, każdy z czujników wykrywa przecięcie sygnału z układem odniesienia. 
+Odbiorniki nie powinny być oddalone od siebie bardziej niż połowa długości fali dźwiękowej. 
+Czujniki mogłyby w przeciwnym razie wykrywać przecięcia z różnych okresów fali uniemożliwiając całkowicie obliczenie kąta padania. 
+Długość fali jest zależna od częstotliwości sygnału oraz jego prędkości rozchodzenia się w danym medium. 
+Wyznaczamy ją ze wzoru \ref{eq:wavelength} przy czym częstotliwość jest równa \unit[40]{kHz},
+a prędkość rozchodzenia się dźwięku w powietrzu przy temperaturze 15 °C wynosi \unit[340,3]{m/s} \cite{sound_speed}.
+Połowa długości fali to zatem \unit[4,25]{mm} i tej wartości nie powinna przekraczać odległość między odbiornikami.
 Wszystkie czujniki tak małych rozmiarów są produkowane w technologii MEMS. 
-\begin{figure}[ht!]
-    $$\lambda = \frac{v}{f} = \frac{340,3\frac{m}{s}}{40kHz}=0,0085m = 8,5mm$$
-\caption{Obliczenie długości fali}    
-\end{figure}
+\begin{equation}
+\lambda = \frac{v}{f} = \frac{340,3\frac{m}{s}}{40kHz}=0,0085m = 8,5mm
+\label{eq:wavelength}    
+\end{equation}
+
 \noindent
+\vspace{2cm}
+
 Kolejnym wymaganiem jest takie umieszczenie otworu ciśnieniowego w obudowie, by skierowany był on wewnątrz laminatu obwodu drukowanego. 
-Taka konstrukcja pozwala na stworzenie płaskiej powierzchni tylko z otworami ciśnieniowymi czujników, 
-co przekłada się na mniejsze zakłócenia spowodowane odbiciami fali dźwiękowej od elementów elektronicznych.
+Taka konstrukcja jak na rysunku \ref{fig:mic} \todo{cite microphone datasheet}pozwala na stworzenie płaskiej powierzchni, tylko z otworami ciśnieniowymi czujników. 
+Przekłada się to na mniejsze zakłócenia spowodowane odbiciami fali dźwiękowej od elementów elektronicznych.
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.5\textwidth]{mic.png}
+    \includegraphics[width=0.8\textwidth]{mic.png}
     \caption{Mikrofon SPU0410LR5H-QB}
     \label{fig:mic}
 \end{figure}
 \noindent
 Ostatecznym wymaganiem była dostępność i przystępność cenowa produktu. Ze względu na tak rygorystyczne oczekiwania wybór zawęził się zaledwie do kilku pozycji.
 Jedną z nich był mikrofon SPU0410LR5H-QB marki Knowles\cite{knowles}, który w odpowiedniej ilości został dostarczony przez Promotora.
+\vspace{2cm}
 
 
 
 \section{Komercyjne rozwiązania}
-Na rynku znajduje się bardzo dużo ultradźwiękowych czujników odległości, ale wzglednie niewiele firm oferuje sonary bez ruchomych elementów.
+Na rynku znajduje się bardzo dużo ultradźwiękowych czujników odległości, ale względnie niewiele firm oferuje sonary bez ruchomych elementów.
 Czołowym producentem urządzeń w takiej technologii jest TOPOSENS ze swoim produktem o nazwie ECHO ONE\textregistered.
-Zdjęcia produktu sugerują, że posiada on ultradźwiękowy nadajnik oraz trzy odbiorniki we wzorze tworzącym kąt prosty.
+Rysunek \ref*{fig:echoone}, który jest zdjęciem marketingowym produktu, sugeruje, że posiada on ultradźwiękowy nadajnik oraz trzy odbiorniki we wzorze tworzącym kąt prosty.
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.3\textwidth]{ECHOONE.png}
-    \caption{TOPOSENS ECHO ONE}
+    \includegraphics[width=0.5\textwidth]{ECHOONE.png}
+    \caption{TOPOSENS ECHO ONE, źródło: https://toposens.com/}
     \label{fig:echoone}
 \end{figure}
-
-\todo{dodać źródło obrazka}

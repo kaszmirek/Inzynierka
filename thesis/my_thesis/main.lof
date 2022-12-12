@@ -2,33 +2,32 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Pasmo przenoszenia mikrofonu SPU0410LR5H-QB}}{6}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Obliczenie długości fali}}{6}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Mikrofon SPU0410LR5H-QB}}{7}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces TOPOSENS ECHO ONE}}{7}{figure.3.4}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Mikrofon SPU0410LR5H-QB}}{7}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces TOPOSENS ECHO ONE, źródło: https://toposens.com/}}{8}{figure.3.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Schemat blokowy urządzenia}}{9}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Rozmieszczenie mikrofonów}}{9}{figure.4.2}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rozmieszczenie mikrofonów}}{10}{figure.4.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Ramka danych przychodzących}}{12}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Ramka danych wychodzących}}{13}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Stabilizator napięcia}}{13}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Nadajnik piezoelektryczny}}{14}{figure.6.4}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Wzmacniacz sygnału nadajnika piezoelektrycznego}}{14}{figure.6.5}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Zestaw filtrów dla sygnału z mikrofonów}}{15}{figure.6.6}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Wzmacniacz prądowy napięcia odniesienia}}{15}{figure.6.7}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Wzmacniacz wartości progowej}}{16}{figure.6.8}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Czterokanałowy komparator}}{16}{figure.6.9}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Konfiguracja pinów mikrokontrolera}}{17}{figure.6.10}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Konfiguracja zegarów mikrokontrolera}}{17}{figure.6.11}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Schemat blokowy urządzenia}}{13}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Ramka danych przychodzących}}{14}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ramka danych wychodzących}}{14}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Stabilizator napięcia}}{15}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Nadajnik piezoelektryczny}}{15}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Wzmacniacz sygnału nadajnika piezoelektrycznego}}{16}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Zestaw filtrów dla sygnału z mikrofonów}}{16}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Wzmacniacz prądowy napięcia odniesienia}}{17}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Wzmacniacz wartości progowej}}{17}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Czterokanałowy komparator}}{17}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Konfiguracja pinów mikrokontrolera}}{18}{figure.6.11}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Konfiguracja zegarów mikrokontrolera}}{19}{figure.6.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces PCB}}{18}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Moduł nadawczo-odbiorczy}}{19}{figure.7.2}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Nakładka na Nucleo}}{19}{figure.7.3}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces PCB}}{20}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Moduł nadawczo-odbiorczy}}{21}{figure.7.2}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Nakładka na Nucleo}}{21}{figure.7.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}}{20}{figure.8.1}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym, wpływ na odległość}}{21}{figure.8.2}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Nadajnik sterowany przez wzmacniacz}}{21}{figure.8.3}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}}{22}{figure.8.4}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}}{22}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym, wpływ na odległość}}{23}{figure.8.2}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Nadajnik sterowany przez wzmacniacz}}{23}{figure.8.3}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}}{24}{figure.8.4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
