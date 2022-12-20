@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define LD2_GPIO_Port GPIOA
 #define PIEZO_Pin GPIO_PIN_6
 #define PIEZO_GPIO_Port GPIOA
+#define MIC_2_Pin GPIO_PIN_10
+#define MIC_2_GPIO_Port GPIOB
 #define DBG_LED_Pin GPIO_PIN_9
 #define DBG_LED_GPIO_Port GPIOC
 #define TMS_Pin GPIO_PIN_13
@@ -85,8 +87,8 @@ void Error_Handler(void);
 #define DBG_BUT_GPIO_Port GPIOC
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
-#define MIC_2_Pin GPIO_PIN_7
-#define MIC_2_GPIO_Port GPIOB
+#define OLD_MIC_2_Pin GPIO_PIN_7
+#define OLD_MIC_2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

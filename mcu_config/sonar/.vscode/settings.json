@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stm32l4xx_hal.h": "c",
+        "array": "c",
+        "*.tcc": "c",
+        "memory": "c",
+        "istream": "c",
+        "tuple": "c",
+        "utility": "c"
+    }
+}

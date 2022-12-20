@@ -1,5 +1,5 @@
 \documentclass[printmode,oneside,pl,eng]{mgr}  % do publikacji elektronicznej
-%\documentclass[printmode,pl]{mgr}  % do wydruku dwustronnego
+% \documentclass[printmode,pl, eng]{mgr}  % do wydruku dwustronnego
 %\documentclass[printmode,pl,draft]{mgr}  % do wydruku dwustronnego w~wersji roboczej
 %\documentclass[printmode,en]{mgr}  % do wydruku dwustronnego ze stroną tytułową w~wersji angielskiej
 
@@ -197,6 +197,13 @@
 
 %% dodaje w pliku wynikowym klucze etykiet i referencji - wygodne przy pracy nad tekstem
 %\usepackage{showkeys}
+
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    . Źródło: #2%
+  }%
+}
 
 %%inne przydatne
 %\usepackage{fancyhdr}

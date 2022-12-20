@@ -1,6 +1,9 @@
 \chapter[Przegląd czujników ultradźwiękowych]{Przegląd czujników ultradźwiękowych}
 
 \label{chapter:przeglad_czujnikow}
+Jednym z najważniejszych części projektu jest układ odbiorczy. 
+Wybrane elementy muszą spełniać szereg cech niezbędnych do poprawnego zrealizowania zadania, 
+w tym rozdziale przedstawiony jest proces doboru elementów mających posłużyć jako odbiornik.
 
 
 
@@ -19,10 +22,10 @@ służących do generowania sygnału ma swój punkt rezonansu w wąskim paśmie 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{mic_response.png}
-    \caption{Pasmo przenoszenia mikrofonu SPU0410LR5H-QB}
+    \captionsource{Pasmo przenoszenia mikrofonu SPU0410LR5H-QB}{\cite{knowles:SPU0410LR5H}}
     \label{fig:mic_response}
 \end{figure}
-\vspace{2cm}
+
 \noindent
 
 Następnym wymaganiem jest rozmiar. 
@@ -43,13 +46,13 @@ Wszystkie czujniki tak małych rozmiarów są produkowane w technologii MEMS.
 \vspace{2cm}
 
 Kolejnym wymaganiem jest takie umieszczenie otworu ciśnieniowego w obudowie, by skierowany był on wewnątrz laminatu obwodu drukowanego. 
-Taka konstrukcja jak na rysunku \ref{fig:mic} \todo{cite microphone datasheet}pozwala na stworzenie płaskiej powierzchni, tylko z otworami ciśnieniowymi czujników. 
+Taka konstrukcja jak na rysunku \ref{fig:mic} pozwala na stworzenie płaskiej powierzchni, tylko z otworami ciśnieniowymi czujników. 
 Przekłada się to na mniejsze zakłócenia spowodowane odbiciami fali dźwiękowej od elementów elektronicznych.
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{mic.png}
-    \caption{Mikrofon SPU0410LR5H-QB}
+    \captionsource{Mikrofon SPU0410LR5H-QB}{\cite{knowles:SPU0410LR5H}}
     \label{fig:mic}
 \end{figure}
 \noindent
@@ -62,11 +65,11 @@ Jedną z nich był mikrofon SPU0410LR5H-QB marki Knowles\cite{knowles}, który w
 \section{Komercyjne rozwiązania}
 Na rynku znajduje się bardzo dużo ultradźwiękowych czujników odległości, ale względnie niewiele firm oferuje sonary bez ruchomych elementów.
 Czołowym producentem urządzeń w takiej technologii jest TOPOSENS ze swoim produktem o nazwie ECHO ONE\textregistered.
-Rysunek \ref*{fig:echoone}, który jest zdjęciem marketingowym produktu, sugeruje, że posiada on ultradźwiękowy nadajnik oraz trzy odbiorniki we wzorze tworzącym kąt prosty.
+Rysunek \ref{fig:echoone}, który jest zdjęciem marketingowym produktu, sugeruje, że posiada on ultradźwiękowy nadajnik oraz trzy odbiorniki we wzorze tworzącym kąt prosty.
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.5\textwidth]{ECHOONE.png}
-    \caption{TOPOSENS ECHO ONE, źródło: https://toposens.com/}
+    \captionsource{TOPOSENS ECHO ONE}{\url{https://toposens.com/}}
     \label{fig:echoone}
 \end{figure}

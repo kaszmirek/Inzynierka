@@ -24,102 +24,98 @@
 
 \section{Generowanie i odbieranie sygnału ultradźwiękowego}
 
-Od nadajnika wymaga się, by był zdolny do emitowania mocnego sygnału tylko dla jednej częstotliwości określonej w rozdziale nr \ref{chapter:ch_02}.
+Od nadajnika wymaga się, by był zdolny do emitowania mocnego sygnału tylko dla jednej częstotliwości określonej w rozdziale nr \ref{chapter:przeglad_czujnikow}.
 Do tego celu idealnie nadają się przetworniki piezoelektryczne o częstotliwości rezonansowej \unit[40]{kHz}. W celu zwiększenia wydajności takiego przetwornika,
 konieczne jest podniesienie jego napięcia pracy. Powinno zostać to zrealizowane za pomocą wzmacniacza prądowego oraz transformatora. 
 Sterownik nadajnika musi pozwalać na wygenerowanie dokładnie określonej ilości impulsów. 
 Mechanizm ten umożliwia urządzeniu wykonywać sekwencje odczytu o różnych parametrach, które mogą mieć wpływ na jakość danych wyjściowych. 
 Ze względu na wybranie mikrofonu o bardzo szerokim paśmie przenoszenia, konieczne jest zastosowanie filtrów pasmowych. 
-Muszą mieć one szczyt skuteczności w punkcie częstotliwości nadajnika, pozwoli to na rozróżnienie sygnału docelowego od innych zakłóceń oraz szumu tła.
-
-% \begin{tikzpicture}[scale = 1,line cap=round,line join=round]
-%     \node at (0.5,6*\h) [left] {Binary data sequence};
-%     \node at (0.5,4*\h) [left] {Wygenerowany sygnał};
-%     \node at (0.5,2*\h) [left] {Carrier signal, $\sin(2\pi ft)$};
-%     \node at (0.5,0)    [left] {ASK signal waveform};
-%     \draw (0.5,0)    --++ (11*\w,0);
-%     \draw (0.5,2*\h) --++ (11*\w,0);
-%     \draw[thick,<->] (\w,3*\h) --++ (\w,0) node[midway,above] {$T_b$};
-%     \def\oldi{2}
-%     \foreach[count=\j]\i in {1,0,1,1,0,1,0,1,1,1}
-%     {%
-%       % vertical lines
-%       \draw[dashed] (\j*\w,0) --++ (0,6.5*\h);
-%       \ifthenelse{\i=\oldi}{}{\draw[thick] (\j*\w,3.5*\h) --++ (0,\h);}
-%       % ASK
-%       \ifthenelse{\i=1}{\mysin{(\j*\w,0)}{blue}}{\draw[thick,blue](\j*\w,0) --++ (\w,0);}
-%       % Carier
-%       \mysin{(\j*\w,2*\h)}{red}
-%       % NRZ
-%       \draw[thick] (\j*\w,3.5*\h+\i*\h) --++ (\w,0);
-%       % bits
-%       \node at (\j*\w+0.5*\w,6*\h) {$\i$};
-%       % 
-%       \global\let\oldi=\i % remember \i in \oldi
-%       \global\let\oldj=\j % remember \j in \oldj
-%     }
-%     % last vertical lines
-%     \draw[dashed] (\oldj*\w+\w,0)      --++ (0,6.5*\h);
-%     \draw[thick]  (\oldj*\w+\w,3.5*\h) --++ (0,\h);
-%   \end{tikzpicture}
+Muszą mieć one szczyt skuteczności w zakresie częstotliwości rezonansowej nadajnika, pozwoli to na rozróżnienie sygnału docelowego od innych zakłóceń oraz szumu tła.
 
 
 
+\section{Określenie kierunku nadejścia odebranego sygnału}
+Cytując publikację Dr Kreczmera \cite{Kreczmer:2020:Azimuth:Elevation},
+do określenia kierunku nadejścia sygnału została użyta metoda polegająca na pomiarze przesunięcia fazowego.
+Może to być osiągnięte poprzez umieszczone na wspólnej powierzchni odbiorniki. 
+Jeżeli odstępy pomiędzy mikrofonami są mniejsze niż pół długości fali odbieranego sygnału, 
+to do pomiaru wystarczającą konfiguracją są trzy odbiorniki ustawione niewspółliniowo \ref{fig:micarray}.
+W przypadku gdy odległość między odbiornikami jest stosunkowo mała do odległości od wykrywanego obiektu , 
+od którego odbity zostaje sygnał, fala dźwiękowa może być traktowana jako płaska powierzchnia. 
+Zakładając, że $ t_0, t_1, t_2 $ to czasy w których ta sama powierzchnia została wykryta odpowiednio przez odbiorniki $R_0, R_1 i R_2$, 
+a jednocześnie $t_0 \leq t_1$ i $t_0 \leq t_2$, to odległości odbiorników $R_1 i R_2$ 
+od powierzchni w momencie dotarcia do $R_0$ wynoszą następująco:
 
+\begin{equation}
+	s_1 = v_a\tau_{01}, s_2 = v_a\tau_{02}
+\end{equation}
 
+Gdzie $v_a$ jest prędkością fali, $\tau_{01} = t_1-t_0$ i $\tau_{02} = t_2-t_0$. 
+Ponieważ w uproszczonym modelu fala dźwiękowa jest płaską powierzchnią musi spełnić równanie
 
-\section{Rozmieszczenie elementów nadawczych i odbiorczych}
-\todo{używany sygnał wąskopasmowy idealny do tego jest piezo}
-Rozmieszczenie odbiorników jest kluczowym elementem pomiaru, to dzięki znajomości odległości mikrofonów i różnic w czasach 
-dotarcia sygnału jesteśmy w stanie określić kąt pod którym fala dźwiękowa trafia do urządzenia. 
-Do uzyskania pełnego zakresu w trzech osiach, wymagane są co najmniej trzy odbiorniki: \todo{zacytować pracę dr Kreczmera z wyjasnieniem i wzorami}
-\begin{itemize}
-    \item Mikrofon 0 -- mikrofon odniesienia, znajduje się on w centralnym punkcie, to według niego wyznacza będzie odległość od obiektu.
-    \item Mikrofon X -- na podstawie pomiaru z tego mikrofonu wyznacza się kąt odchylenia w osi X \todo{to nie do konca prawda, wyjasnic}
-    \item Mikrofon Y -- na podstawie pomiaru z tego mikrofonu wyznacza się kąt odchylenia w osi Y
-\end{itemize}
+\begin{equation}
+	ax + by +cz+d = 0.
+\end{equation}
+Gdzie $a, b i c$ to koordynaty wektorów prostopadłych do powierzchni. Można założyć, że wektor jest znormalizowany i oznaczony jako $n = (n_x, n_y, n_z)$ oraz
 
-\tdplotsetmaincoords{60}{125}
-\begin{tikzpicture}
-		[tdplot_main_coords,
-			cube/.style={thick,fill = green},
-			grid/.style={ fill = lightgray},
-			axis/.style={->,black,thick}]
+\begin{equation}
+	n_y^2 + n_z^2 + n_z^2 = 1.
+\end{equation}
 
-	%draw a grid in the x-y plane
-			\draw[grid] (-3,-2) -- (4,-2) -- (4,4) -- (-3,4) -- cycle;
-			
-
-	%draw the axes
-	\draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
-	\draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
-	\draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
-
-	%draw the top and bottom of the cube
-	\draw[cube] (0,0,0) -- (0,2,0) -- (2,2,0) -- (2,0,0) -- cycle;
-	\draw[cube] (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) -- cycle;
-	
-	%draw the edges of the cube
-	\draw[cube] (0,0,0) -- (0,0,2);
-	\draw[cube] (0,2,0) -- (0,2,2);
-	\draw[cube] (2,0,0) -- (2,0,2);
-	\draw[cube] (2,2,0) -- (2,2,2);
-	
-\end{tikzpicture}
+Do wyznaczenia kąta azymutu oraz elewacji obiektu można założyć, że wektor \textbf{n} jest skierowany przeciwnie 
+do kierunku propagacji fali dźwiękowej. W tym przypadku oznacza to $n_x > 0$. Ponieważ wektor \textbf{n} jest znormalizowany, 
+bezwzględna wartość $d$ jest odległością powierzchni od środka układu współrzędnych, 
+który znajduję się w środku odbiornika $R_0$ \ref{fig:micarray}.
+Biorąc pod uwagę poprzednie założenia oraz to, że koordynaty odbiorników $R_1$ i $R_2$ 
+to odpowiednio $(0, y_1, z_1)$ i $(0, y_2, z_2)$ daje nam to układ równań:
 
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width = 0.5\textwidth]{rozmieszczenie_mic.drawio.png}
-    \caption{Rozmieszczenie mikrofonów}
-    \label{fig:rozmieszczenie_mic}
+	\centering
+	\includegraphics[width = 0.5\textwidth]{microphonearray.png}
+	\caption{rozmieszczenie mikrofonów w przestrzeni trójwymiarowej}
+	\label{fig:micarray}
 \end{figure}
+
+\begin{equation}
+	\begin{cases}
+		n_y y_1 + n_z z_1 = s_1,\\
+		n_y y_2 + n_z z_2 = s_2,\\
+		n_y^2 + n_z^2 + n_z^2 = 1.	
+	\end{cases}
+\end{equation}
+Rozwiązaniem tego układu równań jest:
+
+\begin{equation}
+	n_y= \frac{z_2s_1 - z_1s_2}{y_1z_2-y_2z_1},\qquad   n_z= \frac{y_1 s_2 - y_2 s_1}{y_1z_2-y_2 z_1}, \qquad  n_x= \sqrt{1-n_y^2-n_z^2}  
+\end{equation}
+
+
+Mając koordynaty znormalizowanego wektora, kąt azymutu $\Phi$ oraz elewację $\Theta$ można obliczyć za pomocą następujących równań
+\begin{align}
+	&\Phi = arcsin \frac{n_y}{\sqrt{n_y^2 +n_x^2}}= arcsin \frac{n_y}{\sqrt{1-n_z^2}},\\
+	&\Theta = arcsin \frac{n_z}{\sqrt{n_x^2+n_x^2}}= arcsin \frac{n_z}{\sqrt{1-n_y^2}}.	
+\end{align}
+
+
+
+
+
+% \begin{figure}[ht!]
+% 	\centering
+% 	\subfloat[]{\includegraphics[width = 0.5\textwidth]{rozmieszczenie_mic.drawio.png}}
+% 	\subfloat[]{\includegraphics[width = 0.5\textwidth]{microphonearray.png}}
+% 	\caption{Rozmieszczenie mikrofonów w przestrzeni: dwu wymiarowej a) oraz trój wymiarowej b)}
+% 	\label{fig:micarray}
+% 	  \end{figure}
 
 \section{Komunikacja}
 Komunikacja komputera typu PC z płytką deweloperską STM32 Nucleo L476rg na której bazowany jest projekt odbędzie się przy pomocy portu szeregowego. 
 Każdy nowoczesny komputer posiada złącze USB, które miało niezwykły wpływ na standaryzacje interfejsów w urządzeniach użytkowych, 
 większość płytek deweloperskich również posiada wbudowane gniazdo USB z portem szeregowym, dlatego też wybór tego rodzaju komunikacji wydaję się wręcz oczywistą decyzją.
 Tym samym złączem wgrywany jest również program do pamięci mikrokontrolera co jeszcze bardziej upraszcza stanowisko testowe.
-Dane będą wysyłane w postaci tekstu w formie ,,pytanie-odpowiedź", zagwarantuje to większą elastyczność i możliwość zmiany parametrów urządzenia bez konieczności zmiany programu. 
+Dane będą wysyłane w postaci tekstu w formie ,,pytanie-odpowiedź", 
+zagwarantuje to większą elastyczność i możliwość zmiany parametrów urządzenia przez użytkownika bez konieczności przeprogramowywania mikrokontrolera.
+Jednocześnie to rozwiązanie nie spowoduje obniżenia efektywności komunikacji urządzenia z komputerem. 
 
 
 

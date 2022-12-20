@@ -489,7 +489,7 @@
 %tabelka składająca kierunek i specjalność
 \begin{tabular}{p{4.5cm}p{10.5cm}}
 \parbox{4.5cm}{\@fieldtext \vrule depth \@tempheightkier width 0pt} & \parbox{10cm}{\large \vrule height \@tempheighttkier width 0pt \@field}\\
-\parbox{4.5cm}{\@specialisationtext \vrule depth \@tempheightspec width 0pt } & \parbox{10cm}{\large \vrule height \@tempheighttspec width 0pt \@specialisation} 
+% \parbox{4.5cm}{\@specialisationtext \vrule depth \@tempheightspec width 0pt } & \parbox{10cm}{\large \vrule height \@tempheighttspec width 0pt \@specialisation} 
 \end{tabular}\mbox{}\\[5mm] \vfill
 \begin{center}
 \LARGE\bf \@naglowek

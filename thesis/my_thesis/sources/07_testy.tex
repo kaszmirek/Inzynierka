@@ -2,12 +2,9 @@
 
 \label{chapter:testy}
 
-Opis zrealizowanych eksperymentów, które demonstrują
-najważniejsze cechy urządzenia i czujnika.
-
 \section{Test przetwornika piezoelektrycznego}
 Pierwszym testem był test przetwornika, który jest nadajnikiem sygnału. Zasilono go bezpośrednio z generatora wbudowanego w oscyloskop, 
-parametry zadane to sygnał sinusoidalny o napięciu \unit[5]{V} \todo{\em...},,peak to peak" czyli wartości szczytowej.
+parametry zadane to sygnał sinusoidalny o napięciu \unit[5]{V} \textit{peak-to-peak} czyli wartości szczytowej.
 Elementem odbiorczym był inny przetwornik piezoelektryczny służący tylko do testów, został on umieszczony w odległości \unit[10]{cm} od nadajnika. 
 Jego częstotliwość rezonansowa również wynosiła \unit[40]{kHz}.
 Po podłączeniu sondy oscyloskopu do odbiornika ukazał się bardzo wyraźny sygnał w kształcie sinusoidy ustawionej na nadajniku.
@@ -21,7 +18,8 @@ Zmiana częstotliwości o chociażby \unit[1]{kHz} wiązała się kilkudziesięc
 \end{figure}
 
 \section{Test wpływu odległości na sygnał}
-Z identycznym stanowiskiem pomiarowym co sekcję wyżej sprawdzono wpływ odległości czujników na moc i przesuniecie fazy sygnału. 
+Z identycznym stanowiskiem pomiarowym co sekcję wyżej sprawdzono wpływ odległości czujników na moc i przesuniecie fazy sygnału.
+Zmieniając odległość nadajnika od odbiornika dało się w czasie rzeczywistym wyraźnie zauważyć przesuwanie sie fazy sygnału jak i jego amplitudę. 
 \todo{zdjęcie z oscylo z przesuniętym sygnałem i kilka testów na różne odległości}
 
 \begin{figure}[!ht]
@@ -38,21 +36,28 @@ Szybka zmiana ustawień diod i następne uruchomienie, nie pokazywało oznak wi�
 płytce nie odstawała od temperatury pokojowej.
 
 \section{Uruchomienie i test wzmacniacza sygnału przetwornika piezoelektrycznego}
+Wzmacniacz nadajnika zachował się zgodnie z założeniami projektowymi, na wyjściu otrzymane zostało \unit[80]{V} peak-to-peak. 
 
 \begin{figure}[!ht]
     \centering
-    \missingfigure{screen z oscylo z przebiegiem sygnału z piezo}
-    \caption{Nadajnik sterowany przez wzmacniacz}
+    \includegraphics[width = 0.5\textwidth]{piezo_oscylo.jpg}
+    \caption{Wyjście transformatora z podłączonym przetwornikiem piezoelektrycznym}
     \label{fig:oscylo_piezo3}
 \end{figure}
 
 \section{Test mikrofonów i filtrów}
-
+Test miał na celu sprawdzenie jaki poziom sygnału dostarczają same mikrofony oraz na 
 
 \begin{figure}[!ht]
     \centering
-    \missingfigure{screen z oscylo z przebiegiem sygnału z piezo}
-    \caption{Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}
+    \includegraphics[width = 0.5\textwidth]{microphone.jpg}
+    \caption{Przebieg sygnału odebrany bezpośrednio przez mikrofon MEMS}
     \label{fig:oscylo_piezo4}
 \end{figure}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{filter.jpg}
+    \caption{Przebieg sygnału odebrany bezpośrednio przez mikrofon MEMS}
+    \label{fig:oscylo_piezo4}
+\end{figure}

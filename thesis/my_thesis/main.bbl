@@ -1,5 +1,5 @@
 \providecommand{\noopsort}[1]{}
-\begin{thebibliography}{Wik}
+\begin{thebibliography}{KNO13}
 
 \bibitem[KiC]{kicad}
 kicad.
@@ -11,10 +11,34 @@ Knowles corporation (nyse: Kn) is a market leader and global provider of
   serving the ...
 \newblock \url{https://www.knowles.com/}.
 
-\bibitem[Wik]{sound_speed}
+\bibitem[KNO13]{knowles:SPU0410LR5H}
+KNOWLES,
+\newblock {\em Zero-Height SiSonic \texttrademark Microphone}, 3 2013.
+\newblock Rev. H.
+
+\bibitem[Kre20]{Kreczmer:2020:Azimuth:Elevation}
+Bogdan Kreczmer,
+\newblock Estimation of azimuth and elevation angles of ultrasonic signal
+  arrival by indirect phase determination.
+\newblock W:~Roman Szewczyk, Cezary Zieli{\'{n}}ski,  Ma{\l}gorzata
+  Kaliczy{\'{n}}ska, redaktorzy, {\em Automation 2020: Towards Industry of the
+  Future}, strony 359--367, Cham, 2020. Springer International Publishing.
+
+\bibitem[Tex]{ti:lm1117}
+Texas Instruments,
+\newblock {\em LM1117 800-mA, Low-Dropout Linear Regulator}.
+\newblock
+  \url{https://www.ti.com/lit/ds/symlink/lm1117.pdf?ts=1671400004705&ref_url=https%253A%252F%252Fwww.google.com%252F}.
+
+\bibitem[Wika]{sound_speed}
 Wikipedia.
 \newblock Prędkość dźwięku.
 \newblock
   \url{https://pl.wikipedia.org/wiki/Pr%C4%99dko%C5%9B%C4%87_d%C5%BAwi%C4%99ku}.
+
+\bibitem[Wikb]{sluch}
+Wikipedia.
+\newblock Słuch.
+\newblock \url{https://pl.wikipedia.org/wiki/S%C5%82uch}.
 
 \end{thebibliography}

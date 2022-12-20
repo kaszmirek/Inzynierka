@@ -2,10 +2,25 @@
 
 \label{chapter:specyfikacja}
 
+Urządzenie oprócz dostarczania swoich podstawowych funkcji niezbędnych do działania, 
+może również zaoferować pewne udogodnienia w testowaniu oraz obsłudze przez użytkownika końcowego.
+Takim udogodnieniem jest na pewno zmiana istotnych parametrów sonaru poprzez komunikację szeregową z urządzeniem.
+\vspace{2cm}
 
-W tej części trzeba podać jakie będą udostępniane funkcjonalności,
-jak mają być realizowane pomiary, jakie polecenia będzie można
-przesyłać do urządzenia, przewidywane parametry, np.
-częstość powtórzeń pomiarów, zakres zmiany ilości sygnałów pobudzenia,
-zakres zmian wypełnienia impulsów itp.
+Komendy które przyjmuje urządzenie to:
+\begin{itemize}
+    \item Uruchomienie pomiaru -- rozpoczyna kompletną sekwencje pomiarową i zwraca wynik z powrotem do urządzenia.
+    \item Zmiana ilości impulsów nadajnika -- za parametr przyjmuje wartości od 1 do 10 powtórzeń.
+    \item Zmiana wypełnienia impulsu -- wpływa na moc nadajnika, za parametr przyjmuje wartości (0-199), które odpowiadają największemu i najmniejszemu wypełnieniu.
+    \item Zmiana progu wykrywania sygnału  -- pozwala na regulacje czułości odbiornika, za parametr przyjmuje 12 bitową wartość (0-4095) przetwornika DAC.
+    \item Zmiana czasu odstępu od zakończenia nadawania do rozpoczęcia odbierania, za parametr przyjmuje 
+    \item Zmiana czasu końca pomiaru -- stanowi o tym kiedy mikrokontroler powinien przerwać odbieranie sygnału, za parametr przyjmuje czas wyrażony w taktach procesora o częstotliwości \unit[80]{MHz} w zakresie liczby 32 bitowej. 
+\end{itemize}
+
+
+% W tej części trzeba podać jakie będą udostępniane funkcjonalności,
+% jak mają być realizowane pomiary, jakie polecenia będzie można
+% przesyłać do urządzenia, przewidywane parametry, np.
+% częstość powtórzeń pomiarów, zakres zmiany ilości sygnałów pobudzenia,
+% zakres zmian wypełnienia impulsów itp.
 
