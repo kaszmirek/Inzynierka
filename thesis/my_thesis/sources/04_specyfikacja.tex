@@ -2,19 +2,20 @@
 
 \label{chapter:specyfikacja}
 
-Urządzenie oprócz dostarczania swoich podstawowych funkcji niezbędnych do działania, 
+Urządzenie, oprócz dostarczania swoich podstawowych funkcji niezbędnych do działania, 
 może również zaoferować pewne udogodnienia w testowaniu oraz obsłudze przez użytkownika końcowego.
 Takim udogodnieniem jest na pewno zmiana istotnych parametrów sonaru poprzez komunikację szeregową z urządzeniem.
-\vspace{2cm}
 
-Komendy które przyjmuje urządzenie to:
+Komendy, które przyjmuje urządzenie, to:
 \begin{itemize}
-    \item Uruchomienie pomiaru -- rozpoczyna kompletną sekwencje pomiarową i zwraca wynik z powrotem do urządzenia.
-    \item Zmiana ilości impulsów nadajnika -- za parametr przyjmuje wartości od 1 do 10 powtórzeń.
-    \item Zmiana wypełnienia impulsu -- wpływa na moc nadajnika, za parametr przyjmuje wartości (0-199), które odpowiadają największemu i najmniejszemu wypełnieniu.
-    \item Zmiana progu wykrywania sygnału  -- pozwala na regulacje czułości odbiornika, za parametr przyjmuje 12 bitową wartość (0-4095) przetwornika DAC.
-    \item Zmiana czasu odstępu od zakończenia nadawania do rozpoczęcia odbierania, za parametr przyjmuje 
-    \item Zmiana czasu końca pomiaru -- stanowi o tym kiedy mikrokontroler powinien przerwać odbieranie sygnału, za parametr przyjmuje czas wyrażony w taktach procesora o częstotliwości \unit[80]{MHz} w zakresie liczby 32 bitowej. 
+    \item uruchomienie pomiaru -- rozpoczyna kompletną sekwencje pomiarową i zwraca wynik z powrotem do urządzenia;
+    \item zmiana liczbę impulsów nadajnika -- za parametr przyjmuje wartości od 1 do 10 powtórzeń;
+    \item zmiana wypełnienia impulsu -- wpływa na moc nadajnika, za parametr przyjmuje wartości (0-199), które odpowiadają największemu i najmniejszemu wypełnieniu;
+    \item zmiana progu wykrywania sygnału  -- pozwala na regulację czułości odbiornika, za parametr przyjmuje 12-bitową wartość (0-4095) przetwornika DAC;
+    \item zmiana czasu odstępu od zakończenia nadawania do rozpoczęcia odbierania, 
+    za parametr przyjmuje czas wyrażony w taktach procesora o częstotliwości \unit[80]{MHz} w zakresie liczby 16-bitowej;  
+    \item zmiana czasu końca pomiaru -- stanowi o tym, kiedy mikrokontroler powinien przerwać odbieranie sygnału, 
+    za parametr przyjmuje czas wyrażony w taktach procesora o częstotliwości \unit[80]{MHz} w zakresie liczby 32-bitowej. 
 \end{itemize}
 
 

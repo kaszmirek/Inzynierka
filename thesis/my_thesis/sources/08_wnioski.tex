@@ -4,15 +4,23 @@
 
 Praca miała na celu przedstawienie procesu projektowania i budowy sonaru. Zawiera ona dokładny opis każdego etapu, rozwija problematykę, 
 oraz pokazuje proces podejmowania decyzji przy doborze kluczowych elementów. Dokument powinien ułatwić przyszłym konstruktorom budowę podobnego urządzenia.
-Sonary tego typu już teraz mają szerokie zastosowanie w przemyśle, a wraz rosnącym rozwojem automatyki zapotrzebowanie na czujniki będzie rosło. 
-Temat dalej pozostaje otwarty i wciąż poczynić można ogromne postępy w rozwoju tej technologii, chociażby ze względu na małą konkurencję na rynku wśród producentów tego typu urządzeń
+Sonary tego typu już teraz zyskują coraz szersze zastosowanie w przemyśle, a wraz z rosnącym rozwojem automatyki zapotrzebowanie na czujniki będzie rosło. 
+Temat dalej pozostaje otwarty i wciąż poczynić można ogromne postępy w rozwoju tej technologii, chociażby ze względu na małą konkurencję na rynku wśród producentów tego typu urządzeń.
 Bardzo istotną częścią jest również analiza danych. Stosując bardziej zaawansowane algorytmy będzie można osiągnąć dużo lepsze rezultaty, 
-powinno to pozwolić nie tylko na określenie kierunku i odległości obiektu ale również kształt tych obiektów a także wizualizacje przestrzenną.
+powinno to pozwolić nie tylko na określenie kierunku i odległości obiektu, ale również ich kształt oraz wizualizację przestrzenną.
 
-Informacją wartą podkreślenia jest to, że zastosowany został niewłaściwy wzmacniacz operacyjny do filtrowania częstotliwości sygnału z odbiorników. Jak wskazuje nota katalogowa, 
-jego wzmocnienie nie jest liniowe względem przekroju częstotliwości. Zastosowanie go w implementacji filtra okazało się nieskuteczne. Należy w tym zastosowaniu dobrać taki wzmacniacz operacyjny, 
+Informacją wartą podkreślenia jest to, że zastosowany został nieoptymalny w tym przypadku wzmacniacz operacyjny do filtrowania częstotliwości sygnału z odbiorników. 
+Jak wskazuje nota katalogowa, jego wzmocnienie nie jest liniowe względem przekroju częstotliwości. 
+Zastosowanie go w implementacji filtra okazało się nie w pełni nieskuteczne. Należy w tym zastosowaniu dobrać taki wzmacniacz operacyjny, 
 który będzie miał bardziej liniowe wzmocnienie dla szerokiego pasma częstotliwości. 
 Elementem który mógłby również usprawnić pracę nad urządzeniem jest płynna regulacja wzmocnienia sterowana przez mikrokontroler, 
 w chwili obecnej regulowany jest tylko próg wykrycia.
+Istotnym problemem okazały się zbyt często występujące przerwania koniecznie do zapisu czasów pełnych okresów. 
+Problem ten może być prawdopodobnie rozwiązany poprzez wykorzystanie peryferium DMA, który pozwala na bezpośredni dostęp do pamięci.
+Kolejną rzeczą, której warto poświęcić więcej czasu, to analiza danych. Należałoby przeprowadzić testy kalibracyjne w komorze bezechowe, 
+w celu określenia ilości drgań przetwornika oraz zachowania się sonaru przy znanej ilości obiektów odbijających dźwięk.
+Urządzenie dostarcza wiele możliwości i widać, że radzi sobie dobrze z przetwarzaniem sygnału analogowego. 
 Dalszy rozwój projektu powinien również objąć obudowę urządzenia, powinna ona być specjalnie zaprojektowana do pełnienia roli sonaru, 
 co powinno zwiększyć funkcjonalność i atrakcyjność urządzenia, ułatwić montaż i wyeliminować wpływ czynników zewnętrznych na pomiar. 
+
+\nocite{roberto}

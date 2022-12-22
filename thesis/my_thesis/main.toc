@@ -1,35 +1,33 @@
-\contentsline {chapter}{\numberline {1}Wstęp}{4}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Cel i założenia}{5}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Przegląd czujników ultradźwiękowych}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Dobór odbiornika}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Komercyjne rozwiązania}{8}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Analiza problemu}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Generowanie i odbieranie sygnału ultradźwiękowego}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Określenie kierunku nadejścia odebranego sygnału}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Komunikacja}{11}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Specyfikacja realizacji sonaru ultradźwiękowego}{12}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Projekt konstrukcji sonaru oraz protokoły komunikacji}{13}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Plan urządzenia}{13}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Komunikacja}{13}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Wybór protokołu}{13}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Komputer \textrightarrow {} sonar}{14}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Sonar \textrightarrow {} komputer}{15}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Konstrukcja układów elektronicznych sonaru}{15}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Zasilanie}{15}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Nadajnik}{16}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Wzmacniacz nadajnika}{16}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Filtry sygnału audio}{17}{subsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.3.5}Progowanie sygnału}{18}{subsection.6.3.5}%
-\contentsline {section}{\numberline {6.4}Konfiguracja mikrokontrolera}{18}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Program}{22}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Realizacja sonaru ultradźwiękowego}{24}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Testy i eksperymenty}{28}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Test przetwornika piezoelektrycznego}{28}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Test wpływu odległości na sygnał}{28}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Pierwsze uruchomienie}{29}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Uruchomienie i test wzmacniacza sygnału przetwornika piezoelektrycznego}{29}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Test mikrofonów i filtrów}{30}{section.8.5}%
-\contentsline {chapter}{\numberline {9}Podsumowanie i wnioski}{31}{chapter.9}%
-\contentsline {chapter}{Literatura}{32}{section*.9}%
-\contentsline {chapter}{Spis rysunk\'ow}{33}{section*.11}%
-\contentsline {chapter}{\numberline {A}Schematy i noty katalogowe}{34}{appendix.A}%
+\contentsline {chapter}{\numberline {1}Wstęp}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Cel i założenia}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Przegląd czujników ultradźwiękowych}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dobór odbiornika}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Komercyjne rozwiązania}{7}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Analiza problemu}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Generowanie i odbieranie sygnału ultradźwiękowego}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Określenie kierunku nadejścia odebranego sygnału}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Komunikacja}{10}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Specyfikacja realizacji sonaru ultradźwiękowego}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Projekt konstrukcji sonaru oraz protokoły komunikacji}{12}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Komunikacja}{12}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Komputer \textrightarrow {} sonar}{13}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Sonar \textrightarrow {} komputer}{14}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Konstrukcja układów elektronicznych sonaru}{14}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Zasilanie}{14}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Nadajnik}{15}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Wzmacniacz nadajnika}{15}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Filtry sygnału audio}{16}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Progowanie sygnału}{17}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Konfiguracja mikrokontrolera}{18}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Program}{21}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Realizacja sonaru ultradźwiękowego}{23}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Testy i eksperymenty}{27}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Test przetwornika piezoelektrycznego}{27}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Pierwsze uruchomienie}{27}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Uruchomienie i test wzmacniacza sygnału przetwornika piezoelektrycznego}{28}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Test mikrofonów i filtrów}{28}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Test wykrywania obiektu}{30}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Podsumowanie i wnioski}{32}{chapter.9}%
+\contentsline {chapter}{Literatura}{33}{section*.4}%
+\contentsline {chapter}{Spis rysunk\'ow}{34}{section*.6}%
+\contentsline {chapter}{\numberline {A}Schematy i noty katalogowe}{35}{appendix.A}%

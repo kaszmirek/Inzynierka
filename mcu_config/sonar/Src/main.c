@@ -100,16 +100,17 @@ int main(void)
   MX_TIM2_Init();
   MX_USART2_UART_Init();
   MX_TIM16_Init();
-  MX_TIM6_Init();
   MX_TIM5_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
-  set_thereshold(2100);
+  set_thereshold(2700);
   RetargetInit(&huart2);
   serial_init(&huart2);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, get_thereshold()); // default value
+  HAL_TIM_IC_Init(&htim2);
   HAL_TIM_OnePulse_Start_IT(&htim5, TIM_CHANNEL_1);
-  HAL_TIM_OnePulse_Start_IT(&htim6, TIM_CHANNEL_1);
+  HAL_TIM_OnePulse_Start_IT(&htim8, TIM_CHANNEL_1);
   HAL_TIM_OnePulse_Start_IT(&htim16, TIM_CHANNEL_1);
   TIM16->RCR = 0; // one pulse
   /* USER CODE END 2 */

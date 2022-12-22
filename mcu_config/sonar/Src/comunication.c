@@ -58,26 +58,26 @@ void ExecCmd(int _cmd, int _param)
     {
     case START:
         // reset all timers
-        TIM16->CR1 |= TIM_CR1_CEN;
         printf("Measure started\r\n");
+        TIM16->CR1 |= TIM_CR1_CEN;
         break;
     case TEST_PIEZO:
-        SendResults();
         printf("Test send\r\n");
+        SendResults();
         // start timer
         break;
     case REPS:
         // htim16.Init.RepetitionCounter = constrain(_param, 0, 10);
-        TIM16->RCR = constrain(_param, 0, 10) - 1;
         printf("Number of PWM reps changed to %d\r\n", _param);
+        TIM16->RCR = constrain(_param, 0, 10) - 1;
         break;
     case PWM:
+        printf("PWM fill changed to %d \r\n", _param);
         TIM16->CCR1 = constrain(_param, 0, 199);
-        printf("PWM fill changed to %d %%\r\n", _param);
         break;
     case THR:
-        HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, constrain(_param, 0, 4095)); // todo: global thr value
         printf("THR changed to %d\r\n", _param);
+        HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, constrain(_param, 0, 4095)); // todo: global thr value
         break;
     case WAIT:
         // SetWaitTime();
@@ -91,14 +91,15 @@ void ExecCmd(int _cmd, int _param)
 
 void SendResults()
 {
-    printf("Y 1 %c ", get_zero_cross(0));
+    printf("Y 1 %d ", get_zero_cross(0));
 
     for (uint8_t i = 0; i < CHANNELS_NUM; i++)
     {
         for (uint8_t j = 0; i < get_pulse_count(); i++)
         {
-            printf("%ld ", get_timing_array(i, j));
+            printf("%ld d", get_timing_array(i, j));
         }
     }
     printf("\r\n");
+    set_ready_to_send(false);
 }

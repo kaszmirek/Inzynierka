@@ -1,20 +1,36 @@
 \providecommand{\noopsort}[1]{}
 \begin{thebibliography}{KNO13}
 
+\bibitem[han]{hantek}
+Qingdao hantek electronic co., ltd. is a manufacturer of general instruments
+  specializes in design, product, sale and service.
+\newblock \url{http://www.hantek.com/}.
+
+\bibitem[jlc]{jlcpcb}
+Jlcpcb, china's largest pcb prototype manufacturer, offers 24 hours quick turn
+  pcb prototype, pcb assembly and reliable small-batch pcb production.
+\newblock \url{https://jlcpcb.com/}.
+
 \bibitem[KiC]{kicad}
-kicad.
+Kicad is an open source software suite for electronic design automation (eda).
 \newblock \url{https://www.kicad.org/}.
 
 \bibitem[kno]{knowles}
 Knowles corporation (nyse: Kn) is a market leader and global provider of
   advanced micro-acoustic, audio processing, and precision device solutions,
-  serving the ...
+  serving the...
 \newblock \url{https://www.knowles.com/}.
 
 \bibitem[KNO13]{knowles:SPU0410LR5H}
 KNOWLES,
 \newblock {\em Zero-Height SiSonic \texttrademark Microphone}, 3 2013.
 \newblock Rev. H.
+
+\bibitem[kra]{kradex}
+Kradex to polski producent obudów plastikowych przeznaczonych przede wszystkim
+  dla branży elektronicznej, elektrotechnicznej czy elektrycznej i wszędzie
+  tam, gdzie wymagane jest zastosowanie obudów z tworzyw sztucznych.
+\newblock \url{https://www.kradex.com.pl/}.
 
 \bibitem[Kre20]{Kreczmer:2020:Azimuth:Elevation}
 Bogdan Kreczmer,
@@ -23,6 +39,12 @@ Bogdan Kreczmer,
 \newblock W:~Roman Szewczyk, Cezary Zieli{\'{n}}ski,  Ma{\l}gorzata
   Kaliczy{\'{n}}ska, redaktorzy, {\em Automation 2020: Towards Industry of the
   Future}, strony 359--367, Cham, 2020. Springer International Publishing.
+
+\bibitem[Oro18]{roberto}
+R.~Orozco,
+\newblock {\em Bąk jaki jest każdy widzi}.
+\newblock Praca dyplomowa inżynierska, Wydział Elektroniki, Politechnika
+  Wrocławska, \url{https://kcir.pwr.edu.pl/~mucha/#studenckie}, 2018.
 
 \bibitem[Tex]{ti:lm1117}
 Texas Instruments,
@@ -36,7 +58,12 @@ Wikipedia.
 \newblock
   \url{https://pl.wikipedia.org/wiki/Pr%C4%99dko%C5%9B%C4%87_d%C5%BAwi%C4%99ku}.
 
-\bibitem[Wikb]{sluch}
+\bibitem[Wikb]{sonar}
+Wikipedia.
+\newblock Sonar.
+\newblock \url{https://pl.wikipedia.org/wiki/Sonar}.
+
+\bibitem[Wikc]{sluch}
 Wikipedia.
 \newblock Słuch.
 \newblock \url{https://pl.wikipedia.org/wiki/S%C5%82uch}.

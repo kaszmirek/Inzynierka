@@ -1,6 +1,7 @@
 This is BibTeX, Version 0.99d (TeX Live 2022/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
+A level-1 auxiliary file: sources/Streszczenie.aux
 A level-1 auxiliary file: sources/00_Wstep.aux
 A level-1 auxiliary file: sources/01_cel_i_zalozenia.aux
 A level-1 auxiliary file: sources/02_przeglad_czujnikow.aux
@@ -13,44 +14,44 @@ A level-1 auxiliary file: sources/08_wnioski.aux
 The style file: alphapl.bst
 A level-1 auxiliary file: sources/09_dodatek_datasheety.aux
 Database file #1: sources/bibliografia.bib
-You've used 7 entries,
+You've used 12 entries,
             2626 wiz_defined-function locations,
-            630 strings with 6027 characters,
-and the built_in function-call counts, 1934 in all, are:
-= -- 197
-> -- 39
-< -- 4
-+ -- 10
-- -- 9
-* -- 99
-:= -- 279
-add.period$ -- 17
-call.type$ -- 7
-change.case$ -- 33
-chr.to.int$ -- 6
-cite$ -- 7
-duplicate$ -- 91
-empty$ -- 192
-format.name$ -- 15
-if$ -- 434
-int.to.chr$ -- 2
+            651 strings with 6946 characters,
+and the built_in function-call counts, 3081 in all, are:
+= -- 313
+> -- 58
+< -- 6
++ -- 15
+- -- 13
+* -- 151
+:= -- 435
+add.period$ -- 28
+call.type$ -- 12
+change.case$ -- 58
+chr.to.int$ -- 10
+cite$ -- 12
+duplicate$ -- 145
+empty$ -- 315
+format.name$ -- 23
+if$ -- 690
+int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 1
-newline$ -- 37
-num.names$ -- 11
-pop$ -- 53
+newline$ -- 59
+num.names$ -- 17
+pop$ -- 94
 preamble$ -- 2
-purify$ -- 42
+purify$ -- 72
 quote$ -- 0
-skip$ -- 80
+skip$ -- 132
 stack$ -- 0
-substring$ -- 81
-swap$ -- 16
-text.length$ -- 4
-text.prefix$ -- 7
+substring$ -- 116
+swap$ -- 21
+text.length$ -- 6
+text.prefix$ -- 12
 top$ -- 0
-type$ -- 56
+type$ -- 96
 warning$ -- 0
-while$ -- 9
-width$ -- 10
-write$ -- 84
+while$ -- 13
+width$ -- 16
+write$ -- 137

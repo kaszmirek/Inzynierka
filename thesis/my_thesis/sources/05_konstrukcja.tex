@@ -8,22 +8,25 @@
 % Opis funkcjonalności, które będą oferowane przez aplikację
 % oraz sposób przetwarzania danych pomiarowych i ich reprezentacji.
 
-\section{Plan urządzenia}
 Założenia konstrukcyjne to przede wszystkim prostota budowy, modularność i skrócenie czasu realizacji. 
-Schemat funkcjonalny na rysunku nr \ref{fig:uml} obrazuje, w jaki sposób połączone są składowe elementy urządzenia.
+Schemat funkcjonalny (patrz rys. \ref{fig:uml}) obrazuje, w jaki sposób połączone są składowe elementy urządzenia.
 Płytka deweloperska wysyła określoną przez użytkownika liczbę przebiegów sygnału PWM (Pulse Width Modulation), 
-następnie sygnał jest ten wzmacniany 
-do poziomu aż \unit[80]{V} by uzyskać maksymalną wydajność i trafia na przetwornik piezoelektryczny który generuje falę ultradźwiękową.
-Fala ta po odbiciu się od obiektu w polu wykrywania sonaru trafia z powrotem do urządzenia a konkretniej do mikrofonów MEMS umieszczonych na czole obudowy.
-Sygnał z mikrofonów jest filtrowany by przepuścić tylko pożądane przez nas częstotliwości bliskie częstotliwości nadajnika, 
+następnie sygnał ten jest wzmacniany do poziomu \unit[80]{V} by uzyskać maksymalną wydajność i trafia na przetwornik piezoelektryczny, 
+który generuje falę ultradźwiękową. Fala ta po odbiciu się od obiektu w polu wykrywania sonaru trafia z powrotem do urządzenia, 
+a konkretniej do mikrofonów MEMS umieszczonych na czole obudowy.
+Sygnał z mikrofonów jest filtrowany, by przepuścić tylko pożądane częstotliwości zbliżone do częstotliwości nadajnika, 
 oraz wzmacniany w celu lepszej interpretacji przez dalsze układy.
-Po przefiltrowaniu, sygnał jest progowany. Mikrokontroler za pomocą przetwornika DAC ustala poziom napięcia, 
-który wyznaczy granicę pomiędzy wysokim a niskim stanem logicznym. To rozróżnienie jest nam potrzebne do pobudzenia cyfrowego wejścia licznika, 
-zmienność tej wartości pozwala nam również na reagowanie tylko na sygnał o odpowiedniej amplitudzie by móc z powrotem obniżyć próg 
-do miejsca przecięcia się sinusoidy z napięciem odniesienia, gdzie dokładność pomiaru jest największa.
-Mikroprocesor dzięki wspomnianym wcześniej licznikom odmierza czas między zboczami rosnącymi sprogowanego już sygnału.
-Wszystkie pomiary czasów przecięć z trzech odbiorników są wysyłane we wspólnej ramce danych do komputera gdzie za pomocą 
+Po przefiltrowaniu, sygnał jest progowany. Mikrokontroler, za pomocą przetwornika DAC, ustala poziom napięcia, 
+który wyznaczy granicę pomiędzy wysokim a niskim stanem logicznym. To rozróżnienie jest potrzebne do pobudzenia cyfrowego wejścia licznika.
+Zmienność tej wartości pozwala również na reagowanie tylko na sygnał o odpowiedniej amplitudzie, by móc z powrotem obniżyć próg 
+do miejsca przecięcia się sinusoidy z napięciem odniesienia. Na tym poziomie napięcia dokładność pomiaru jest największa.
+Mikrokontroler, dzięki wspomnianym wcześniej licznikom odmierza czas między zboczami rosnącymi sprogowanego już sygnału.
+Wszystkie pomiary czasów przecięć z trzech odbiorników są wysyłane we wspólnej ramce danych do komputera, gdzie za pomocą 
 różnic w tych czasach wyznaczony zostanie dystans obiektu oraz jego odchylenie względem sonaru.
+
+W dalszej części szczegółowo zostały przedstawione aspekty związane
+z komunikacją z urządzeniem, jak też elementy jego elektronicznej
+konstrukcji oraz oprogramowania.
 
 \begin{figure}[ht!]
     \centering
@@ -32,30 +35,31 @@ różnic w tych czasach wyznaczony zostanie dystans obiektu oraz jego odchylenie
     \label{fig:uml}
 \end{figure}
 
-\section{Komunikacja}
 
-\subsection{Wybór protokołu}
+\section{Komunikacja}
 
 Wybrany został protokół UART, ze względu na to, że płytka deweloperska STM32 NUCLEO-L476RG 
 z której skorzystano w projekcie posiada wbudowany konwerter UART$\rightarrow$~USB, 
 co pozwala na skomunikowanie mikrokontrolera z komputerem bez dodatkowego sprzętu.
+Szybkość transmisji została ustawiona na wartość \unit[115200]{b/s}, a długość słowa na \unit[8]{bitów}. 
+Kontrola parzystości nie została wykorzystana, a bit stopu posiada domyślną wartość jednego bita.
 
 W celu uruchomienia sekwencji wykrywania obiektu operator powinien wysłać komendę przykładowo o nazwie "START". 
-Komenda taka posiada swoje ID w formie pojedynczej cyfry, pozwoli to zmniejszyć ilość znaków zamieszczanych w ramce danych. 
-Komunikacja tekstowa przede wszystkim pozwala na weryfikacje danych przez standardowy terminal tekstowy. 
-Ramka danych rozpocznie się znakiem ,,X", pomoże to programowi odfiltrować tylko dane przeznaczone dla niego. ,,X" został wybrany ze względu na to, 
-że znak ten na pewno nie będzie występował w treści wiadomości w żadnej postaci.
-Wiadomość startu wraz z opcjonalnymi parametrami takimi jak ilość impulsów do wyemitowania czy próg czułości wykrywania sygnału wysłane są bajt po bajcie do urządzenia. 
-Sonar rozpoznając znak początku ramki przechodzi dalej do odczytywania ID komendy oraz jej parametrów, po odebraniu całej wiadomości program zaczyna sekwencję pomiaru.
-Następnie urządzenie wysyła do użytkownika odpowiedź, standardowo zaczyna znakiem rozpoznawczym a następnie zwraca numer ID komendy na którą ta wiadomość jest odpowiedzią,
-status wykonania zadania, w formie kodów błędów, liczba wykrytych przecięć zer, oraz wartości liczników z każdego ze składowych pomiaru.
+Komenda taka posiada swoje ID w formie pojedynczej cyfry. Uproszczenie pozwoli zmniejszyć liczbę znaków zamieszczanych w ramce danych. 
+Istotną zaletą komunikacji w trybie tekstowym jest to, że pozwala ona na weryfikacje danych przez standardowy terminal tekstowy. 
+Ramka danych rozpocznie się znakiem ,,X", pomoże to programowi odfiltrować tylko dane przeznaczone dla niego. Znak ten został wybrany ze względu na to, 
+że na pewno nie będzie występował w treści wiadomości jako element danych.
+Wiadomość startu wraz z opcjonalnymi parametrami takimi jak liczbę impulsów do wyemitowania czy próg czułości wykrywania sygnału, wysłane są bajt po bajcie do urządzenia. 
+Sonar rozpoznając znak początku ramki przechodzi dalej do odczytywania ID komendy oraz jej parametrów. Po odebraniu całej wiadomości program zaczyna sekwencję pomiaru.
+Urządzenie wysyła do użytkownika odpowiedź, która zaczyna się znakiem rozpoznawczym "Y", a następnie zwraca numer ID komendy, na którą ta wiadomość jest odpowiedzią.
+Następnie przekazuje status wykonania zadania, w formie kodów błędów, liczba wykrytych przecięć zer oraz wartości liczników z każdego ze składowych pomiaru.
 Dane będą przetwarzane przez operacje na obiektach typu {\tt string}. Pozwoli to na wycięcie odpowiednich wartości ze scalonej ramki wysłanej jako jeden długi ciąg znaków.
 
 \subsection{Komputer \textrightarrow{} sonar}
 Użytkownik systemu może wysłać z komputera instrukcję do wywołania całej sekwencji działania urządzenia. 
-Ramka danych zaczyna się znakiem, który nie będzie nigdy występował w treści wiadomości, ułatwi to rozpoznanie wiadomości, 
+Ramka danych zaczyna się znakiem, który nie będzie nigdy występował w treści wiadomości, ułatwi to jej rozpoznanie, 
 następnie musi zostać podany numer komendy informujący sonar jaką czynność powinien wykonać oraz 
-parametr określający warunki tej czynności. Informacje te zostały oddzielone znakiem spacji, a wiadomość zakończona znakiem końca lini i powrotu karetki.
+parametr określający warunki tej czynności. Wartości te zostały oddzielone znakiem spacji, a wiadomość zakończona znakiem końca lini i powrotu karetki.
 Lista dostępnych komend została szerzej opisana w rozdziale \ref{chapter:specyfikacja}. 
 
 \begin{figure}[!ht] %data in
@@ -91,46 +95,14 @@ Lista dostępnych komend została szerzej opisana w rozdziale \ref{chapter:specy
         \label{fig:datain}
     \end{figure}
 
-% \begin{figure}[!h]
-%     \centering
-%     \begin{tikztimingtable}[timing/wscale=4]
-%         \tikzset{% Environment Config
-%             timing/dslope=0.1,
-%             timing/.style={x=5ex,y=2ex},
-%             x=5ex,
-%             timing/rowdist=3ex,
-%             timing/name/.style={font=\sffamily\scriptsize},
-%             timing/d/text/.style={font=\sffamily\tiny},
-%         }
-%         \busref*{FRAME}      & 2u 1d 2d 2u \\
-%         \textcolor{black}{Instruction} & [black]
-%             Z 1D{X}  1D{COM\_ID} 1D{CRC}    \\ %
-%         \textcolor{black}{Bytes} & [black]
-%             Z 1D{1}  1D{1}       1D{4}      \\ %
-%         %
-%         % there must NOT be an uncommented line before \extracode!
-%         %
-%         \extracode
-%             \tablerules
-%         %%  \tablegrid
-        
-%         \begin{pgfonlayer}{background}
-%             \begin{scope}[semitransparent ,semithick]
-%                 %\vertlines[darkgray,dotted]{1.0,3.0,...,23.0}
-%                 \vertlines[gray,dotted]{4.0,8.0,...,\twidth}
-%             \end{scope}
-%         \end{pgfonlayer}
-%         \end{tikztimingtable}
-%     \end{figure}
-    
 
 \subsection{Sonar \textrightarrow{} komputer}
 
 Sonar w odpowiedzi na instrukcję wysyła ramkę danych która również zaczyna się znakiem specjalnym. 
-Tym razem jest to litera Y w celu rozróżnienia wiadomości wychodzących i przychodzących.
+Tym razem jest to litera "Y" w celu rozróżnienia wiadomości wychodzących i przychodzących.
 Następnie podawany jest status wykonania, 
 liczba wykrytych przecięć sygnału z układem odniesienia oraz czasy wykrytych przecięć ze wszystkich odbiorników.
-Podobnie jak w ramce z komendami przychodzącymi, wszystkie dane oddzielone są znakiem spacji a ramka zakończona znakiem końca linii oraz powrotu karetki.
+Podobnie jak w ramce z komendami przychodzącymi, wszystkie dane oddzielone są znakiem spacji, a ramka zakończona znakiem końca linii oraz powrotu karetki.
 Dodatkowo podczas pracy urządzenie zwraca informacje diagnostyczne o wykonanych działaniach, błędach i ostrzeżeniach.
 
 \begin{figure}[!ht] %data out
@@ -145,7 +117,7 @@ Dodatkowo podczas pracy urządzenie zwraca informacje diagnostyczne o wykonanych
         timing/d/text/.style={font=\sffamily\tiny},
     }
     \textcolor{black}{Instruction} & [black]
-        Z 1D{X}  1D{ } 1D{STATUS} 1D{ } 1D{ZC\_NUM} 1D{ } 1D{D11} 1D{...} 1D{D33} 1D{\textbackslash r \textbackslash n}  \\ %
+        Z 1D{Y}  1D{ } 1D{STATUS} 1D{ } 1D{ZC\_NUM} 1D{ } 1D{D11} 1D{...} 1D{D33} 1D{\textbackslash r \textbackslash n}  \\ %
     \textcolor{black}{Bytes} & [black]
         Z 1D{1}  1D{1} 1D{1}      1D{1} 1D{1}       1D{1} 1D{32}   1D{...} 1D{32} 1D{2}      \\ %
     %
@@ -177,12 +149,14 @@ Całą elektroniczną część urządzenia można podzielić na kilka bloków, z
 Do bloków tych zaliczamy blok sekcji zasilania, blok nadawczy oraz blok odbiorczy. Ten ostatni zawiera zestaw filtrów sygnału odbieranego oraz komparatory progujące.
 
 \subsection{Zasilanie}
+
 Całe urządzenie zasilane jest z portu USB komputera, które jednocześnie służy do komunikacji. 
 Przewód jest podłączony bezpośrednio do płytki deweloperskiej Nucleo, gdyż posiada ona już wbudowane złącze. 
-Mimo, że płytka deweloperska posiada wyprowadzenia zarówno \unit[5]{V} jak i \unit[3,3]{V}, 
-postanowiłem zaimplementować układ stabilizatora liniowego LM1117 obniżającego napięcie do \unit[3,3]{V} w celu lepszej izolacji 
-zasilania układów analogowych od cyfrowych co powinno przełożyć się na mniejsze zakłócenia. 
-Blisko jego wyprowadzeń zostały również umieszczone kondensatory konieczne do poprawnej stabilizacji, zgodnie z zaleceniami w nocie katalogowej \cite{ti:lm1117}
+Mimo że płytka deweloperska posiada wyprowadzenia zarówno \unit[5]{V} jak i \unit[3,3]{V}, 
+postanowiono zaimplementować układ stabilizatora liniowego LM1117 (patrz rys. \ref{fig:ldo}) obniżającego napięcie do \unit[3,3]{V}. Ma to na celu lepszą izolację 
+zasilania układów analogowych od cyfrowych, co powinno przełożyć się na mniejsze zakłócenia. 
+Blisko jego wyprowadzeń zostały również umieszczone kondensatory konieczne do poprawnej stabilizacji. 
+Wartości tych kondensatorów zostały dobrane zgodnie z zaleceniami w nocie katalogowej. \cite{ti:lm1117}
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = 0.5\textwidth]{LDO.png}
@@ -191,8 +165,8 @@ Blisko jego wyprowadzeń zostały również umieszczone kondensatory konieczne d
 \end{figure}
 
 \subsection{Nadajnik}
-Rolę nadajnika pełni przetwornik piezoelektryczny BPU-1640T0AH12  o średnicy \unit[16]{mm} i częstotliwości rezonansowej \unit[40]{kHz}. 
-która to jest poza spektrum słyszalnych dla człowieka częstotliwości wynoszącym \unit[16-20 000]{Hz} \cite{sluch}.
+Rolę nadajnika pełni przetwornik piezoelektryczny BPU-1640T0AH12 (patrz rys. \ref{fig:piezo}) o średnicy \unit[16]{mm} i częstotliwości rezonansowej \unit[40]{kHz}. 
+Częstotliwość ta jest poza spektrum słyszalności dla ludzkiego słuchu \unit[16-20 000]{Hz} \cite{sluch}.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = 0.3\textwidth]{piezo.jpeg}
@@ -205,15 +179,15 @@ która to jest poza spektrum słyszalnych dla człowieka częstotliwości wynosz
 W celu uzyskania mocnego sygnału ultradźwiękowego z przetwornika piezoelektrycznego zaprojektowano układ wzmacniający z transformatorem. 
 Sygnał nadający częstotliwość wysyłany jest z mikroprocesora, następnie jest wzmacniany parą tranzystorów SS8550 oraz MMBT3904, razem tworzących układ Darlingtona, 
 który zapewnia duże wzmocnienie prądowe sygnału i zachowuje krótkie czasy przełączania charakterystyczne dla tranzystorów bipolarnych.
-Transformator w tym układzie służy do podniesienia napięcia które trafia na przetwornik, docelowo jest to nawet szczytowo \unit[80]{V} co sprawia, 
-że sygnał jest bardzo mocny.
-Układ posiada również zabezpieczenie przed zbyt długim czasem otwarcia tranzystora, sygnał jest przepuszczany przez kondensator C501 \ref{fig:piezo_amp}, 
+Transformator w tym układzie służy do podniesienia napięcia, które trafia na przetwornik, docelowo jest to szczytowo \unit[80]{V}, co sprawia, 
+że sygnał jest mocny.
+Układ posiada również zabezpieczenie przed zbyt długim czasem otwarcia tranzystora. Sygnał jest przepuszczany przez kondensator C501 (patrz rys. \ref{fig:piezo_amp}), 
 co sprawia, że tylko szybkozmienne przebiegi są w stanie dotrzeć na bazę tranzystora Q502.
-Zbyt długa ekspozycja transformatora na przepływ prądu mogłaby go narazić na przegrzanie.
+Zbyt długa ekspozycja transformatora na przepływ prądu mogłaby go narazić na przegrzanie, a w konsekwencji jego uszkodzenie.
 Ze względu na indukcyjny charakter uzwojeń transformatora podczas szybkiej zmiany generowanego pola magnetycznego następuje 
 konwersja tej energii do postaci prądu zwrotnego wyindukowanego na tej cewce. Aby uchronić się przed niepożądanym działaniem tego zjawiska, 
 równolegle z uzwojeniem pierwotnym sprzężona jest dioda Schottkiego 1N5819WS, która pozwala zniwelować ten prąd.
-Dodatkowo jako element ułatwiający pracę nad urządzeniem, dodany został LED, który emituje światło w trakcie przepływu prądu przez transformator.
+Dodatkowo, jako element ułatwiający pracę nad urządzeniem, dodany został LED, który emituje światło w trakcie przepływu prądu przez transformator.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = \textwidth]{piezo_amp.png}
@@ -227,14 +201,13 @@ Przyjęto, że rolę odbiorników będą pełnić trzy dookólne mikrofony MEMS,
 Dlatego też konieczne jest zastosowanie dla każdego z nich zestawu filtrów pasmowych, które przepuszczą nam tylko i wyłącznie częstotliwości bliskie częstotliwości 
 sygnału jaki generuje przetwornik piezoelektryczny, a zablokują wszystkie niepożądane. 
 Pojedynczy stopień filtra, dawałby na wyjściu zbyt niski zakres poziomu napięć, 
-z tego powodu sygnał przechodzi przez 3 stopnie wzmacniaczy operacyjnych MCP6L04. Takie rozwiązanie zarówno filtruje sygnał i wzmacnia go.
+z tego powodu sygnał przechodzi przez 3 stopnie wzmacniaczy operacyjnych MCP6L04 (patrz rys. \ref{fig:filter}). Takie rozwiązanie zarówno filtruje sygnał i wzmacnia go.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width = \textwidth]{filter.png}
     \caption{Zestaw filtrów dla sygnału z mikrofonów}
     \label{fig:filter}
 \end{figure}
-\todo{zaktualizować rysunek}
 
 Zazwyczaj układy analogowe oparte o wzmacniacze operacyjne zasilane są napięciem symetrycznym a sygnał przemienny oscyluje wokół potencjału masy. 
 W tym wypadku ze względu na zakres napięciowy wejść mikroprocesora do zasilania wzmacniaczy operacyjnych 
@@ -252,10 +225,10 @@ a wzmacniacz operacyjny zwiększa wydajność prądową takiego źródła.
 \subsection{Progowanie sygnału}
 Wejścia licznika reagują na zbocza sygnału cyfrowego, co oznacza, że analogowy sygnał z wyjścia filtra musi zostać przetworzony na stany logiczne.
 Dokładna wartość napięcia nie jest potrzebna. Istotne są punkty przecięcia się sinusoidy z osią przebiegu.
-Takie zadanie idealnie spełnia komparator LM239D \ref{fig:comparator}, próg od którego sygnał ma interpretować jako wysoki stan jest podawany w formie 
-napięcia z przetwornika DAC mikrokontrolera dodatkowo wzmocnionego wzmacniaczem operacyjnym MCP6L04 \ref{fig:thereshold}.
+Takie zadanie idealnie spełnia komparator LM239D (patrz rys. \ref{fig:comparator}), próg od którego sygnał ma interpretować jako wysoki stan jest podawany w formie 
+napięcia z przetwornika DAC mikrokontrolera, dodatkowo wzmocnionego wzmacniaczem operacyjnym MCP6L04 (patrz rys. \ref{fig:thereshold}).
 Pozwala to na reagowanie tylko na falę dźwiękową o wystarczająco dużej amplitudzie, 
-a po wykryciu mocnego sygnału wrócić z powrotem do poziomu napięcia odniesienia sygnału gdzie pomiar jest najdokładniejszy.
+a po wykryciu mocnego sygnału wrócić z powrotem do poziomu napięcia odniesienia sygnału, gdzie pomiar jest najdokładniejszy.
 
 \begin{figure}[ht!]
     \centering
@@ -273,20 +246,20 @@ a po wykryciu mocnego sygnału wrócić z powrotem do poziomu napięcia odniesie
 
 \section{Konfiguracja mikrokontrolera}
 
-Mikrokontroler użyty w projekcie to STM32L476 został on wybrany ze względu na odpowiednią liczbę liczników, przetworników i interfejsów komunikacji. 
+Mikrokontroler użyty w projekcie to STM32L476. Został on wybrany ze względu na odpowiednią liczbę liczników, przetworników i interfejsów komunikacji. 
 Jego konfiguracja została przeprowadzona w programie STM32CUBEMX od firmy ST. 
 Graficzny interfejs pozwala w łatwy sposób zmienić ustawienia peryferiów, 
 taktowania zegarów systemowych czy nazwy zmiennych pomocniczych przydatnych na etapie programowania.
-Gotowa konfiguracja wejść i wyjść została przedstawiona na rysunku nr \ref{fig:cube}, gdzie przyjęto następujące oznaczenia:
+Gotowa konfiguracja wejść i wyjść została przedstawiona na rysunku \ref{fig:cube}, gdzie przyjęto następujące oznaczenia:
 
 \begin{itemize}
-    \item MIC\_0 -- pin do pomiaru sygnału z mikrofonu nr 0
-    \item MIC\_1 -- pin do pomiaru sygnału z mikrofonu nr 1
-    \item MIC\_2 -- pin do pomiaru sygnału z mikrofonu nr 2
-    \item THR -- pin generujący napięcie progowania(thereshold) dla komparatora zewnętrznego 
-    \item PIEZO -- pin sterujący przetwornikiem piezoelektrycznym 
-    \item DBG\_LED -- pin obsługujący diodę diagnostyczną
-    \item DBG\_BUT -- pin obsługujący przycisk diagnostyczny
+    \item MIC\_0 -- pin do pomiaru sygnału z mikrofonu nr 0,
+    \item MIC\_1 -- pin do pomiaru sygnału z mikrofonu nr 1,
+    \item MIC\_2 -- pin do pomiaru sygnału z mikrofonu nr 2,
+    \item THR -- pin generujący napięcie progowania(thereshold) dla komparatora zewnętrznego, 
+    \item PIEZO -- pin sterujący przetwornikiem piezoelektrycznym,
+    \item DBG\_LED -- pin obsługujący diodę diagnostyczną,
+    \item DBG\_BUT -- pin obsługujący przycisk diagnostyczny.
 \end{itemize}
 
 \begin{figure}[ht!]
@@ -295,13 +268,12 @@ Gotowa konfiguracja wejść i wyjść została przedstawiona na rysunku nr \ref{
     \caption{Konfiguracja pinów mikrokontrolera}
     \label{fig:cube}
 \end{figure}
-\todo{zaktualizować rysunek procka}
 
-Piny odpowiedzialne za pomiary sygnału z mikrofonów zostały skonfigurowane jako wejścia 32 bitowego licznika TIM2 na osobnych kanałach. 
-Została wykorzystana funkcja input capture, która wywołuje przerwanie za każdym razem jak wykryje zbocze rosnące lub opadające sygnału. 
+Piny odpowiedzialne za pomiary sygnału z mikrofonów zostały skonfigurowane jako wejścia 32-bitowego licznika TIM2 na osobnych kanałach. 
+Została wykorzystana funkcja {\tt input capture}, która wywołuje przerwanie za każdym razem jak wykryje zbocze rosnące lub opadające sygnału. 
 W przerwaniu zaczytywana jest wartość licznika i przekazywana do bufora wiadomości.
 Wyjście o nazwie THR zostało skonfigurowane jako przetwornik DAC, jego celem jest wygenerowanie napięcia, 
-które jest progiem wykrycia sygnału dla komparatora \ref{fig:comparator}. Wartość ta podlega zmianie w trakcie pracy urządzenia, 
+które jest progiem wykrycia sygnału dla komparatora. Wartość ta podlega zmianie w trakcie pracy urządzenia, 
 przez co użytkownik może dopasować czułość detektora, albo zwiększyć dokładność w trakcie trwania samego pomiaru.
 Przetwornik piezoelektryczny sterowany jest sygnałem PWM, licznik TIM16 został skonfigurowany do pracy w PWM Generation z dodatkową opcją One Pulse Mode. 
 Oznacza to, że licznik wykona dokładnie jeden okres sygnału o zadanych parametrach. 
@@ -309,8 +281,8 @@ W celu powtórzenia impulsu wyznaczoną przez użytkownika liczbę razy wykorzys
 Elementy do debugowania zostały skonfigurowane jako zwykłe wyjście dla diody, oraz zwykłe wejście dla przycisku.
 
 Taktowanie mikroprocesora zostało ustawiane na zalecaną maksymalną wartość \unit[80]{MHz}. 
-Jak widać na rysunku nr \ref{fig:cube_clocks} z tej wartości korzystają również wszystkie użyte w projekcie peryferia. 
-Co ma znaczenie podczas obliczania np częstotliwości sygnału PWM czy konwertowaniu wartości licznika na czas rzeczywisty.
+Jak widać na rysunku \ref{fig:cube_clocks} z tej wartości korzystają również wszystkie użyte w projekcie peryferia, 
+vo ma znaczenie podczas obliczania np. częstotliwości sygnału PWM czy konwertowaniu wartości licznika na czas rzeczywisty.
 
 \begin{figure}[ht!]
     \centering
@@ -319,13 +291,21 @@ Co ma znaczenie podczas obliczania np częstotliwości sygnału PWM czy konwerto
     \label{fig:cube_clocks}
 \end{figure}
 
+Peryferium komunikacji, którym w przypadku tego projektu jest peryferium UART w trybie asynchronicznym, skonfigurowano w sposób widoczny na rysunku~\ref{fig:uart}.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{uart.png}
+    \caption{Konfiguracja peryferium UART}
+    \label{fig:uart}
+\end{figure}
+
+
 \clearpage
 \section{Program}
 Program w całości został napisany w języku C, korzystając z powłoki abstrakcji HAL od ST electronics. 
 Większość funkcjonalności programu udało się zrealizować na przerwaniach systemowych oraz licznikach sprzętowych w celu maksymalizacji wydajności wykonywania operacji.
 Pomiar przecięć sygnału  z układem odniesienia jest dokonywany poprzez czytanie wartości licznika w momencie wywołania przerwania zmianą stanu na jego wejściu.
 Na wydruku \ref{lst:measure} przedstawiony został callback odpowiadający za pomiar czasów zmiany stanu.
-
 
 \begin{listing}[tp]
     \begin{minted}[frame=single,framesep=10pt,fontsize=\scriptsize,linenos = true]{c}
@@ -334,19 +314,16 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
     switch (htim->Channel)
     {
     case HAL_TIM_ACTIVE_CHANNEL_1:
-        active_channel = 1 - 1;
-        zero_cross[0]++;
-        set_timing_array(1, zero_cross[0], HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1));
+        set_zero_cross(0, get_zero_cross(0) + 1);
+        set_timing_array(1, get_zero_cross(0), HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1));
         break;
     case HAL_TIM_ACTIVE_CHANNEL_2:
-        active_channel = 2 - 1;
-        zero_cross[1]++;
-        set_timing_array(1, zero_cross[1], HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2));
+        set_zero_cross(1, get_zero_cross(1) + 1);
+        set_timing_array(1, get_zero_cross(1), HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2));
         break;
     case HAL_TIM_ACTIVE_CHANNEL_3:
-        active_channel = 3 - 1;
-        zero_cross[2]++;
-        set_timing_array(1, zero_cross[2], HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3));
+        set_zero_cross(2, get_zero_cross(2) + 1);
+        set_timing_array(1, get_zero_cross(2), HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3));
         break;
     default:
         break;
@@ -361,7 +338,9 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 Wszystkie znaki przychodzące za pomocą peryferium UART są zapisywane w buforze, lecz dopiero kiedy napotkany zostanie znak końca linii, 
 wykonywana jest operacja sprawdzenia poprawności danych w ciągu znaków. 
 Odbieranie wiadomości w formie tekstowej opiera sie na funkcjach operujących na zmiennych typu \textit{string}. 
-Funkcja \textit{sscanf} widoczna na wydruku \ref{lst:comm}  wyciąga z tekstowego typu danych liczby i konwertuje je na typ danych liczb całkowitych \textit{int}.
+Funkcja \textit{sscanf} 
+%tt
+widoczna na wydruku \ref{lst:comm}  wyciąga z tekstowego typu danych liczby i konwertuje je na typ danych liczb całkowitych \textit{int}.
 W ten sposób otrzymane dane przekazywane są do funkcji \textit{ExecCmd}, która wywołuje podaną w parametrach komendę z parametrami.
 W celach diagnostycznych umieszczone zostały również linie kodu odpowiedzialne za wyświetlanie buforu po każdej odebranej wiadomości oraz komunikat błędu, 
 jeżeli wiadomość ta nie spełnia kryteriów przyjętych podczas projektowania systemu komunikacji.
@@ -400,7 +379,7 @@ void MsgHandler()
 \end{listing}
 
 
-Po minięciu czasu zakończenia pomiaru, przerwanie wywołuje blok \ref{lst:send} odpowiedzialny za odesłanie wyników do komputera. Za pomocą funkcji \textit{printf}
+Po minięciu czasu zakończenia pomiaru, przerwanie wywołuje blok programu na wydruku \ref{lst:send} odpowiedzialny za odesłanie wyników do komputera. Za pomocą funkcji \textit{printf}
 dane wysyłane pojedynczo, a pakiet danych kończony jest znakiem końca linii po wysłaniu wszystkich danych zapisanych w buforze.
 
 \begin{listing}[tp]

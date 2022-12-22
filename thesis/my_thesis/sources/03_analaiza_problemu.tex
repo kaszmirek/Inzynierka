@@ -10,23 +10,12 @@
 % przesyłanie danych. Czy być może jakiś tryb mieszany.
 % Jaką chce Pan przyjąć formę przetwarzania danych i dlaczego. itd. itd.
 
-\def\w{1} % width (T_b)
-\def\h{1} % height of the signals
-
-% draws the sin wave
-\newcommand{\mysin}[2] % position,color
-{%
-  \begin{scope}[shift={#1}]
-    \draw[thick,#2] (0,0) sin (0.125*\w,0.5*\h) cos (0.25*\w,0) sin (0.375*\w,-0.5*\h) cos (0.5*\w,0)
-                          sin (0.625*\w,0.5*\h) cos (0.75*\w,0) sin (0.875*\w,-0.5*\h) cos (\w,0);
-  \end{scope}
-}
 
 \section{Generowanie i odbieranie sygnału ultradźwiękowego}
 
-Od nadajnika wymaga się, by był zdolny do emitowania mocnego sygnału tylko dla jednej częstotliwości określonej w rozdziale nr \ref{chapter:przeglad_czujnikow}.
+Od nadajnika wymaga się, by był zdolny do emitowania mocnego sygnału tylko dla jednej częstotliwości określonej w rozdziale \ref{chapter:przeglad_czujnikow}.
 Do tego celu idealnie nadają się przetworniki piezoelektryczne o częstotliwości rezonansowej \unit[40]{kHz}. W celu zwiększenia wydajności takiego przetwornika,
-konieczne jest podniesienie jego napięcia pracy. Powinno zostać to zrealizowane za pomocą wzmacniacza prądowego oraz transformatora. 
+konieczne jest podniesienie napięcia sygnału pobudzającego. Powinno zostać to zrealizowane za pomocą wzmacniacza prądowego oraz transformatora. 
 Sterownik nadajnika musi pozwalać na wygenerowanie dokładnie określonej ilości impulsów. 
 Mechanizm ten umożliwia urządzeniu wykonywać sekwencje odczytu o różnych parametrach, które mogą mieć wpływ na jakość danych wyjściowych. 
 Ze względu na wybranie mikrofonu o bardzo szerokim paśmie przenoszenia, konieczne jest zastosowanie filtrów pasmowych. 
@@ -35,28 +24,28 @@ Muszą mieć one szczyt skuteczności w zakresie częstotliwości rezonansowej n
 
 
 \section{Określenie kierunku nadejścia odebranego sygnału}
-Cytując publikację Dr Kreczmera \cite{Kreczmer:2020:Azimuth:Elevation},
-do określenia kierunku nadejścia sygnału została użyta metoda polegająca na pomiarze przesunięcia fazowego.
+W publikacji \cite{Kreczmer:2020:Azimuth:Elevation},
+do wyznaczenia kierunku nadejścia sygnału została użyta metoda polegająca na pomiarze przesunięcia fazowego.
 Może to być osiągnięte poprzez umieszczone na wspólnej powierzchni odbiorniki. 
 Jeżeli odstępy pomiędzy mikrofonami są mniejsze niż pół długości fali odbieranego sygnału, 
-to do pomiaru wystarczającą konfiguracją są trzy odbiorniki ustawione niewspółliniowo \ref{fig:micarray}.
+to do pomiaru wystarczającą konfiguracją są trzy odbiorniki ustawione niewspółliniowo (patrz rys. \ref{fig:micarray}).
 W przypadku gdy odległość między odbiornikami jest stosunkowo mała do odległości od wykrywanego obiektu , 
 od którego odbity zostaje sygnał, fala dźwiękowa może być traktowana jako płaska powierzchnia. 
-Zakładając, że $ t_0, t_1, t_2 $ to czasy w których ta sama powierzchnia została wykryta odpowiednio przez odbiorniki $R_0, R_1 i R_2$, 
-a jednocześnie $t_0 \leq t_1$ i $t_0 \leq t_2$, to odległości odbiorników $R_1 i R_2$ 
+Zakładając, że $ t_0, t_1, t_2 $ to czasy, w których ta sama powierzchnia została wykryta odpowiednio przez odbiorniki $R_0, R_1$ i $R_2$, 
+a jednocześnie $t_0 \leq t_1$ i $t_0 \leq t_2$, to odległości odbiorników $R_1$ i $R_2$ 
 od powierzchni w momencie dotarcia do $R_0$ wynoszą następująco:
 
 \begin{equation}
-	s_1 = v_a\tau_{01}, s_2 = v_a\tau_{02}
+	s_1 = v_a\tau_{01}, \qquad s_2 = v_a\tau_{02},
 \end{equation}
 
-Gdzie $v_a$ jest prędkością fali, $\tau_{01} = t_1-t_0$ i $\tau_{02} = t_2-t_0$. 
-Ponieważ w uproszczonym modelu fala dźwiękowa jest płaską powierzchnią musi spełnić równanie
+gdzie $v_a$ jest prędkością fali, $\tau_{01} = t_1-t_0$ i $\tau_{02} = t_2-t_0$. 
+Ponieważ w uproszczonym modelu fala dźwiękowa jest płaską powierzchnią musi spełnić równanie:
 
 \begin{equation}
-	ax + by +cz+d = 0.
+	ax + by +cz+d = 0,
 \end{equation}
-Gdzie $a, b i c$ to koordynaty wektorów prostopadłych do powierzchni. Można założyć, że wektor jest znormalizowany i oznaczony jako $n = (n_x, n_y, n_z)$ oraz
+gdzie $a, b$ i $c$ to koordynaty wektorów prostopadłych do powierzchni. Można założyć, że wektor jest znormalizowany i oznaczony jako $n = (n_x, n_y, n_z)$ oraz
 
 \begin{equation}
 	n_y^2 + n_z^2 + n_z^2 = 1.
@@ -65,9 +54,7 @@ Gdzie $a, b i c$ to koordynaty wektorów prostopadłych do powierzchni. Można z
 Do wyznaczenia kąta azymutu oraz elewacji obiektu można założyć, że wektor \textbf{n} jest skierowany przeciwnie 
 do kierunku propagacji fali dźwiękowej. W tym przypadku oznacza to $n_x > 0$. Ponieważ wektor \textbf{n} jest znormalizowany, 
 bezwzględna wartość $d$ jest odległością powierzchni od środka układu współrzędnych, 
-który znajduję się w środku odbiornika $R_0$ \ref{fig:micarray}.
-Biorąc pod uwagę poprzednie założenia oraz to, że koordynaty odbiorników $R_1$ i $R_2$ 
-to odpowiednio $(0, y_1, z_1)$ i $(0, y_2, z_2)$ daje nam to układ równań:
+który znajduję się w środku odbiornika $R_0$ (patrz rys. \ref{fig:micarray}).
 
 \begin{figure}[ht!]
 	\centering
@@ -75,6 +62,11 @@ to odpowiednio $(0, y_1, z_1)$ i $(0, y_2, z_2)$ daje nam to układ równań:
 	\caption{rozmieszczenie mikrofonów w przestrzeni trójwymiarowej}
 	\label{fig:micarray}
 \end{figure}
+
+
+Biorąc pod uwagę poprzednie założenia oraz to, że koordynaty odbiorników $R_1$ i $R_2$ 
+to odpowiednio $(0, y_1, z_1)$ i $(0, y_2, z_2)$ daje to układ równań:
+
 
 \begin{equation}
 	\begin{cases}
@@ -89,8 +81,8 @@ Rozwiązaniem tego układu równań jest:
 	n_y= \frac{z_2s_1 - z_1s_2}{y_1z_2-y_2z_1},\qquad   n_z= \frac{y_1 s_2 - y_2 s_1}{y_1z_2-y_2 z_1}, \qquad  n_x= \sqrt{1-n_y^2-n_z^2}  
 \end{equation}
 
-
-Mając koordynaty znormalizowanego wektora, kąt azymutu $\Phi$ oraz elewację $\Theta$ można obliczyć za pomocą następujących równań
+\clearpage
+Mając koordynaty znormalizowanego wektora, kąt azymutu $\Phi$ oraz elewację $\Theta$ można obliczyć za pomocą następujących równań:
 \begin{align}
 	&\Phi = arcsin \frac{n_y}{\sqrt{n_y^2 +n_x^2}}= arcsin \frac{n_y}{\sqrt{1-n_z^2}},\\
 	&\Theta = arcsin \frac{n_z}{\sqrt{n_x^2+n_x^2}}= arcsin \frac{n_z}{\sqrt{1-n_y^2}}.	
@@ -109,19 +101,15 @@ Mając koordynaty znormalizowanego wektora, kąt azymutu $\Phi$ oraz elewację $
 % 	  \end{figure}
 
 \section{Komunikacja}
-Komunikacja komputera typu PC z płytką deweloperską STM32 Nucleo L476rg na której bazowany jest projekt odbędzie się przy pomocy portu szeregowego. 
-Każdy nowoczesny komputer posiada złącze USB, które miało niezwykły wpływ na standaryzacje interfejsów w urządzeniach użytkowych, 
-większość płytek deweloperskich również posiada wbudowane gniazdo USB z portem szeregowym, dlatego też wybór tego rodzaju komunikacji wydaję się wręcz oczywistą decyzją.
-Tym samym złączem wgrywany jest również program do pamięci mikrokontrolera co jeszcze bardziej upraszcza stanowisko testowe.
-Dane będą wysyłane w postaci tekstu w formie ,,pytanie-odpowiedź", 
-zagwarantuje to większą elastyczność i możliwość zmiany parametrów urządzenia przez użytkownika bez konieczności przeprogramowywania mikrokontrolera.
+Komunikacja komputera typu PC z płytką deweloperską STM32 NUCLEO-L476RG, 
+na której bazowany jest projekt odbędzie się przy pomocy portu szeregowego. 
+Nowoczesne komputery są wyposażone w złącze USB, które ma niezwykły wpływ na standaryzację interfejsów w urządzeniach użytkowych. 
+Większość płytek deweloperskich również posiada wbudowane gniazdo USB z portem szeregowym, 
+Dlatego też wybór tego rodzaju komunikacji wydaje się wręcz oczywistą decyzją.
+Tym samym złączem wgrywany jest również program do pamięci mikrokontrolera, co jeszcze bardziej upraszcza stanowisko testowe.
+Dane będą wysyłane w postaci tekstu w formie pytanie-odpowiedź, 
+gwarantując większą elastyczność i możliwość zmiany parametrów urządzenia przez użytkownika bez konieczności przeprogramowywania mikrokontrolera.
 Jednocześnie to rozwiązanie nie spowoduje obniżenia efektywności komunikacji urządzenia z komputerem. 
 
-
-
-% Lorem ipsum: \todo{jak dane są wyciagane z ramki, ogólny opis, port szeregowy, czemu tekstowo?}
-% wybrano komunikacje tekstwoa co pozwalaa na zweryfikowanie danych poprzez zwykly teminal tekstowy nie powoduje obnizenia ofektywnosci kominikacji urzadzenia z komputerem 
-% przyjeto komunikacja zapytanie odpowiedz, ze wzgledu na wieksza elastycznosc i mozliwosc zmiany ustawien sonaru 
-% funkcje
 
 
