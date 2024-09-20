@@ -171,7 +171,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60105",
+                "PLATFORMIO=60106",
                 "STM32L476xx",
                 "USE_HAL_DRIVER",
                 "F_CPU=80000000L",

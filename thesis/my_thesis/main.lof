@@ -1,40 +1,40 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pasmo przenoszenia mikrofonu SPU0410LR5H-QB}}{6}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Mikrofon SPU0410LR5H-QB}}{6}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces TOPOSENS ECHO ONE}}{7}{figure.3.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pasmo przenoszenia mikrofonu SPU0410LR5H-QB}}{8}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Mikrofon SPU0410LR5H-QB}}{8}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces TOPOSENS ECHO ONE}}{9}{figure.3.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces rozmieszczenie mikrofonów w przestrzeni trójwymiarowej}}{9}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces rozmieszczenie mikrofonów w przestrzeni trójwymiarowej}}{12}{figure.4.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Schemat blokowy urządzenia}}{13}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Ramka danych przychodzących}}{14}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Ramka danych wychodzących}}{14}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Stabilizator napięcia}}{15}{figure.6.4}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Nadajnik piezoelektryczny}}{15}{figure.6.5}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Wzmacniacz sygnału nadajnika piezoelektrycznego}}{16}{figure.6.6}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Zestaw filtrów dla sygnału z mikrofonów}}{17}{figure.6.7}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Wzmacniacz prądowy napięcia odniesienia}}{17}{figure.6.8}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Wzmacniacz wartości progowej}}{17}{figure.6.9}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Czterokanałowy komparator}}{18}{figure.6.10}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Konfiguracja pinów mikrokontrolera}}{19}{figure.6.11}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Konfiguracja zegarów mikrokontrolera}}{20}{figure.6.12}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Konfiguracja peryferium UART}}{20}{figure.6.13}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Schemat blokowy urządzenia}}{18}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Ramka danych przychodzących}}{19}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ramka danych wychodzących}}{19}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Stabilizator napięcia}}{20}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Nadajnik piezoelektryczny}}{20}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Wzmacniacz sygnału nadajnika piezoelektrycznego}}{21}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Zestaw filtrów dla sygnału z mikrofonów}}{22}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Wzmacniacz prądowy napięcia odniesienia}}{22}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Wzmacniacz wartości progowej}}{22}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Czterokanałowy komparator}}{23}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Konfiguracja pinów mikrokontrolera}}{24}{figure.6.11}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Konfiguracja zegarów mikrokontrolera}}{25}{figure.6.12}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Konfiguracja peryferium UART}}{25}{figure.6.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces PCB}}{23}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Moduł nadawczo-odbiorczy}}{24}{figure.7.2}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Nakładka na Nucleo}}{24}{figure.7.3}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Skończony projekt w otwartej obudowie}}{25}{figure.7.4}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Skończony projekt}}{25}{figure.7.5}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Widok terminala podczas komunikacji z urządzeniem }}{26}{figure.7.6}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces PCB}}{29}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Moduł nadawczo-odbiorczy}}{30}{figure.7.2}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Nakładka na Nucleo}}{30}{figure.7.3}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Skończony projekt w otwartej obudowie}}{31}{figure.7.4}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Skończony projekt}}{31}{figure.7.5}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Widok terminala podczas komunikacji z urządzeniem }}{32}{figure.7.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Stanowisko badawcze}}{28}{figure.8.1}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}}{28}{figure.8.2}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Wyjście transformatora z podłączonym przetwornikiem piezoelektrycznym}}{29}{figure.8.3}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Przebiegi sygnałów z pojedynczego kanału w punkcie pomiaru kolejno za mikrofonem, wzmacniaczem i komparatorem}}{29}{figure.8.4}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Stanowisko badawcze wykrywania obiektu}}{30}{figure.8.5}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Odebrany sygnał bez badanego obiektu}}{30}{figure.8.6}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Odebrany sygnał z badanym obiektem}}{31}{figure.8.7}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Stanowisko badawcze}}{34}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Przebieg sygnału odebrany innym przetwornikiem piezoelektrycznym}}{34}{figure.8.2}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Wyjście transformatora z podłączonym przetwornikiem piezoelektrycznym}}{35}{figure.8.3}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Przebiegi sygnałów z pojedynczego kanału w punkcie pomiaru kolejno za mikrofonem, wzmacniaczem i komparatorem}}{35}{figure.8.4}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Stanowisko badawcze wykrywania obiektu}}{36}{figure.8.5}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Odebrany sygnał bez badanego obiektu}}{36}{figure.8.6}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Odebrany sygnał z badanym obiektem}}{37}{figure.8.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
